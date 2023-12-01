@@ -6,6 +6,8 @@ public abstract class Prodotti {
 
     public Double prezzo;
 
+    public Prodotti(){};
+
     public Prodotti(String portata, String nomePiatto, Double prezzo) {
         this.portata = portata;
         this.nomePiatto = nomePiatto;
