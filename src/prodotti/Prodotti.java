@@ -1,5 +1,8 @@
+package prodotti;
+
 public abstract class Prodotti {
 
+    //TODO non si capisce dal nome cos'è, siamo su prodotti per c'è scritto portata unifichiamo? bravo Roccaldo !
     public String portata;
 
     public String nomePiatto;
@@ -38,10 +41,13 @@ public abstract class Prodotti {
 
     @Override
     public String toString() {
-        return "Prodotti{" +
+        return "prodotti.Prodotti{" +
                 "portata='" + portata + '\'' +
                 ", nomePiatto='" + nomePiatto + '\'' +
                 ", prezzo=" + prezzo +
                 '}';
     }
+
+
+    //TODO come facciamo a stampare i field del prodotto? stampaDettagli
 }

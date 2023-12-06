@@ -2,7 +2,7 @@ RISTORANTE DEVELHOPE
 
 Menù a base di carne:
 
-Antipasti:
+prodotti.Antipasti:
 
 Primi Piatti:
 
@@ -13,9 +13,9 @@ Secondi Piatti:
 4) Cotoletta alla milanese
 5) Spezzatino di agnello con patate
 
-Contorni:
+prodotti.Contorni:
 
-Dessert:
+prodotti.Dessert:
 1)Cheesecake di yogurt alle fragole
 2)Crostata al limone meringata
 3)Crostatine alla nocciola e vaniglia

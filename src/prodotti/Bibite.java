@@ -1,3 +1,5 @@
+package prodotti;
+
 public class Bibite extends Prodotti {
 
     public Bibite(String portata, String nomePiatto, Double prezzo) {
