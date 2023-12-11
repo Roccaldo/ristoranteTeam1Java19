@@ -22,4 +22,12 @@ public class Menu {
    public List<Prodotti> getMenuVegano() {
       return menuVegano;
    }
+
+   public void stampaMenuCarne() {
+      System.out.println("MENU DI CARNE");
+      for(Prodotti prodotto: menuCarne) {
+         prodotto.stampaDettagli();
+      }
+   }
+
 }

@@ -10,5 +10,12 @@ public class Main {
         Secondi secondo4 = new Secondi(PortataEnum.SECONDOPIATTO, "Cotoletta alla milanese", TipoCotturaEnum.BEN_COTTA, 9.0);
         Secondi secondo5 = new Secondi(PortataEnum.SECONDOPIATTO, "Spezzatino di agnello con patate", TipoCotturaEnum.BEN_COTTA, 11.0);
 
+        Menu menuCarne = new Menu();
+        menuCarne.getMenuCarne().add(secondo1);
+        menuCarne.getMenuCarne().add(secondo2);
+        menuCarne.getMenuCarne().add(secondo3);
+        menuCarne.getMenuCarne().add(secondo4);
+        menuCarne.getMenuCarne().add(secondo5);
+        menuCarne.stampaMenuCarne();
     }
 }
