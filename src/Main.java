@@ -33,6 +33,11 @@ public class Main {
         menuCarne.getMenuCarne().add(dessert3);
         menuCarne.getMenuCarne().add(dessert4);
         menuCarne.getMenuCarne().add(dessert5);
+        menuCarne.getMenuCarne().add(dessertVegano1);
+        menuCarne.getMenuCarne().add(dessertVegano2);
+        menuCarne.getMenuCarne().add(dessertVegano3);
+        menuCarne.getMenuCarne().add(dessertVegano4);
+        menuCarne.getMenuCarne().add(dessertVegano5);
 
         menuCarne.stampaMenuCarne();
 
@@ -43,5 +48,7 @@ public class Main {
         menuVegano.getMenuVegano().add(dessertVegano3);
         menuVegano.getMenuVegano().add(dessertVegano4);
         menuVegano.getMenuVegano().add(dessertVegano5);
+
+        menuVegano.stampaMenuVegano();
     }
 }
