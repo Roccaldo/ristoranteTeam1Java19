@@ -1,7 +1,7 @@
 package prodotti;
 
 public class PrimiPiatti extends Prodotti{
-    public PrimiPiatti(String portata, String nomePiatto, Double prezzo) {
-        super(portata, nomePiatto, prezzo);
+    public PrimiPiatti(String nomePiatto, Double prezzo) {
+        super(nomePiatto, prezzo);
     }
 }

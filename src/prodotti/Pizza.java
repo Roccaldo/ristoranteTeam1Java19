@@ -2,8 +2,9 @@ package prodotti;
 
 public class Pizza extends Prodotti {
     private String tipoImpasto;
-    public Pizza(String portata, String nomePiatto, String tipoImpasto, Double prezzo) {
-        super(portata, nomePiatto, prezzo);
+
+    public Pizza(String nomePiatto, Double prezzo, String tipoImpasto) {
+        super(nomePiatto, prezzo);
         this.tipoImpasto = tipoImpasto;
     }
 

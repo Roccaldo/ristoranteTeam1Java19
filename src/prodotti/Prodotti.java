@@ -3,24 +3,13 @@ package prodotti;
 public abstract class Prodotti {
 
     //TODO non si capisce dal nome cos'è, siamo su prodotti per c'è scritto portata unifichiamo? bravo Roccaldo !
-    public String portata;
+    private String nomePiatto;
 
-    public String nomePiatto;
+    private Double prezzo;
 
-    public Double prezzo;
-
-    public Prodotti(String portata, String nomePiatto, Double prezzo) {
-        this.portata = portata;
+    public Prodotti(String nomePiatto, Double prezzo) {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
-    }
-
-    public String getPortata() {
-        return portata;
-    }
-
-    public void setPortata(String portata) {
-        this.portata = portata;
     }
 
     public String getNomePiatto() {
@@ -42,7 +31,6 @@ public abstract class Prodotti {
     @Override
     public String toString() {
         return "prodotti.Prodotti{" +
-                "portata='" + portata + '\'' +
                 ", nomePiatto='" + nomePiatto + '\'' +
                 ", prezzo=" + prezzo +
                 '}';
