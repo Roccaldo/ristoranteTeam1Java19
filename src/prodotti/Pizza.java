@@ -3,18 +3,16 @@ package prodotti;
 public class Pizza extends Prodotti {
     private String tipoImpasto;
 
-    public Pizza(String nomePiatto, Double prezzo, String tipoImpasto) {
+    public Pizza(String nomePiatto, String tipoImpasto, Double prezzo) {
         super(nomePiatto, prezzo);
         this.tipoImpasto = tipoImpasto;
     }
 
-    @Override
-    public Double getPrezzo() {
-        return super.getPrezzo();
+    public String getTipoImpasto() {
+        return tipoImpasto;
     }
 
-    @Override
-    public void setNomePiatto(String nomePiatto) {
-        super.setNomePiatto(nomePiatto);
+    public void setTipoImpasto(String tipoImpasto) {
+        this.tipoImpasto = tipoImpasto;
     }
 }
