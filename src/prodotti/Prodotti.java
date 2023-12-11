@@ -2,7 +2,6 @@ package prodotti;
 
 public abstract class Prodotti {
 
-    //TODO non si capisce dal nome cos'è, siamo su prodotti per c'è scritto portata unifichiamo? bravo Roccaldo !
     private String nomePiatto;
 
     private Double prezzo;
@@ -37,5 +36,4 @@ public abstract class Prodotti {
     }
 
 
-    //TODO come facciamo a stampare i field del prodotto? stampaDettagli
 }

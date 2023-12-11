@@ -3,7 +3,7 @@ package prodotti;
 public enum PortataEnum  {
     ANTIPASTO("Antipasto"),
     PRIMOPIATTO("Primo Piatto"),
-    SECONDOPIATTO("Secodno Piatto"),
+    SECONDOPIATTO("Secondo Piatto"),
     CONTORNO("Contorno"),
     DESSERT("Dessert");
     private String portata;
