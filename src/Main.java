@@ -13,6 +13,12 @@ public class Main {
         Dessert dessert3= new Dessert(PortataEnum.DESSERT, "Crostatine alla nocciola e vaniglia", CalorieEnum.ALTO, 10.99);
         Dessert dessert4= new Dessert(PortataEnum.DESSERT, "Mousse ai frutti di bosco", CalorieEnum.BASSO, 13.49);
         Dessert dessert5= new Dessert(PortataEnum.DESSERT, "Torta al forno aromatizzata al limone", CalorieEnum.BASSO, 9.99);
+        Dessert dessertVegano1= new Dessert(PortataEnum.DESSERT, "Budino di riso al latte di mandorle", CalorieEnum.BASSO, 14.99);
+        Dessert dessertVegano2= new Dessert(PortataEnum.DESSERT,"Tronchetti di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99);
+        Dessert dessertVegano3= new Dessert(PortataEnum.DESSERT,"Frutta alle spezie", CalorieEnum.BASSO, 6.99);
+        Dessert dessertVegano4= new Dessert(PortataEnum.DESSERT,"Pere affogate", CalorieEnum.ALTO, 8.99);
+        Dessert dessertVegano5= new Dessert(PortataEnum.DESSERT,"Mousse di cioccolato all'acqua", CalorieEnum.MEDIO,10.99);
+
 
         Menu menuCarne = new Menu();
 
@@ -29,5 +35,13 @@ public class Main {
         menuCarne.getMenuCarne().add(dessert5);
 
         menuCarne.stampaMenuCarne();
+
+        Menu menuVegano = new Menu();
+
+        menuVegano.getMenuVegano().add(dessertVegano1);
+        menuVegano.getMenuVegano().add(dessertVegano2);
+        menuVegano.getMenuVegano().add(dessertVegano3);
+        menuVegano.getMenuVegano().add(dessertVegano4);
+        menuVegano.getMenuVegano().add(dessertVegano5);
     }
 }

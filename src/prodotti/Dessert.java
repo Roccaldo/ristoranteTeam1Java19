@@ -9,5 +9,4 @@ public class Dessert extends Prodotti{
         this.portata= portata;
         this.livelloCalorie= livelloCalorie;
     }
-
 }

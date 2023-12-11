@@ -7,9 +7,7 @@ public class Menu {
    private List<Prodotti> menuCarne = new ArrayList<>();
    private List<Prodotti> menuPesce = new ArrayList<>();
    private List<Prodotti> menuVegano = new ArrayList<>();
-   public Menu(){
-
-   }
+   public Menu(){}
 
    public List<Prodotti> getMenuCarne() {
       return menuCarne;
@@ -29,5 +27,12 @@ public class Menu {
          prodotto.stampaDettagli();
       }
    }
+   public void stampaMenuVegano() {
+      System.out.println("MENU VEGANO");
+      for(Prodotti prodotto: menuVegano) {
+         prodotto.stampaDettagli();
+      }
+   }
+
 
 }
