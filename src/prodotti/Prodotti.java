@@ -35,5 +35,8 @@ public abstract class Prodotti {
                 '}';
     }
 
+    public void stampaDettagli() {
+        System.out.println(nomePiatto + ": " + " €" + prezzo);
+    }
 
 }
