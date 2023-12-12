@@ -8,4 +8,11 @@ public class Antipasti extends Prodotti{
 		this.portata = portata;
 	}
 
+	public PortataEnum getPortata() {
+		return portata;
+	}
+
+	public void setPortata(PortataEnum portata) {
+		this.portata = portata;
+	}
 }

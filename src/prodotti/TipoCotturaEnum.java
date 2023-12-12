@@ -2,7 +2,8 @@ package prodotti;
 
 public enum TipoCotturaEnum {
     AL_SANGUE("Al sangue"),
-    BEN_COTTA("Ben cotta");
+    BEN_COTTA("Ben cotta"),
+    STANDARD("Standard");
 
     private String tipoCottura;
 

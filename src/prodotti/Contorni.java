@@ -7,4 +7,12 @@ public class Contorni extends Prodotti {
         super(nomePiatto, prezzo);
         this.portata = portata;
     }
+
+    public PortataEnum getPortata() {
+        return portata;
+    }
+
+    public void setPortata(PortataEnum portata) {
+        this.portata = portata;
+    }
 }

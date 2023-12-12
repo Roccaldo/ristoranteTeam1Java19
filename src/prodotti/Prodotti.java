@@ -27,6 +27,10 @@ public abstract class Prodotti {
         this.prezzo = prezzo;
     }
 
+    public void stampaDettagli() {
+        System.out.println(nomePiatto + ": " + " €" + prezzo);
+    }
+
     @Override
     public String toString() {
         return "prodotti.Prodotti{" +
@@ -34,9 +38,4 @@ public abstract class Prodotti {
                 ", prezzo=" + prezzo +
                 '}';
     }
-
-    public void stampaDettagli() {
-        System.out.println(nomePiatto + ": " + " €" + prezzo);
-    }
-
 }

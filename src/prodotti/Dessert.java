@@ -9,4 +9,20 @@ public class Dessert extends Prodotti{
         this.portata= portata;
         this.livelloCalorie= livelloCalorie;
     }
+
+    public PortataEnum getPortata() {
+        return portata;
+    }
+
+    public void setPortata(PortataEnum portata) {
+        this.portata = portata;
+    }
+
+    public CalorieEnum getLivelloCalorie() {
+        return livelloCalorie;
+    }
+
+    public void setLivelloCalorie(CalorieEnum livelloCalorie) {
+        this.livelloCalorie = livelloCalorie;
+    }
 }
