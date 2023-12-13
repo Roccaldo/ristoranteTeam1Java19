@@ -6,6 +6,8 @@ public abstract class Prodotti {
 
     private Double prezzo;
 
+    //TODO qui ci va portata enum field
+
     public Prodotti(String nomePiatto, Double prezzo) {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
@@ -27,6 +29,8 @@ public abstract class Prodotti {
         this.prezzo = prezzo;
     }
 
+
+    //TODO cercare su google come inserire colori Ansi per stampare le portate
     public void stampaDettagli() {
         System.out.println(nomePiatto + ": " + " €" + prezzo);
     }

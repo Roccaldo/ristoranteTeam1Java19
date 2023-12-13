@@ -25,4 +25,6 @@ public class Dessert extends Prodotti{
     public void setLivelloCalorie(CalorieEnum livelloCalorie) {
         this.livelloCalorie = livelloCalorie;
     }
+
+    //TODO stessa cosa
 }

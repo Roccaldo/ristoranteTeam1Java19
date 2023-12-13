@@ -15,4 +15,12 @@ public class Contorni extends Prodotti {
     public void setPortata(PortataEnum portata) {
         this.portata = portata;
     }
+
+    //TODO stessa cosa dell'altra classe
+
+    @Override
+    public void stampaDettagli() {
+        super.stampaDettagli();
+        //TODO e gli altri field?
+    }
 }

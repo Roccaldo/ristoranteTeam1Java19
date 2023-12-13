@@ -2,6 +2,8 @@ import prodotti.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        //TODO creare la classe ristrorante e spostare questa logica li dentro
         //crea menu
         Menu menuCarne = new Menu();
         Menu menuPesce = new Menu();

@@ -15,4 +15,6 @@ public class Pizza extends Prodotti {
     public void setTipoImpasto(String tipoImpasto) {
         this.tipoImpasto = tipoImpasto;
     }
+
+    //TODO
 }
