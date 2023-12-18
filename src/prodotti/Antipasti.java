@@ -3,9 +3,9 @@ package prodotti;
 public class Antipasti extends Prodotti{
 
 	private PortataEnum portata;
-	public Antipasti(PortataEnum portata, String nomePiatto, Double prezzo) {
+	public Antipasti(String nomePiatto, Double prezzo, PortataEnum portata) {
 		super(nomePiatto, prezzo);
-		this.portata = portata;
+		this.portata = PortataEnum.ANTIPASTO;
 	}
 
 	public PortataEnum getPortata() {

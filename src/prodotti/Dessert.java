@@ -4,9 +4,9 @@ public class Dessert extends Prodotti{
 
     private PortataEnum portata;
     private CalorieEnum livelloCalorie;
-    public Dessert(PortataEnum portata,String nomePiatto,CalorieEnum livelloCalorie, Double prezzo) {
+    public Dessert(String nomePiatto,CalorieEnum livelloCalorie, Double prezzo,PortataEnum portata) {
         super(nomePiatto, prezzo);
-        this.portata= portata;
+        this.portata= PortataEnum.DESSERT;
         this.livelloCalorie= livelloCalorie;
     }
 

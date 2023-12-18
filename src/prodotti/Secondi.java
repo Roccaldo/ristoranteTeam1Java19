@@ -5,7 +5,7 @@ public class Secondi extends Prodotti{
     private TipoCotturaEnum tipoCottura;
 
     //TODO sistemare
-    public Secondi (String nomePiatto, TipoCotturaEnum tipoCottura, Double prezzo) {
+    public Secondi (String nomePiatto, TipoCotturaEnum tipoCottura, Double prezzo, PortataEnum portata) {
         super(nomePiatto, prezzo);
         this.portata = PortataEnum.SECONDOPIATTO;
         this.tipoCottura = tipoCottura;

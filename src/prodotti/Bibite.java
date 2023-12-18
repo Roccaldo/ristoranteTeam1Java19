@@ -3,10 +3,12 @@ package prodotti;
 public class Bibite extends Prodotti {
 
     //TODO il modificatore di accesso
-    boolean isAlcholic;
-    public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo) {
+    private PortataEnum portata;
+    private boolean isAlcholic;
+    public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo, PortataEnum portata) {
         super(nomePiatto, prezzo);
         this.isAlcholic = isAlcholic;
+        this.portata = PortataEnum.BIBITE
     }
 
     public boolean isAlcholic() {
@@ -15,6 +17,14 @@ public class Bibite extends Prodotti {
 
     public void setAlcholic(boolean alcholic) {
         isAlcholic = alcholic;
+    }
+
+    public PortataEnum getPortata() {
+        return portata;
+    }
+
+    public void setPortata(PortataEnum portata) {
+        this.portata = portata;
     }
 
 

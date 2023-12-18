@@ -3,9 +3,9 @@ package prodotti;
 public class Contorni extends Prodotti {
 
     private PortataEnum portata;
-    public Contorni(PortataEnum portata,String nomePiatto, Double prezzo) {
+    public Contorni(String nomePiatto, Double prezzo,PortataEnum portata) {
         super(nomePiatto, prezzo);
-        this.portata = portata;
+        this.portata = PortataEnum.CONTORNO;
     }
 
     public PortataEnum getPortata() {

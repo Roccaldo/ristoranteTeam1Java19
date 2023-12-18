@@ -3,7 +3,7 @@ package prodotti;
 public class PrimiPiatti extends Prodotti{
 
     private PortataEnum portata;
-    public PrimiPiatti(String nomePiatto, Double prezzo) {
+    public PrimiPiatti(String nomePiatto, Double prezzo, PortataEnum portata) {
         super(nomePiatto, prezzo);
         this.portata = PortataEnum.PRIMOPIATTO;
     }

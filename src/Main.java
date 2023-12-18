@@ -12,46 +12,46 @@ public class Main {
         Menu menuContorni = new Menu();
 
         //menu carne
-        menuCarne.getMenuCarne().add(new Antipasti(PortataEnum.ANTIPASTO, "Ravioli cinesi al vapore", 3.50));
-        menuCarne.getMenuCarne().add(new Antipasti(PortataEnum.ANTIPASTO, "Cornetti salati", 1.50));
+        menuCarne.getMenuCarne().add(new Antipasti("Ravioli cinesi al vapore", 3.50,PortataEnum.ANTIPASTO));
+        menuCarne.getMenuCarne().add(new Antipasti("Cornetti salati", 1.50,PortataEnum.ANTIPASTO ));
 
-        menuCarne.getMenuCarne().add(new PrimiPiatti(PortataEnum.PRIMOPIATTO,"Pappardelle al ragù di cinghiale", 14.76));
-        menuCarne.getMenuCarne().add(new PrimiPiatti(PortataEnum.PRIMOPIATTO,"Mezzemaniche al pesto di peperoni e basilico con salsiccia", 22.30));
+        menuCarne.getMenuCarne().add(new PrimiPiatti("Pappardelle al ragù di cinghiale", 14.76,(PortataEnum.PRIMOPIATTO));
+        menuCarne.getMenuCarne().add(new PrimiPiatti("Mezzemaniche al pesto di peperoni e basilico con salsiccia", 22.30,PortataEnum.PRIMOPIATTO));
 
-        menuCarne.getMenuCarne().add(new Secondi(PortataEnum.SECONDOPIATTO, "Pollo alla campagnola", TipoCotturaEnum.BEN_COTTA, 10.0));
-        menuCarne.getMenuCarne().add( new Secondi(PortataEnum.SECONDOPIATTO, "Tagliata di manzo", TipoCotturaEnum.AL_SANGUE, 18.0));
+        menuCarne.getMenuCarne().add(new Secondi("Pollo alla campagnola", TipoCotturaEnum.BEN_COTTA, 10.0, PortataEnum.SECONDOPIATTO));
+        menuCarne.getMenuCarne().add( new Secondi("Tagliata di manzo", TipoCotturaEnum.AL_SANGUE, 18.0, PortataEnum.SECONDOPIATTO));
 
 
 
         //menu pesce
-        menuPesce.getMenuPesce().add(new Antipasti(PortataEnum.ANTIPASTO, "Antipasto di mare", 4.50));
-        menuPesce.getMenuPesce().add(new Antipasti(PortataEnum.ANTIPASTO, "Pepata di cozze", 6.40));
+        menuPesce.getMenuPesce().add(new Antipasti("Antipasto di mare", 4.50,PortataEnum.ANTIPASTO));
+        menuPesce.getMenuPesce().add(new Antipasti("Pepata di cozze", 6.40,PortataEnum.ANTIPASTO));
 
-        menuPesce.getMenuPesce().add(new PrimiPiatti(PortataEnum.PRIMOPIATTO, "Spaghetti allo scoglio", 14.0));
-        menuPesce.getMenuPesce().add(new PrimiPiatti(PortataEnum.PRIMOPIATTO, "Linguine all'astice", 9.0));
+        menuPesce.getMenuPesce().add(new PrimiPiatti("Spaghetti allo scoglio", 14.0,PortataEnum.PRIMOPIATTO));
+        menuPesce.getMenuPesce().add(new PrimiPiatti("Linguine all'astice", 9.0,PortataEnum.PRIMOPIATTO));
 
-        menuPesce.getMenuPesce().add( new Secondi(PortataEnum.SECONDOPIATTO, "Salmone croccante", TipoCotturaEnum.STANDARD, 18.0));
-        menuPesce.getMenuPesce().add( new Secondi(PortataEnum.SECONDOPIATTO, "Polpettine di tonno e ricotta", TipoCotturaEnum.STANDARD, 18.0));
+        menuPesce.getMenuPesce().add( new Secondi("Salmone croccante", TipoCotturaEnum.STANDARD, 18.0,PortataEnum.SECONDOPIATTO));
+        menuPesce.getMenuPesce().add( new Secondi( "Polpettine di tonno e ricotta", TipoCotturaEnum.STANDARD, 18.0,PortataEnum.SECONDOPIATTO));
 
         //menu vegano
-        menuVegano.getMenuVegano().add(new Antipasti(PortataEnum.ANTIPASTO, "Insalata di ceci", 4.50));
-        menuVegano.getMenuVegano().add(new Antipasti(PortataEnum.ANTIPASTO, "Falafel", 6.40));
+        menuVegano.getMenuVegano().add(new Antipasti( "Insalata di ceci", 4.50,PortataEnum.ANTIPASTO));
+        menuVegano.getMenuVegano().add(new Antipasti( "Falafel", 6.40,PortataEnum.ANTIPASTO));
 
-        menuVegano.getMenuVegano().add(new PrimiPiatti(PortataEnum.PRIMOPIATTO, "Carbonara Vegana", 11.0));
-        menuVegano.getMenuVegano().add(new PrimiPiatti(PortataEnum.PRIMOPIATTO, "Lasagna vegana", 11.0));
+        menuVegano.getMenuVegano().add(new PrimiPiatti( "Carbonara Vegana", 11.0, PortataEnum.PRIMOPIATTO));
+        menuVegano.getMenuVegano().add(new PrimiPiatti( "Lasagna vegana", 11.0,PortataEnum.PRIMOPIATTO));
 
-        menuVegano.getMenuVegano().add( new Secondi(PortataEnum.SECONDOPIATTO, "Strudel salato", TipoCotturaEnum.STANDARD, 18.0));
-        menuVegano.getMenuVegano().add( new Secondi(PortataEnum.SECONDOPIATTO, "Seitan alla piastra", TipoCotturaEnum.STANDARD, 18.0));
+        menuVegano.getMenuVegano().add( new Secondi("Strudel salato", TipoCotturaEnum.STANDARD, 18.0,PortataEnum.SECONDOPIATTO));
+        menuVegano.getMenuVegano().add( new Secondi( "Seitan alla piastra", TipoCotturaEnum.STANDARD, 18.0,PortataEnum.SECONDOPIATTO));
 
         //menu contorni
-        menuContorni.getMenuContorni().add(new Contorni(PortataEnum.CONTORNO, "Patate fritte", 1.50));
-        menuContorni.getMenuContorni().add(new Contorni(PortataEnum.CONTORNO, "Insalata", 1.50));
+        menuContorni.getMenuContorni().add(new Contorni("Patate fritte", 1.50,PortataEnum.CONTORNO));
+        menuContorni.getMenuContorni().add(new Contorni("Insalata", 1.50,PortataEnum.CONTORNO));
 
         //menu dessert
-        menuDessert.getMenuDessert().add(new Dessert(PortataEnum.DESSERT, "Cheesecake di yogurt alle fragole", CalorieEnum.MEDIO, 12.99));
-        menuDessert.getMenuDessert().add(new Dessert(PortataEnum.DESSERT, "Crostata al limone meringata", CalorieEnum.ALTO, 9.99));
-        menuDessert.getMenuDessert().add(new Dessert(PortataEnum.DESSERT,"Tronchetti vegani di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99));
-        menuDessert.getMenuDessert().add(new Dessert(PortataEnum.DESSERT,"Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99));
+        menuDessert.getMenuDessert().add(new Dessert("Cheesecake di yogurt alle fragole", CalorieEnum.MEDIO, 12.99,(PortataEnum.DESSERT));
+        menuDessert.getMenuDessert().add(new Dessert( "Crostata al limone meringata", CalorieEnum.ALTO, 9.99,PortataEnum.DESSERT));
+        menuDessert.getMenuDessert().add(new Dessert("Tronchetti vegani di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99,PortataEnum.DESSERT));
+        menuDessert.getMenuDessert().add(new Dessert("Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99,PortataEnum.DESSERT));
 
         //stampa
         menuCarne.stampaMenuCarne();
