@@ -2,10 +2,12 @@ package prodotti;
 
 public class PrimiPiatti extends Prodotti{
 
+    private String tipoPasta;
     private PortataEnum portata;
-    public PrimiPiatti(String nomePiatto, Double prezzo, PortataEnum portata) {
+    public PrimiPiatti(String nomePiatto, Double prezzo, PortataEnum portata, String tipoPasta) {
         super(nomePiatto, prezzo);
         this.portata = PortataEnum.PRIMOPIATTO;
+        this.tipoPasta = tipoPasta;
     }
 
     public PortataEnum getPortata() {
@@ -16,6 +18,13 @@ public class PrimiPiatti extends Prodotti{
         this.portata = portata;
     }
 
+    public String getTipoPasta() {
+        return tipoPasta;
+    }
+
+    public void setTipoPasta(String tipoPasta) {
+        this.tipoPasta = tipoPasta;
+    }
 
     //TODO metodo che stampa e possiamo fare uno in overloaded che prende anche il coloro
 }

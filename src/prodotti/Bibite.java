@@ -8,7 +8,7 @@ public class Bibite extends Prodotti {
     public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo, PortataEnum portata) {
         super(nomePiatto, prezzo);
         this.isAlcholic = isAlcholic;
-        this.portata = PortataEnum.BIBITE
+        this.portata = PortataEnum.BIBITE;
     }
 
     public boolean isAlcholic() {

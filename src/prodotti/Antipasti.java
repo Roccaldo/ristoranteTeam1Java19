@@ -15,4 +15,5 @@ public class Antipasti extends Prodotti{
 	public void setPortata(PortataEnum portata) {
 		this.portata = portata;
 	}
+
 }
