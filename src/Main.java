@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         //TODO creare la classe ristrorante e spostare questa logica li dentro
+        Ristorante ristorante = new Ristorante("Team Java19","Via Sparsi Per l' Italia, 5");
+        System.out.println(ristorante);
         //crea menu
         Menu menuCarne = new Menu("Carne");
         Menu menuPesce = new Menu("Pesce");
