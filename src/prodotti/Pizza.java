@@ -5,7 +5,7 @@ public class Pizza extends Prodotti {
     private PortataEnum portata;
     private String tipoImpasto;
 
-    public Pizza(String nomePiatto, String tipoImpasto, Double prezzo, PortataEnum portata) {
+    public Pizza(String nomePiatto, String tipoImpasto, Double prezzo) {
         super(nomePiatto, prezzo);
         this.tipoImpasto = tipoImpasto;
         this.portata = PortataEnum.PIZZA;

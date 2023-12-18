@@ -4,7 +4,7 @@ public class PrimiPiatti extends Prodotti{
 
     private String tipoPasta;
     private PortataEnum portata;
-    public PrimiPiatti(String nomePiatto, Double prezzo, PortataEnum portata, String tipoPasta) {
+    public PrimiPiatti(String nomePiatto, Double prezzo, String tipoPasta) {
         super(nomePiatto, prezzo);
         this.portata = PortataEnum.PRIMOPIATTO;
         this.tipoPasta = tipoPasta;

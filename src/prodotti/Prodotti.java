@@ -1,7 +1,8 @@
 package prodotti;
 
-public abstract class Prodotti {
+import java.util.Objects;
 
+public abstract class Prodotti {
     private String nomePiatto;
 
     private Double prezzo;
@@ -29,7 +30,6 @@ public abstract class Prodotti {
         this.prezzo = prezzo;
     }
 
-
     //TODO cercare su google come inserire colori Ansi per stampare le portate
     public void stampaDettagli() {
         System.out.println(nomePiatto + ": " + " €" + prezzo);
@@ -41,5 +41,18 @@ public abstract class Prodotti {
                 ", nomePiatto='" + nomePiatto + '\'' +
                 ", prezzo=" + prezzo +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Prodotti prodotti = (Prodotti) o;
+        return Objects.equals(nomePiatto, prodotti.nomePiatto) && Objects.equals(prezzo, prodotti.prezzo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nomePiatto, prezzo);
     }
 }

@@ -5,7 +5,7 @@ public class Bibite extends Prodotti {
     //TODO il modificatore di accesso
     private PortataEnum portata;
     private boolean isAlcholic;
-    public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo, PortataEnum portata) {
+    public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo) {
         super(nomePiatto, prezzo);
         this.isAlcholic = isAlcholic;
         this.portata = PortataEnum.BIBITE;
