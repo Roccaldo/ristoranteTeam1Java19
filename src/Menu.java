@@ -1,6 +1,7 @@
 import prodotti.PortataEnum;
 import prodotti.PrimiPiatti;
 import prodotti.Prodotti;
+import prodotti.TipoMenuEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,8 @@ public class Menu {
 
    //TODO inserire i field per menu, quindi creare un tipomenuenum e poi il nome città come field
    private List<Prodotti> menu = new ArrayList<>();
+
+   private TipoMenuEnum tipoMenu;
 
    public Menu(String nomeMenu) {
       this.nomeMenu = nomeMenu;
@@ -28,6 +31,14 @@ public class Menu {
 
    public List<Prodotti> getMenu() {
       return menu;
+   }
+
+   public TipoMenuEnum getTipoMenu() {
+      return tipoMenu;
+   }
+
+   public void setTipoMenu(TipoMenuEnum tipoMenu) {
+      this.tipoMenu = tipoMenu;
    }
 
    public void stampaMenu() {
