@@ -34,11 +34,12 @@ public class PrimiPiatti extends Prodotti{
         this.tipoPasta = tipoPasta;
     }
 
-    //TODO metodo che stampa e possiamo fare uno in overloaded che prende anche il coloro
     @Override
     public void stampaDettagli() {
+        System.out.print("\u001B[34m");
         super.stampaDettagli();
         System.out.print("Tipo di pasta: " + tipoPasta);
-        System.out.println(" ");
+        System.out.println("\u001B[0m ");
     }
+
 }

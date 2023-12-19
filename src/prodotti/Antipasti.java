@@ -25,7 +25,8 @@ public class Antipasti extends Prodotti{
 
 	@Override
 	public void stampaDettagli() {
+		System.out.print("\u001B[36m");
 		super.stampaDettagli();
-		System.out.println(" ");
+		System.out.println("\u001B[0m ");
 	}
 }
