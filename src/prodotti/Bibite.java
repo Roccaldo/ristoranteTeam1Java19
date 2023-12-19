@@ -29,4 +29,15 @@ public class Bibite extends Prodotti {
 
 
     //TODO stampare le bibite, abbiamo un metodo da incrementare con i nuovi fields
+    @Override
+    public void stampaDettagli() {
+        super.stampaDettagli();
+
+        if(isAlcholic) {
+            System.out.println("Alcolico");
+        } else {
+            System.out.println("Analcolico");
+        }
+    }
+
 }

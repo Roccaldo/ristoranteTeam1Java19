@@ -27,4 +27,9 @@ public class PrimiPiatti extends Prodotti{
     }
 
     //TODO metodo che stampa e possiamo fare uno in overloaded che prende anche il coloro
+    @Override
+    public void stampaDettagli() {
+        super.stampaDettagli();
+        System.out.println("Tipo di pasta: " + tipoPasta);
+    }
 }

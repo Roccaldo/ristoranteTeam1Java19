@@ -27,4 +27,9 @@ public class Dessert extends Prodotti{
     }
 
     //TODO stessa cosa
+    @Override
+    public void stampaDettagli() {
+        super.stampaDettagli();
+        System.out.println("Livello di calorie: " + livelloCalorie.getLivelloCalorie());
+    }
 }

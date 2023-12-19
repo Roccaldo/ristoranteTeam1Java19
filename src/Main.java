@@ -7,11 +7,11 @@ public class Main {
         Ristorante ristorante = new Ristorante("Team Java19","Via Sparsi Per l' Italia, 5");
         System.out.println(ristorante);
         //crea menu
-        Menu menuCarne = new Menu("Carne");
-        Menu menuPesce = new Menu("Pesce");
-        Menu menuVegano = new Menu("Vegano");
-        Menu menuDessert = new Menu("Dessert");
-        Menu menuContorni = new Menu("Contorni");
+        Menu menuCarne = new Menu("Carne", TipoMenuEnum.CARNE);
+        Menu menuPesce = new Menu("Pesce", TipoMenuEnum.PESCE);
+        Menu menuVegano = new Menu("Vegano", TipoMenuEnum.VEGANO);
+        Menu menuDessert = new Menu("Dessert", TipoMenuEnum.DESSERT);
+        Menu menuContorni = new Menu("Contorni", TipoMenuEnum.CONTORNI);
 
         //menu carne
         menuCarne.getMenu().add(new Antipasti("Ravioli cinesi al vapore", 3.50));

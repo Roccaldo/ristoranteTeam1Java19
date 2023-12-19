@@ -26,4 +26,10 @@ public class Secondi extends Prodotti{
     public void setTipoCottura(TipoCotturaEnum tipoCottura) {
         this.tipoCottura = tipoCottura;
     }
+
+    @Override
+    public void stampaDettagli() {
+        super.stampaDettagli();
+        System.out.println("Tipo di cottura: " + tipoCottura.getTipoCottura());
+    }
 }

@@ -27,5 +27,9 @@ public class Pizza extends Prodotti {
         this.portata = portata;
     }
 
-    //TODO
+    @Override
+    public void stampaDettagli() {
+        super.stampaDettagli();
+        System.out.println("Tipo di impasto: " + tipoImpasto);
+    }
 }
