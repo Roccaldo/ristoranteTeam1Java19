@@ -12,6 +12,7 @@ public class Main {
         Menu menuVegano = new Menu("Vegano");
         Menu menuDessert = new Menu("Dessert");
         Menu menuContorni = new Menu("Contorni");
+        Menu menuPizza = new Menu("Pizza");
 
         //menu carne
         menuCarne.getMenu().add(new Antipasti("Ravioli cinesi al vapore", 3.50));
@@ -54,6 +55,12 @@ public class Main {
         menuDessert.getMenu().add(new Dessert( "Crostata al limone meringata", CalorieEnum.ALTO, 9.99));
         menuDessert.getMenu().add(new Dessert("Tronchetti vegani di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99));
         menuDessert.getMenu().add(new Dessert("Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99));
+
+        //menu pizza
+        menuPizza.aggiungiPiatto(new Pizza("Margherita", "Integrale", 4.50));
+        menuPizza.aggiungiPiatto(new Pizza("Crudaiola", "Normale", 4.50));
+
+
 
         //stampa
         menuCarne.stampaMenu();
