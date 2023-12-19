@@ -66,7 +66,7 @@ public class Main {
         menuPizza.aggiungiPiatto(new Pizza("Margherita", "Integrale", 4.50));
         menuPizza.aggiungiPiatto(new Pizza("Crudaiola", "Normale", 4.50));
         menuPizza.aggiungiPiatto(new Pizza("Vegetariana", "Normale", 5.00));
-
+        
         //menu bibite
         menuBibite.aggiungiPiatto(new Bibite("Coca cola", false, 1.50));
         menuBibite.aggiungiPiatto(new Bibite("Fanta", false, 2.00));
@@ -75,7 +75,6 @@ public class Main {
         menuBibite.aggiungiPiatto(new Bibite("Vino Rosso", true, 14.50));
 
         //stampa menu
-        System.out.println();
         menuCarne.stampaMenu();
         System.out.println();
         menuPesce.stampaMenu();
