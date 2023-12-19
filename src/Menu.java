@@ -1,7 +1,4 @@
-import prodotti.PortataEnum;
-import prodotti.PrimiPiatti;
-import prodotti.Prodotti;
-import prodotti.TipoMenuEnum;
+import prodotti.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +12,9 @@ public class Menu {
 
    private TipoMenuEnum tipoMenu;
 
-   public Menu(String nomeMenu) {
+   public Menu(String nomeMenu, TipoMenuEnum tipoMenu) {
       this.nomeMenu = nomeMenu;
+      this.tipoMenu = tipoMenu;
    }
    //TODO fare u metodo che fa add e remove
 
