@@ -10,7 +10,7 @@ public class Secondi extends Prodotti{
         this.portata = PortataEnum.SECONDOPIATTO;
         this.tipoCottura = tipoCottura;
     }
-
+    
     public PortataEnum getPortata() {
         return portata;
     }
