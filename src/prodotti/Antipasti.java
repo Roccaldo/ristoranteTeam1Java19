@@ -23,4 +23,9 @@ public class Antipasti extends Prodotti{
 		this.portata = portata;
 	}
 
+	@Override
+	public void stampaDettagli() {
+		super.stampaDettagli();
+		System.out.println(" ");
+	}
 }

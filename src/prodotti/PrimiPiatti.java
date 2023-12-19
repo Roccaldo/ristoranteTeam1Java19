@@ -38,6 +38,7 @@ public class PrimiPiatti extends Prodotti{
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.println("Tipo di pasta: " + tipoPasta);
+        System.out.print("Tipo di pasta: " + tipoPasta);
+        System.out.println(" ");
     }
 }

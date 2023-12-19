@@ -44,7 +44,10 @@ public abstract class Prodotti {
     }
 
     public void stampaDettagli() {
-        System.out.print(nomePiatto + ": " + " €" + prezzo);
+        System.out.print(nomePiatto + ": " + " €" + prezzo + " | ");
+        if (!getAllergeni().isEmpty()) {
+            System.out.print("Allergeni presenti: " + getAllergeni() + " | ");
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 import prodotti.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,21 +11,21 @@ public class Main {
         System.out.println(ristorante);
 
         //crea menu
-        Menu menuCarne = new Menu("Carne", TipoMenuEnum.CARNE);
-        Menu menuPesce = new Menu("Pesce", TipoMenuEnum.PESCE);
-        Menu menuVegano = new Menu("Vegano", TipoMenuEnum.VEGANO);
-        Menu menuDessert = new Menu("Dessert", TipoMenuEnum.DESSERT);
+        Menu menuCarne = new Menu("Monte", TipoMenuEnum.CARNE);
+        Menu menuPesce = new Menu("Mare", TipoMenuEnum.PESCE);
+        Menu menuVegano = new Menu("Amici della natura", TipoMenuEnum.VEGANO);
+        Menu menuDessert = new Menu("dolci", TipoMenuEnum.DESSERT);
         Menu menuContorni = new Menu("Contorni", TipoMenuEnum.CONTORNI);
         Menu menuPizza = new Menu("Pizza", TipoMenuEnum.PIZZA);
 
 
 
         //menu carne
-        menuCarne.getMenu().add(new Antipasti("Ravioli cinesi al vapore", 3.50));
+        menuCarne.getMenu().add(new Antipasti("Ravioli cinesi al vapore", 3.50, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA))));
         menuCarne.getMenu().add(new Antipasti("Cornetti salati", 1.50));
 
         menuCarne.getMenu().add(new PrimiPiatti("Pappardelle al ragù di cinghiale", 14.76, "Classica"));
-        menuCarne.getMenu().add(new PrimiPiatti("Mezzemaniche al pesto di peperoni e basilico con salsiccia", 22.30, "Integrale"));
+        menuCarne.getMenu().add(new PrimiPiatti("Mezzemaniche al pesto di peperoni e basilico con salsiccia", 22.30, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.UOVA)), "Integrale"));
 
         menuCarne.getMenu().add(new Secondi("Pollo alla campagnola", TipoCotturaEnum.BEN_COTTA, 10.0));
         menuCarne.getMenu().add( new Secondi("Tagliata di manzo", TipoCotturaEnum.AL_SANGUE, 18.0));

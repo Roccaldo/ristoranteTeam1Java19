@@ -44,6 +44,7 @@ public class Bibite extends Prodotti {
         } else {
             System.out.println("Analcolico");
         }
+        System.out.println(" ");
     }
 
 }

@@ -42,6 +42,7 @@ public class Pizza extends Prodotti {
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.println("Tipo di impasto: " + tipoImpasto);
+        System.out.print("Tipo di impasto: " + tipoImpasto);
+        System.out.println(" ");
     }
 }

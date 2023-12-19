@@ -37,7 +37,7 @@ public class Menu {
    }
 
    public void stampaMenu() {
-      System.out.println("Menù " + getNomeMenu());
+      System.out.println("Menù " + getNomeMenu() + " (" + getTipoMenu() + ")");
       for (Prodotti prodotti : menu) {
             prodotti.stampaDettagli();
       }

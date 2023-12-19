@@ -27,5 +27,6 @@ public class Contorni extends Prodotti {
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
+        System.out.println(" ");
     }
 }

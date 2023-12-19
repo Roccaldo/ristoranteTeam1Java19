@@ -38,6 +38,7 @@ public class Secondi extends Prodotti{
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.println("Tipo di cottura: " + tipoCottura.getTipoCottura());
+        System.out.print("Tipo di cottura: " + tipoCottura.getTipoCottura());
+        System.out.println(" ");
     }
 }
