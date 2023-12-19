@@ -1,5 +1,7 @@
 package prodotti;
 
+import java.util.ArrayList;
+
 public class Bibite extends Prodotti {
 
     //TODO il modificatore di accesso
@@ -7,6 +9,12 @@ public class Bibite extends Prodotti {
     private boolean isAlcholic;
     public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo) {
         super(nomePiatto, prezzo);
+        this.isAlcholic = isAlcholic;
+        this.portata = PortataEnum.BIBITE;
+    }
+
+    public Bibite(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, boolean isAlcholic) {
+        super(nomePiatto, prezzo, allergeni);
         this.isAlcholic = isAlcholic;
         this.portata = PortataEnum.BIBITE;
     }

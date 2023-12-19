@@ -1,5 +1,7 @@
 package prodotti;
 
+import java.util.ArrayList;
+
 public class Pizza extends Prodotti {
 
     private PortataEnum portata;
@@ -7,6 +9,12 @@ public class Pizza extends Prodotti {
 
     public Pizza(String nomePiatto, String tipoImpasto, Double prezzo) {
         super(nomePiatto, prezzo);
+        this.tipoImpasto = tipoImpasto;
+        this.portata = PortataEnum.PIZZA;
+    }
+
+    public Pizza(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, String tipoImpasto) {
+        super(nomePiatto, prezzo, allergeni);
         this.tipoImpasto = tipoImpasto;
         this.portata = PortataEnum.PIZZA;
     }

@@ -1,5 +1,6 @@
 package prodotti;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Prodotti {
@@ -7,11 +8,19 @@ public abstract class Prodotti {
 
     private Double prezzo;
 
+    private ArrayList<AllergeniEnum> allergeni = new ArrayList<>();
+
     //TODO qui ci va portata enum field
 
     public Prodotti(String nomePiatto, Double prezzo) {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
+    }
+
+    public Prodotti(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni) {
+        this.nomePiatto = nomePiatto;
+        this.prezzo = prezzo;
+        this.allergeni = allergeni;
     }
 
     public String getNomePiatto() {
@@ -28,6 +37,10 @@ public abstract class Prodotti {
 
     public void setPrezzo(Double prezzo) {
         this.prezzo = prezzo;
+    }
+
+    public ArrayList<AllergeniEnum> getAllergeni() {
+        return allergeni;
     }
 
     //TODO cercare su google come inserire colori Ansi per stampare le portate
