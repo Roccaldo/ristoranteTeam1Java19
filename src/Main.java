@@ -63,9 +63,9 @@ public class Main {
         menuDessert.aggiungiPiatto((new Dessert("Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99)));
 
         //menu pizza
-        menuPizza.aggiungiPiatto(new Pizza("Margherita", "Integrale", 4.50));
-        menuPizza.aggiungiPiatto(new Pizza("Crudaiola", "Normale", 4.50));
-        menuPizza.aggiungiPiatto(new Pizza("Vegetariana", "Normale", 5.00));
+        menuPizza.aggiungiPiatto(new Pizza("Margherita", "Integrale", 4.50,"Pomodoro,Mozzarella"));
+        menuPizza.aggiungiPiatto(new Pizza("Crudaiola", "Normale", 4.50,"Pomodoro, Mozzarella, Prosciutto Crudo"));
+        menuPizza.aggiungiPiatto(new Pizza("Vegetariana", "Normale", 5.00,"Pomodoro, Mozzarella, Zucchine, Peperoni"));
         
         //menu bibite
         menuBibite.aggiungiPiatto(new Bibite("Coca cola", false, 1.50));

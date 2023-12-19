@@ -50,7 +50,7 @@ public class Ristorante {
 
     private String determinaStato(){
         int oraAttuale = orario.getHour();
-        return (oraAttuale >= 8 && oraAttuale < 23) ? "Aperto" : "Chiuso";
+        return oraAttuale >= 8 && oraAttuale < 23 ? "Aperto" : "Chiuso";
     }
 
     @Override
