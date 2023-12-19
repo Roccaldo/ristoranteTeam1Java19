@@ -6,6 +6,7 @@ public class Bibite extends Prodotti {
 
     private PortataEnum portata;
     private boolean isAlcholic;
+
     public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo) {
         super(nomePiatto, prezzo);
         this.isAlcholic = isAlcholic;
@@ -34,12 +35,10 @@ public class Bibite extends Prodotti {
         this.portata = portata;
     }
 
-
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-
-        if(isAlcholic) {
+        if (isAlcholic) {
             System.out.println("Alcolico");
         } else {
             System.out.println("Analcolico");
