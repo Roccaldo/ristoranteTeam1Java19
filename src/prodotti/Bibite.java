@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Bibite extends Prodotti {
 
-    //TODO il modificatore di accesso
     private PortataEnum portata;
     private boolean isAlcholic;
     public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo) {
@@ -36,7 +35,6 @@ public class Bibite extends Prodotti {
     }
 
 
-    //TODO stampare le bibite, abbiamo un metodo da incrementare con i nuovi fields
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();

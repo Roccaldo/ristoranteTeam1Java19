@@ -10,7 +10,6 @@ public abstract class Prodotti {
 
     private ArrayList<AllergeniEnum> allergeni = new ArrayList<>();
 
-    //TODO qui ci va portata enum field
 
     public Prodotti(String nomePiatto, Double prezzo) {
         this.nomePiatto = nomePiatto;
@@ -39,13 +38,13 @@ public abstract class Prodotti {
         this.prezzo = prezzo;
     }
 
+
     public ArrayList<AllergeniEnum> getAllergeni() {
         return allergeni;
     }
 
-    //TODO cercare su google come inserire colori Ansi per stampare le portate
     public void stampaDettagli() {
-        System.out.println(nomePiatto + ": " + " €" + prezzo);
+        System.out.print(nomePiatto + ": " + " €" + prezzo);
     }
 
     @Override

@@ -1,18 +1,23 @@
 import prodotti.*;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
         //TODO creare la classe ristrorante e spostare questa logica li dentro
         Ristorante ristorante = new Ristorante("Team Java19","Via Sparsi Per l' Italia, 5");
         System.out.println(ristorante);
+
         //crea menu
         Menu menuCarne = new Menu("Carne", TipoMenuEnum.CARNE);
         Menu menuPesce = new Menu("Pesce", TipoMenuEnum.PESCE);
         Menu menuVegano = new Menu("Vegano", TipoMenuEnum.VEGANO);
         Menu menuDessert = new Menu("Dessert", TipoMenuEnum.DESSERT);
         Menu menuContorni = new Menu("Contorni", TipoMenuEnum.CONTORNI);
-        Menu menuPizza = new Menu("Pizza", TipoMenuEnum.PIZZA.PIZZA);
+        Menu menuPizza = new Menu("Pizza", TipoMenuEnum.PIZZA);
+
+
 
         //menu carne
         menuCarne.getMenu().add(new Antipasti("Ravioli cinesi al vapore", 3.50));
@@ -59,8 +64,7 @@ public class Main {
         //menu pizza
         menuPizza.aggiungiPiatto(new Pizza("Margherita", "Integrale", 4.50));
         menuPizza.aggiungiPiatto(new Pizza("Crudaiola", "Normale", 4.50));
-
-
+        menuPizza.aggiungiPiatto(new Pizza("Vegetariana","Normale",5.00));
 
         //stampa
         menuCarne.stampaMenu();
@@ -68,10 +72,13 @@ public class Main {
         menuVegano.stampaMenu();
         menuContorni.stampaMenu();
         menuDessert.stampaMenu();
+        menuPizza.stampaMenu();
 
         //metodo aggiungi e rimuovi piatti
         menuCarne.aggiungiPiatto(new Antipasti("Ravioli cinesi al vapore", 3.50));
         menuCarne.rimuoviPiatto(new Antipasti("Ravioli cinesi al vapore", 3.50));
         menuCarne.stampaMenu();
+
+
     }
 }

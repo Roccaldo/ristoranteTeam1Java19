@@ -34,7 +34,6 @@ public class Dessert extends Prodotti{
         this.livelloCalorie = livelloCalorie;
     }
 
-    //TODO stessa cosa
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();

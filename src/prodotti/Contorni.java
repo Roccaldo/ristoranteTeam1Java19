@@ -23,11 +23,9 @@ public class Contorni extends Prodotti {
         this.portata = portata;
     }
 
-    //TODO stessa cosa dell'altra classe
 
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        //TODO e gli altri field?
     }
 }

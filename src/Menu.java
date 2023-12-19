@@ -7,7 +7,6 @@ public class Menu {
 
    private String nomeMenu;
 
-   //TODO inserire i field per menu, quindi creare un tipomenuenum e poi il nome città come field
    private List<Prodotti> menu = new ArrayList<>();
 
    private TipoMenuEnum tipoMenu;
@@ -16,8 +15,6 @@ public class Menu {
       this.nomeMenu = nomeMenu;
       this.tipoMenu = tipoMenu;
    }
-   //TODO fare u metodo che fa add e remove
-
 
    public String getNomeMenu() {
       return nomeMenu;
