@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Antipasti extends Prodotti{
 
+	//TODO è in comune a tutti, Ubaldo ha già la soluzione
+	//portataEnum
 	private PortataEnum portata;
 	public Antipasti(String nomePiatto, Double prezzo) {
 		super(nomePiatto, prezzo);

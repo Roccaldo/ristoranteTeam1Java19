@@ -8,6 +8,8 @@ public abstract class Prodotti {
 
     private Double prezzo;
 
+    private PortataEnum portata;
+
     private ArrayList<AllergeniEnum> allergeni = new ArrayList<>();
 
     //TODO lasciare solo un costruttore e portare Portata enum come field modificare i costruttori figlio

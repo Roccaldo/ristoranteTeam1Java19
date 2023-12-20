@@ -6,6 +6,10 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+
+
+        //TODO create le portate, create i menu, add portate menu, add menu al ristorante
+
         //TODO creare la classe ristrorante e spostare questa logica li dentro
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5");
         System.out.println(ristorante);
@@ -74,6 +78,14 @@ public class Main {
         menuBibite.aggiungiPiatto(new Bibite("Vino bianco", true, 14.50));
         menuBibite.aggiungiPiatto(new Bibite("Vino Rosso", true, 14.50));
 
+
+
+        //TODO dividere i due enumerati uno per il tipo menu e uno per il tipo portata
+        //TODO tutta la logica deve stare in ristorante come avevte fatto con portate e menu
+        ristorenate.stampaMenues();
+        ristorante.stampaMenues(TipoMenuEnum.CARNE);
+
+        //TODO questo deve essere in ristorante
         //stampa menu
         menuCarne.stampaMenu();
         System.out.println();
