@@ -8,6 +8,9 @@ public class Ristorante {
     private String indirizzo;
     private String stato;
     private LocalDateTime orario;
+
+    //TODO googlare per capire se c'è un metodo che prende un enumerato
+    //Testiamolo
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
     public Ristorante(String nome, String indirizzo){
         this.nome = nome;

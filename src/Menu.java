@@ -7,6 +7,7 @@ public class Menu {
 
    private String nomeMenu;
 
+   //TODO si può usare un set e rifattorizzare menu
    private List<Prodotti> menu = new ArrayList<>();
 
    private TipoMenuEnum tipoMenu;
