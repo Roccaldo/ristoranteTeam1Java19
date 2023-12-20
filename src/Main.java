@@ -23,9 +23,9 @@ public class Main {
 
         //menu carne
         menuCarne.aggiungiPiatto((new Antipasti("Ravioli cinesi al vapore", 3.50, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA)))));
-        menuCarne.aggiungiPiatto((new Antipasti("Cornetti salati", 1.50)));
+        menuCarne.aggiungiPiatto((new Antipasti("Cornetti salati", 1.50,new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI)))));
 
-        menuCarne.aggiungiPiatto((new PrimiPiatti("Pappardelle al ragù di cinghiale", 14.76, "Classica")));
+        menuCarne.aggiungiPiatto((new PrimiPiatti("Pappardelle al ragù di cinghiale", 14.76, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.UOVA)), "Classica")));
         menuCarne.aggiungiPiatto((new PrimiPiatti("Mezzemaniche al pesto di peperoni e basilico con salsiccia", 22.30, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.UOVA)), "Integrale")));
 
         menuCarne.aggiungiPiatto((new Secondi("Pollo alla campagnola", TipoCotturaEnum.BEN_COTTA, 10.0)));
@@ -33,11 +33,11 @@ public class Main {
 
 
         //menu pesce
-        menuPesce.aggiungiPiatto((new Antipasti("Antipasto di mare", 4.50)));
+        menuPesce.aggiungiPiatto((new Antipasti("Antipasto di mare", 4.50,new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI,AllergeniEnum.MOLLUSCHI)))));
         menuPesce.aggiungiPiatto((new Antipasti("Pepata di cozze", 6.40)));
 
-        menuPesce.aggiungiPiatto((new PrimiPiatti("Spaghetti allo scoglio", 14.0, "Classica")));
-        menuPesce.aggiungiPiatto((new PrimiPiatti("Linguine all'astice", 9.0, "Classica")));
+        menuPesce.aggiungiPiatto((new PrimiPiatti("Spaghetti allo scoglio", 14.0,new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI,AllergeniEnum.MOLLUSCHI)), "Classica")));
+        menuPesce.aggiungiPiatto((new PrimiPiatti("Linguine all'astice", 9.0,new ArrayList<>(Arrays.asList(AllergeniEnum.CROSTACEI)), "Classica")));
 
         menuPesce.aggiungiPiatto((new Secondi("Salmone croccante", TipoCotturaEnum.STANDARD, 18.0)));
         menuPesce.aggiungiPiatto((new Secondi("Polpettine di tonno e ricotta", TipoCotturaEnum.STANDARD, 18.0)));
@@ -46,10 +46,10 @@ public class Main {
         menuVegano.aggiungiPiatto((new Antipasti("Insalata di ceci", 4.50)));
         menuVegano.aggiungiPiatto((new Antipasti("Falafel", 6.40)));
 
-        menuVegano.aggiungiPiatto((new PrimiPiatti("Carbonara Vegana", 11.0, "Integrale")));
+        menuVegano.aggiungiPiatto((new PrimiPiatti("Carbonara Vegana", 11.0, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA)), "Integrale")));
         menuVegano.aggiungiPiatto((new PrimiPiatti("Lasagna vegana", 11.0, "Riso")));
 
-        menuVegano.aggiungiPiatto((new Secondi("Strudel salato", TipoCotturaEnum.STANDARD, 18.0)));
+        menuVegano.aggiungiPiatto((new Secondi("Strudel salato",TipoCotturaEnum.STANDARD, 18.0)));
         menuVegano.aggiungiPiatto((new Secondi("Seitan alla piastra", TipoCotturaEnum.STANDARD, 18.0)));
 
         //menu contorni
