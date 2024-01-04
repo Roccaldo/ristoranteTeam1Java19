@@ -12,11 +12,13 @@ public class Menu {
 
    private TipoMenuEnum tipoMenu;
 
+   // Costruttore
    public Menu(String nomeMenu, TipoMenuEnum tipoMenu) {
       this.nomeMenu = nomeMenu;
       this.tipoMenu = tipoMenu;
    }
 
+   // Getter e Setter
    public String getNomeMenu() {
       return nomeMenu;
    }
@@ -37,6 +39,7 @@ public class Menu {
       this.tipoMenu = tipoMenu;
    }
 
+   //Metodo StampaMenu
    public void stampaMenu() {
       System.out.println("Menù " + getNomeMenu() + " (" + getTipoMenu() + ")");
       for (Prodotti prodotti : menu) {
@@ -44,6 +47,7 @@ public class Menu {
       }
    }
 
+   //Metodo Aggiungi piatto al menu
    public void aggiungiPiatto (Prodotti prodotto) {
       if (menu.contains(prodotto)) {
          System.out.println("prodotto già presente nel menù");
@@ -53,6 +57,7 @@ public class Menu {
       }
    }
 
+   //Metodo Rimuovi piatto al menu
    public void rimuoviPiatto (Prodotti prodotto) {
       if (menu.contains(prodotto)) {
          menu.remove(prodotto);

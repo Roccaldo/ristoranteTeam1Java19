@@ -7,6 +7,8 @@ public class Antipasti extends Prodotti{
 	//TODO è in comune a tutti, Ubaldo ha già la soluzione
 	//portataEnum
 	private PortataEnum portata;
+
+	//Costruttore
 	public Antipasti(String nomePiatto, Double prezzo) {
 		super(nomePiatto, prezzo);
 		this.portata = PortataEnum.ANTIPASTO;
@@ -17,6 +19,7 @@ public class Antipasti extends Prodotti{
 		this.portata = PortataEnum.ANTIPASTO;
 	}
 
+	//Getter e Setter
 	public PortataEnum getPortata() {
 		return portata;
 	}
@@ -25,6 +28,7 @@ public class Antipasti extends Prodotti{
 		this.portata = portata;
 	}
 
+	//Metodo Stampa Dettagli portata
 	@Override
 	public void stampaDettagli() {
 		System.out.print("\u001B[36m");

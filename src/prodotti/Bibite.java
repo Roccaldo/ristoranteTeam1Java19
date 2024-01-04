@@ -7,6 +7,7 @@ public class Bibite extends Prodotti {
     private PortataEnum portata;
     private boolean isAlcholic;
 
+    //Costruttore
     public Bibite(String nomePiatto, boolean isAlcholic, Double prezzo) {
         super(nomePiatto, prezzo);
         this.isAlcholic = isAlcholic;
@@ -19,6 +20,7 @@ public class Bibite extends Prodotti {
         this.portata = PortataEnum.BIBITE;
     }
 
+    //Getter e Setter
     public boolean isAlcholic() {
         return isAlcholic;
     }
@@ -35,6 +37,7 @@ public class Bibite extends Prodotti {
         this.portata = portata;
     }
 
+    //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
         System.out.print("\u001B[30m");

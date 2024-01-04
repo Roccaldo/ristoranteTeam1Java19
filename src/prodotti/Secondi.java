@@ -6,6 +6,7 @@ public class Secondi extends Prodotti{
     private PortataEnum portata;
     private TipoCotturaEnum tipoCottura;
 
+    //Costruttore
     //TODO sistemare
     public Secondi (String nomePiatto, TipoCotturaEnum tipoCottura, Double prezzo) {
         super(nomePiatto, prezzo);
@@ -19,6 +20,7 @@ public class Secondi extends Prodotti{
         this.tipoCottura = tipoCottura;
     }
 
+    //Getter e Setter
     public PortataEnum getPortata() {
         return portata;
     }
@@ -35,6 +37,7 @@ public class Secondi extends Prodotti{
         this.tipoCottura = tipoCottura;
     }
 
+    //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
         System.out.print("\u001B[32m");

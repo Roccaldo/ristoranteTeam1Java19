@@ -6,6 +6,8 @@ public class Dessert extends Prodotti{
 
     private PortataEnum portata;
     private CalorieEnum livelloCalorie;
+
+    //Costruttore
     public Dessert(String nomePiatto,CalorieEnum livelloCalorie, Double prezzo) {
         super(nomePiatto, prezzo);
         this.portata= PortataEnum.DESSERT;
@@ -18,6 +20,7 @@ public class Dessert extends Prodotti{
         this.livelloCalorie= livelloCalorie;
     }
 
+    //Getter e Setter
     public PortataEnum getPortata() {
         return portata;
     }
@@ -34,6 +37,7 @@ public class Dessert extends Prodotti{
         this.livelloCalorie = livelloCalorie;
     }
 
+    //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
         System.out.print("\u001B[35m");

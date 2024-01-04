@@ -12,6 +12,7 @@ public class Pizza extends Prodotti {
     private AllergeniEnum allergeni;
     private List<String> ingredienti;
 
+    //Costruttore
     public Pizza(String nomePiatto, String tipoImpasto, Double prezzo,String... ingredienti ) {
         super(nomePiatto, prezzo);
         this.tipoImpasto = tipoImpasto;
@@ -28,7 +29,7 @@ public class Pizza extends Prodotti {
 
     }
 
-
+    //Getter e Setter
     public String getTipoImpasto() {
         return tipoImpasto;
     }
@@ -36,7 +37,6 @@ public class Pizza extends Prodotti {
     public void setTipoImpasto(String tipoImpasto) {
         this.tipoImpasto = tipoImpasto;
     }
-
 
     public PortataEnum getPortata() {
         return portata;
@@ -54,6 +54,7 @@ public class Pizza extends Prodotti {
         this.ingredienti = ingredienti;
     }
 
+    //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
         System.out.print("\u001B[31m");

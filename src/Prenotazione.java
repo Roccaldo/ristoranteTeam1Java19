@@ -9,12 +9,14 @@ public class Prenotazione {
 
     private OffsetDateTime orario;
 
+    //Costruttore
     public Prenotazione(String nomePrenotazione, Integer postiOccupati, OffsetDateTime orario) {
         this.nomePrenotazione = nomePrenotazione;
         this.postiOccupati = postiOccupati;
         this.orario = orario;
     }
 
+    //Getter e Setter
     public String getNomePrenotazione() {
         return nomePrenotazione;
     }
@@ -48,6 +50,7 @@ public class Prenotazione {
                 '}';
     }
 
+    //Metodo Stampa dettagli della prenotazione
     public void dettagliPrenotazione(){
         System.out.print(nomePrenotazione + ": " + " " + postiOccupati + " | " + orario);
     }

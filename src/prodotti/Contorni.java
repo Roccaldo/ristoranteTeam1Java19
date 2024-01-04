@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Contorni extends Prodotti {
 
     private PortataEnum portata;
+
+    //Costruttore
     public Contorni(String nomePiatto, Double prezzo) {
         super(nomePiatto, prezzo);
         this.portata = PortataEnum.CONTORNO;
@@ -15,6 +17,7 @@ public class Contorni extends Prodotti {
         this.portata = PortataEnum.CONTORNO;
     }
 
+    //Getter e Setter
     public PortataEnum getPortata() {
         return portata;
     }
@@ -24,6 +27,7 @@ public class Contorni extends Prodotti {
     }
 
 
+    //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
         System.out.print("\u001B[33m");

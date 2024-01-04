@@ -12,6 +12,8 @@ public class Ristorante {
     //TODO googlare per capire se c'è un metodo che prende un enumerato
     //Testiamolo
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+    //Costruttore
     public Ristorante(String nome, String indirizzo){
         this.nome = nome;
         this.indirizzo = indirizzo;
@@ -19,6 +21,7 @@ public class Ristorante {
         this.stato = determinaStato();
     }
 
+    //Getter e Setter
     public String getNome() {
         return nome;
     }
@@ -51,6 +54,7 @@ public class Ristorante {
         this.orario = orario;
     }
 
+    //Metodo che determina lo stato del ristorante
     private String determinaStato(){
         int oraAttuale = orario.getHour();
         return oraAttuale >= 8 && oraAttuale < 23 ? "Aperto" : "Chiuso";

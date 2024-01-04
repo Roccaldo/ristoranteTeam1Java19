@@ -6,6 +6,8 @@ public class PrimiPiatti extends Prodotti{
 
     private String tipoPasta;
     private PortataEnum portata;
+
+    //Costruttore
     public PrimiPiatti(String nomePiatto, Double prezzo, String tipoPasta) {
         super(nomePiatto, prezzo);
         this.portata = PortataEnum.PRIMOPIATTO;
@@ -18,6 +20,7 @@ public class PrimiPiatti extends Prodotti{
         this.tipoPasta = tipoPasta;
     }
 
+    //Getter e Setter
     public PortataEnum getPortata() {
         return portata;
     }
@@ -34,6 +37,7 @@ public class PrimiPiatti extends Prodotti{
         this.tipoPasta = tipoPasta;
     }
 
+    //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
         System.out.print("\u001B[34m");

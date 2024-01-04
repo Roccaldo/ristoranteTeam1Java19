@@ -87,7 +87,7 @@ public class Main {
         menuVegano.aggiungiPiatto(antipastoVegano1);
         menuVegano.aggiungiPiatto(antipastoVegano2);
         menuVegano.aggiungiPiatto(primoPiattoVegano1);
-        menuVegano.aggiungiPiatto((primoPiattoVegano2);
+        menuVegano.aggiungiPiatto(primoPiattoVegano2);
         menuVegano.aggiungiPiatto(secondoVegano1);
         menuVegano.aggiungiPiatto(secondoVegano2);
         menuVegano.aggiungiPiatto(contornoVegano1);
