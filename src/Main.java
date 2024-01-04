@@ -19,8 +19,6 @@ public class Main {
         Menu menuCarne = new Menu("Monte", TipoMenuEnum.CARNE);
         Menu menuPesce = new Menu("Mare", TipoMenuEnum.PESCE);
         Menu menuVegano = new Menu("Amici della natura", TipoMenuEnum.VEGANO);
-        Menu menuDessert = new Menu("dolci", TipoMenuEnum.DESSERT);
-        Menu menuContorni = new Menu("Contorni", TipoMenuEnum.CONTORNI);
         Menu menuPizza = new Menu("Pizza", TipoMenuEnum.PIZZA);
         Menu menuBibite = new Menu("Bibite", TipoMenuEnum.BIBITE);
 
@@ -63,6 +61,7 @@ public class Main {
         //menu dessert
         menuDessert.aggiungiPiatto((new Dessert("Cheesecake di yogurt alle fragole", CalorieEnum.MEDIO, 12.99)));
         menuDessert.aggiungiPiatto((new Dessert("Crostata al limone meringata", CalorieEnum.ALTO, 9.99)));
+
         menuDessert.aggiungiPiatto((new Dessert("Tronchetti vegani di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99)));
         menuDessert.aggiungiPiatto((new Dessert("Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99)));
 
@@ -82,8 +81,8 @@ public class Main {
 
         //TODO dividere i due enumerati uno per il tipo menu e uno per il tipo portata
         //TODO tutta la logica deve stare in ristorante come avevte fatto con portate e menu
-        ristorenate.stampaMenues();
-        ristorante.stampaMenues(TipoMenuEnum.CARNE);
+       // ristorenate.stampaMenues();
+       // ristorante.stampaMenues(TipoMenuEnum.CARNE);
 
         //TODO questo deve essere in ristorante
         //stampa menu

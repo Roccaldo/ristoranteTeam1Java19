@@ -4,8 +4,6 @@ public enum TipoMenuEnum {
     CARNE ("Carne"),
     PESCE ("Pesce"),
     VEGANO ("Vegano"),
-    CONTORNI ("Contorni"),
-    DESSERT ("Dessert"),
     PIZZA ("Picca"),
     BIBITE ("Bibite");
 
