@@ -55,15 +55,20 @@ public class Main {
         menuVegano.aggiungiPiatto((new Secondi("Seitan alla piastra", TipoCotturaEnum.STANDARD, 18.0)));
 
         //menu contorni
-        menuContorni.aggiungiPiatto((new Contorni("Patate fritte", 1.50)));
-        menuContorni.aggiungiPiatto((new Contorni("Insalata", 1.50)));
+        menuCarne.aggiungiPiatto((new Contorni("Patate fritte", 1.50)));
+        menuCarne.aggiungiPiatto(new Contorni("Insalata di rucola, pere, grana e noci",5.00));
+        menuPesce.aggiungiPiatto((new Contorni("Insalata semplice", 1.50)));
+        menuPesce.aggiungiPiatto(new Contorni("Insalata nizzarda",6.00));
+        menuVegano.aggiungiPiatto(new Contorni("Finocchi gratinati in padella",2.50));
+        menuVegano.aggiungiPiatto(new Contorni("Carciofi in insalata",4.00));
 
         //menu dessert
-        menuDessert.aggiungiPiatto((new Dessert("Cheesecake di yogurt alle fragole", CalorieEnum.MEDIO, 12.99)));
-        menuDessert.aggiungiPiatto((new Dessert("Crostata al limone meringata", CalorieEnum.ALTO, 9.99)));
-
-        menuDessert.aggiungiPiatto((new Dessert("Tronchetti vegani di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99)));
-        menuDessert.aggiungiPiatto((new Dessert("Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99)));
+        menuCarne.aggiungiPiatto((new Dessert("Cheesecake di yogurt alle fragole", CalorieEnum.MEDIO, 12.99)));
+        menuCarne.aggiungiPiatto((new Dessert("Crostata al limone meringata", CalorieEnum.ALTO, 9.99)));
+        menuPesce.aggiungiPiatto(new Dessert("Tiramisù",CalorieEnum.ALTO,5.00));
+        menuPesce.aggiungiPiatto(new Dessert("Torta tenerina", CalorieEnum.MEDIO,5.00));
+        menuVegano.aggiungiPiatto((new Dessert("Tronchetti vegani di banana al cioccolato fondente", CalorieEnum.MEDIO, 7.99)));
+        menuVegano.aggiungiPiatto((new Dessert("Frutta alle spezie vegano", CalorieEnum.BASSO, 6.99)));
 
         //menu pizza
         menuPizza.aggiungiPiatto(new Pizza("Margherita", "Integrale", 4.50,"Pomodoro,Mozzarella"));
@@ -91,10 +96,6 @@ public class Main {
         menuPesce.stampaMenu();
         System.out.println();
         menuVegano.stampaMenu();
-        System.out.println();
-        menuContorni.stampaMenu();
-        System.out.println();
-        menuDessert.stampaMenu();
         System.out.println();
         menuPizza.stampaMenu();
         System.out.println();
