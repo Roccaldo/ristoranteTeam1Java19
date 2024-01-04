@@ -45,11 +45,11 @@ public abstract class Prodotti {
         return allergeni;
     }
 
-    //TODO non usare getallergeni
+
     public void stampaDettagli() {
         System.out.print(nomePiatto + ": " + " €" + prezzo + " | ");
         if (!getAllergeni().isEmpty()) {
-            System.out.print("Allergeni presenti: " + getAllergeni() + " | ");
+            System.out.print("Allergeni presenti: " + allergeni + " | ");
         }
     }
 
