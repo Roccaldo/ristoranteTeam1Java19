@@ -34,10 +34,9 @@ public class PrimiPiatti extends Prodotti{
     //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
-        System.out.print("\u001B[34m");
         super.stampaDettagli();
         System.out.print("Tipo di pasta: " + tipoPasta);
-        System.out.println("\u001B[0m ");
+        System.out.println();
     }
 
 }

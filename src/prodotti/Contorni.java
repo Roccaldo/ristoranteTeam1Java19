@@ -25,8 +25,7 @@ public class Contorni extends Prodotti {
     //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
-        System.out.print("\u001B[33m");
         super.stampaDettagli();
-        System.out.println("\u001B[0m ");
+        System.out.println();
     }
 }

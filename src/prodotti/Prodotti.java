@@ -45,7 +45,7 @@ public abstract class Prodotti {
     //Metodo stampa dettagli dei piatti
     public void stampaDettagli() {
         System.out.print(nomePiatto + ": " + " €" + prezzo + " | ");
-        if (!getAllergeni().isEmpty()) {
+        if (getAllergeni() != null && !getAllergeni().isEmpty()) {
             System.out.print("Allergeni presenti: " + allergeni + " | ");
         }
     }

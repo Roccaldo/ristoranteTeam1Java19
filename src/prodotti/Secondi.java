@@ -34,9 +34,8 @@ public class Secondi extends Prodotti{
     //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
-        System.out.print("\u001B[32m");
         super.stampaDettagli();
         System.out.print("Tipo di cottura: " + tipoCottura.getTipoCottura());
-        System.out.println("\u001B[0m ");
+        System.out.println();
     }
 }

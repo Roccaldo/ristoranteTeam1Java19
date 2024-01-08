@@ -34,14 +34,12 @@ public class Bibite extends Prodotti {
     //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {
-        System.out.print("\u001B[30m");
         super.stampaDettagli();
         if (isAlcholic) {
             System.out.println("Alcolico");
         } else {
             System.out.println("Analcolico");
         }
-        System.out.print("\u001B[0m");
     }
 
 }
