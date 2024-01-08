@@ -9,11 +9,6 @@ public class Antipasti extends Prodotti{
 	private PortataEnum portata;
 
 	//Costruttore
-	public Antipasti(String nomePiatto, Double prezzo) {
-		super(nomePiatto, prezzo);
-		this.portata = PortataEnum.ANTIPASTO;
-	}
-
 	public Antipasti(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni) {
 		super(nomePiatto, prezzo, allergeni);
 		this.portata = PortataEnum.ANTIPASTO;

@@ -8,12 +8,6 @@ public class Secondi extends Prodotti{
 
     //Costruttore
     //TODO sistemare
-    public Secondi (String nomePiatto, TipoCotturaEnum tipoCottura, Double prezzo) {
-        super(nomePiatto, prezzo);
-        this.portata = PortataEnum.SECONDOPIATTO;
-        this.tipoCottura = tipoCottura;
-    }
-
     public Secondi(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, TipoCotturaEnum tipoCottura) {
         super(nomePiatto, prezzo, allergeni);
         this.portata = PortataEnum.SECONDOPIATTO;

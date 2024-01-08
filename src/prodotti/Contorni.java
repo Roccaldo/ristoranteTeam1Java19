@@ -7,11 +7,6 @@ public class Contorni extends Prodotti {
     private PortataEnum portata;
 
     //Costruttore
-    public Contorni(String nomePiatto, Double prezzo) {
-        super(nomePiatto, prezzo);
-        this.portata = PortataEnum.CONTORNO;
-    }
-
     public Contorni(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni) {
         super(nomePiatto, prezzo, allergeni);
         this.portata = PortataEnum.CONTORNO;

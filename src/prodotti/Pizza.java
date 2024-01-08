@@ -8,23 +8,13 @@ public class Pizza extends Prodotti {
 
     private PortataEnum portata;
     private String tipoImpasto;
-
-    private AllergeniEnum allergeni;
     private List<String> ingredienti;
 
     //Costruttore
-    public Pizza(String nomePiatto, String tipoImpasto, Double prezzo,String... ingredienti ) {
-        super(nomePiatto, prezzo);
+    public Pizza(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, String tipoImpasto, String... ingredienti) {
+        super(nomePiatto, prezzo, allergeni);
         this.tipoImpasto = tipoImpasto;
         this.portata = PortataEnum.PIZZA;
-        this.ingredienti = Arrays.asList(ingredienti);
-    }
-
-    public Pizza(String nomePiatto, String tipoImpasto, Double prezzo, AllergeniEnum allergeni, String... ingredienti) {
-        super(nomePiatto, prezzo);
-        this.tipoImpasto = tipoImpasto;
-        this.portata = PortataEnum.PIZZA;
-        this.allergeni = allergeni;
         this.ingredienti= Arrays.asList(ingredienti);
 
     }

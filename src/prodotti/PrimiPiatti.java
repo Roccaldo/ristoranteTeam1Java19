@@ -8,12 +8,6 @@ public class PrimiPiatti extends Prodotti{
     private PortataEnum portata;
 
     //Costruttore
-    public PrimiPiatti(String nomePiatto, Double prezzo, String tipoPasta) {
-        super(nomePiatto, prezzo);
-        this.portata = PortataEnum.PRIMOPIATTO;
-        this.tipoPasta = tipoPasta;
-    }
-
     public PrimiPiatti(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, String tipoPasta) {
         super(nomePiatto, prezzo, allergeni);
         this.portata = PortataEnum.PRIMOPIATTO;
