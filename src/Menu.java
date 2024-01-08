@@ -7,8 +7,7 @@ public class Menu {
 
    private String nomeMenu;
 
-   //TODO si può usare un set e rifattorizzare menu
-   private List<Prodotti> menu = new ArrayList<>();
+   private ArrayList<Prodotti> menu = new ArrayList<>();
 
    private TipoMenuEnum tipoMenu;
 
@@ -41,9 +40,31 @@ public class Menu {
 
    //Metodo StampaMenu
    public void stampaMenu() {
-      System.out.println("Menù " + getNomeMenu() + " (" + getTipoMenu() + ")");
+      System.out.println("Menù " + getNomeMenu() + " (" + tipoMenu.getTipoMenu() + ")");
+      stampaSeContenuto(PortataEnum.ANTIPASTO);
+      stampaSeContenuto(PortataEnum.PRIMOPIATTO);
+      stampaSeContenuto(PortataEnum.SECONDOPIATTO);
+      stampaSeContenuto(PortataEnum.CONTORNO);
+      stampaSeContenuto(PortataEnum.DESSERT);
+      stampaSeContenuto(PortataEnum.BIBITE);
+      stampaSeContenuto(PortataEnum.PIZZA);
+      System.out.println(" ");
+   }
+
+   public void stampaSeContenuto(PortataEnum portataEnum) {
+      boolean contenuto = false;
       for (Prodotti prodotti : menu) {
-            prodotti.stampaDettagli();
+         if (prodotti.getPortata().equals(portataEnum)) {
+            contenuto = true;
+            break;
+         }
+      } if (contenuto) {
+         System.out.println(portataEnum.getPortata());
+         for (Prodotti prodotti : menu) {
+            if (prodotti.getPortata().equals(portataEnum)) {
+               prodotti.stampaDettagli();
+            }
+         }
       }
    }
 
