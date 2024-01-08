@@ -2,6 +2,7 @@ import prodotti.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Menu {
 
@@ -26,7 +27,7 @@ public class Menu {
       this.nomeMenu = nomeMenu;
    }
 
-   public List<Prodotti> getMenu() {
+   public ArrayList<Prodotti> getMenu() {
       return menu;
    }
 
@@ -87,4 +88,19 @@ public class Menu {
          System.out.println("prodotto non presente nel menù");
       }
    }
+
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Menu menu1 = (Menu) o;
+      return Objects.equals(nomeMenu, menu1.nomeMenu) && Objects.equals(menu, menu1.menu) && tipoMenu == menu1.tipoMenu;
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(nomeMenu, menu, tipoMenu);
+   }
 }
+
+

@@ -109,12 +109,19 @@ public class Main {
 
 
 
-        //add menù al ristorante
-        //TODO dividere i due enumerati uno per il tipo menu e uno per il tipo portata
-        //TODO tutta la logica deve stare in ristorante come avevte fatto con portate e menu
+        //add e remove menù al ristorante
+        ristorante.aggingiMenu(menuCarne);
+        ristorante.aggingiMenu(menuCarne);
+        ristorante.rimuoviMenu(menuCarne);
+        ristorante.rimuoviMenu(menuCarne);
+        ristorante.aggingiMenu(menuCarne);
+        ristorante.aggingiMenu(menuPesce);
+        ristorante.aggingiMenu(menuBibite);
        // ristorenate.stampaMenues();
+        ristorante.stampaMenues();
        // ristorante.stampaMenues(TipoMenuEnum.CARNE);
-        //TODO questo deve essere in ristorante
+        ristorante.stampamenu(TipoMenuEnum.CARNE);
+        ristorante.stampamenu(TipoMenuEnum.VEGANO);
         //stampa menu
         System.out.println("\u001B[31m");
         menuCarne.stampaMenu();
