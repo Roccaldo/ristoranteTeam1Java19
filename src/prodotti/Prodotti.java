@@ -12,11 +12,15 @@ public abstract class Prodotti {
 
     private ArrayList<AllergeniEnum> allergeni = new ArrayList<>();
 
+
     //Costruttore
     //TODO lasciare solo un costruttore e portare Portata enum come field modificare i costruttori figlio
-    public Prodotti(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni) {
+
+
+    public Prodotti(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni) {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
+        this.portata = portata;
         this.allergeni = allergeni;
     }
 
@@ -41,6 +45,13 @@ public abstract class Prodotti {
         return allergeni;
     }
 
+    public PortataEnum getPortata() {
+        return portata;
+    }
+
+    public void setPortata(PortataEnum portata) {
+        this.portata = portata;
+    }
 
     //Metodo stampa dettagli dei piatti
     public void stampaDettagli() {

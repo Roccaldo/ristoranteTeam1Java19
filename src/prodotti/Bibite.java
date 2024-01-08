@@ -3,16 +3,14 @@ package prodotti;
 import java.util.ArrayList;
 
 public class Bibite extends Prodotti {
-
-    private PortataEnum portata;
     private boolean isAlcholic;
 
     //Costruttore
-    public Bibite(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, boolean isAlcholic) {
-        super(nomePiatto, prezzo, allergeni);
+    public Bibite(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, boolean isAlcholic) {
+        super(nomePiatto, prezzo, portata, allergeni);
         this.isAlcholic = isAlcholic;
-        this.portata = PortataEnum.BIBITE;
     }
+
 
     //Getter e Setter
     public boolean isAlcholic() {
@@ -22,15 +20,6 @@ public class Bibite extends Prodotti {
     public void setAlcholic(boolean alcholic) {
         isAlcholic = alcholic;
     }
-
-    public PortataEnum getPortata() {
-        return portata;
-    }
-
-    public void setPortata(PortataEnum portata) {
-        this.portata = portata;
-    }
-
     //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {

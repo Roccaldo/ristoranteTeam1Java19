@@ -5,18 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Pizza extends Prodotti {
-
-    private PortataEnum portata;
     private String tipoImpasto;
-    private List<String> ingredienti;
+    private ArrayList<String> ingredienti;
 
     //Costruttore
-    public Pizza(String nomePiatto, Double prezzo, ArrayList<AllergeniEnum> allergeni, String tipoImpasto, String... ingredienti) {
-        super(nomePiatto, prezzo, allergeni);
-        this.tipoImpasto = tipoImpasto;
-        this.portata = PortataEnum.PIZZA;
-        this.ingredienti= Arrays.asList(ingredienti);
 
+
+    public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, String tipoImpasto, ArrayList<String> ingredienti) {
+        super(nomePiatto, prezzo, portata, allergeni);
+        this.tipoImpasto = tipoImpasto;
+        this.ingredienti = ingredienti;
     }
 
     //Getter e Setter
@@ -28,19 +26,11 @@ public class Pizza extends Prodotti {
         this.tipoImpasto = tipoImpasto;
     }
 
-    public PortataEnum getPortata() {
-        return portata;
-    }
-
-    public void setPortata(PortataEnum portata) {
-        this.portata = portata;
-    }
-
-    public List<String> getIngredienti() {
+    public ArrayList<String> getIngredienti() {
         return ingredienti;
     }
 
-    public void setIngredienti(List<String> ingredienti) {
+    public void setIngredienti(ArrayList<String> ingredienti) {
         this.ingredienti = ingredienti;
     }
 
