@@ -1,5 +1,6 @@
 import prodotti.*;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -10,6 +11,12 @@ public class Main {
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
         System.out.println(ristorante);
         System.out.println();
+
+        //creazione prenotazioni
+        OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
+        Prenotazione prenotazione1 = new Prenotazione("Agostino", 10, date);
+        Prenotazione prenotazione2 = new Prenotazione("Roccaldo", 25, date);
+        Prenotazione prenotazione3 = new Prenotazione("Chiara", 40, date);
 
         //Creazione delle portate
         Antipasti antipastoCarne1 = new Antipasti("Ravioli cinesi al vapore", 3.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA)));
@@ -135,6 +142,15 @@ public class Main {
         menuPizza.stampaMenu();
         menuBibite.stampaMenu();
 
+
+        //add, remove e visualizza prenotazioni
+        GestionePrenotazioni gestione = new GestionePrenotazioni();
+        gestione.addPrenotazione(prenotazione1, ristorante);
+        gestione.addPrenotazione(prenotazione1, ristorante);
+        gestione.addPrenotazione(prenotazione2, ristorante);
+        gestione.addPrenotazione(prenotazione3, ristorante);
+        gestione.removePrenotazione(prenotazione1, ristorante);
+        gestione.visualizzaPrenotazioni();
 
     }
 }

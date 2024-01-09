@@ -13,6 +13,7 @@ public class Ristorante {
     private LocalDateTime orario;
     private int numeroTavoli;
     private int numMaxPosti;
+    private int postiLiberi;
     private List<Prenotazione> prenotazioniList = new ArrayList<>();
 
     private ArrayList<Menu> menues = new ArrayList<>();
@@ -26,6 +27,7 @@ public class Ristorante {
         this.orario = LocalDateTime.now();
         this.stato = determinaStato();
         this.numMaxPosti = numMaxPosti;
+        this.postiLiberi = numMaxPosti;
     }
 
     //Getter e Setter
@@ -75,6 +77,14 @@ public class Ristorante {
 
     public void setNumMaxPosti(int numMaxPosti) {
         this.numMaxPosti = numMaxPosti;
+    }
+
+    public int getPostiLiberi() {
+        return postiLiberi;
+    }
+
+    public void setPostiLiberi(int postiLiberi) {
+        this.postiLiberi = postiLiberi;
     }
 
     public List<Prenotazione> getPrenotazioniList() {
