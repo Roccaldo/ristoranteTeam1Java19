@@ -41,7 +41,19 @@ public class Menu {
 
    //Metodo StampaMenu
    public void stampaMenu() {
+      String colore = "";
+
+      switch (tipoMenu) {
+         case CARNE -> colore = "\u001B[31m";
+         case PESCE -> colore = "\u001B[34m";
+         case VEGANO -> colore = "\u001B[32m";
+         case PIZZA -> colore = "\u001B[33m";
+         case BIBITE -> colore = "\u001B[36m";
+      }
+      System.out.println(" ");
       System.out.println("Menù " + getNomeMenu() + " (" + tipoMenu.getTipoMenu() + ")");
+
+      System.out.print(colore);
       stampaSeContenuto(PortataEnum.ANTIPASTO);
       stampaSeContenuto(PortataEnum.PRIMOPIATTO);
       stampaSeContenuto(PortataEnum.SECONDOPIATTO);
@@ -49,7 +61,7 @@ public class Menu {
       stampaSeContenuto(PortataEnum.DESSERT);
       stampaSeContenuto(PortataEnum.BIBITE);
       stampaSeContenuto(PortataEnum.PIZZA);
-      System.out.println(" ");
+      System.out.println("\u001B[0m");
    }
 
    public void stampaSeContenuto(PortataEnum portataEnum) {
