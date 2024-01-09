@@ -17,16 +17,15 @@ public class Ristorante {
 
     private ArrayList<Menu> menues = new ArrayList<>();
 
-    //TODO googlare per capire se c'è un metodo che prende un enumerato
-    //Testiamolo
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     //Costruttore
-    public Ristorante(String nome, String indirizzo){
+    public Ristorante(String nome, String indirizzo, int numMaxPosti){
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.orario = LocalDateTime.now();
         this.stato = determinaStato();
+        this.numMaxPosti = numMaxPosti;
     }
 
     //Getter e Setter
@@ -108,6 +107,7 @@ public class Ristorante {
         return oraAttuale >= 8 && oraAttuale < 23 ? "Aperto" : "Chiuso";
     }
 
+    //Metodo che aggiunge il menu al ristorante
     public void aggingiMenu(Menu menu) {
         if (menues.contains(menu)) {
             System.out.println("menù già presente");
@@ -117,6 +117,7 @@ public class Ristorante {
         }
     }
 
+    //Metodo che rimuove il menu dal ristorante
     public void rimuoviMenu(Menu menu) {
         if (menues.contains(menu)) {
             menues.remove(menu);
@@ -126,12 +127,14 @@ public class Ristorante {
         }
     }
 
+    //Stampa tutti i menu
     public void stampaMenues() {
         for (Menu menu : menues) {
             menu.stampaMenu();
         }
     }
 
+    //Stampa il menu in base al tipo di menu
     public void stampamenu(TipoMenuEnum tipoMenuEnum) {
         boolean nonPresente = true;
         for (Menu menu : menues) {

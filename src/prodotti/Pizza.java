@@ -9,8 +9,6 @@ public class Pizza extends Prodotti {
     private ArrayList<String> ingredienti;
 
     //Costruttore
-
-
     public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, String tipoImpasto, ArrayList<String> ingredienti) {
         super(nomePiatto, prezzo, portata, allergeni);
         this.tipoImpasto = tipoImpasto;

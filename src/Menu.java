@@ -64,6 +64,7 @@ public class Menu {
       System.out.println("\u001B[0m");
    }
 
+   //Metodo che differenzia le portate all'interno della stampa e le mette in lista
    public void stampaSeContenuto(PortataEnum portataEnum) {
       boolean contenuto = false;
       for (Prodotti prodotti : menu) {

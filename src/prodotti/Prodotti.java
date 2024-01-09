@@ -14,9 +14,6 @@ public abstract class Prodotti {
 
 
     //Costruttore
-    //TODO lasciare solo un costruttore e portare Portata enum come field modificare i costruttori figlio
-
-
     public Prodotti(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni) {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;

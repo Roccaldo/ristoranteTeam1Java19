@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Creazione di un ristorante
-        Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5");
+        Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
         System.out.println(ristorante);
         System.out.println();
 
@@ -117,11 +117,17 @@ public class Main {
         ristorante.aggingiMenu(menuCarne);
         ristorante.aggingiMenu(menuPesce);
         ristorante.aggingiMenu(menuBibite);
+
+
        // ristorante.stampaMenues();
         ristorante.stampaMenues();
+
+
        // ristorante.stampaMenues(TipoMenuEnum.CARNE);
         ristorante.stampamenu(TipoMenuEnum.CARNE);
         ristorante.stampamenu(TipoMenuEnum.VEGANO);
+
+
         //stampa menu
         menuCarne.stampaMenu();
         menuPesce.stampaMenu();

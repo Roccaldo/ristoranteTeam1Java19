@@ -7,7 +7,6 @@ public class PrimiPiatti extends Prodotti{
     private String tipoPasta;
 
     //Costruttore
-
     public PrimiPiatti(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, String tipoPasta) {
         super(nomePiatto, prezzo, portata, allergeni);
         this.tipoPasta = tipoPasta;

@@ -1,5 +1,3 @@
-package prodotti;
-
 public class Cliente {
     private String cognome;
     private int numeroPersone;
