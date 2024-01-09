@@ -3,6 +3,7 @@ import prodotti.TipoMenuEnum;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Ristorante {
@@ -10,6 +11,9 @@ public class Ristorante {
     private String indirizzo;
     private String stato;
     private LocalDateTime orario;
+    private int numeroTavoli;
+    private int numMaxPosti;
+    private List<Prenotazione> prenotazioniList = new ArrayList<>();
 
     private ArrayList<Menu> menues = new ArrayList<>();
 
@@ -56,6 +60,46 @@ public class Ristorante {
 
     public void setOrario(LocalDateTime orario) {
         this.orario = orario;
+    }
+
+    public int getNumeroTavoli() {
+        return numeroTavoli;
+    }
+
+    public void setNumeroTavoli(int numeroTavoli) {
+        this.numeroTavoli = numeroTavoli;
+    }
+
+    public int getNumMaxPosti() {
+        return numMaxPosti;
+    }
+
+    public void setNumMaxPosti(int numMaxPosti) {
+        this.numMaxPosti = numMaxPosti;
+    }
+
+    public List<Prenotazione> getPrenotazioniList() {
+        return prenotazioniList;
+    }
+
+    public void setPrenotazioniList(List<Prenotazione> prenotazioniList) {
+        this.prenotazioniList = prenotazioniList;
+    }
+
+    public ArrayList<Menu> getMenues() {
+        return menues;
+    }
+
+    public void setMenues(ArrayList<Menu> menues) {
+        this.menues = menues;
+    }
+
+    public DateTimeFormatter getFormatter() {
+        return formatter;
+    }
+
+    public void setFormatter(DateTimeFormatter formatter) {
+        this.formatter = formatter;
     }
 
     //Metodo che determina lo stato del ristorante
