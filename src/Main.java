@@ -117,7 +117,7 @@ public class Main {
         ristorante.aggingiMenu(menuCarne);
         ristorante.aggingiMenu(menuPesce);
         ristorante.aggingiMenu(menuBibite);
-       // ristorenate.stampaMenues();
+       // ristorante.stampaMenues();
         ristorante.stampaMenues();
        // ristorante.stampaMenues(TipoMenuEnum.CARNE);
         ristorante.stampamenu(TipoMenuEnum.CARNE);
