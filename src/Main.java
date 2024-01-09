@@ -123,17 +123,11 @@ public class Main {
         ristorante.stampamenu(TipoMenuEnum.CARNE);
         ristorante.stampamenu(TipoMenuEnum.VEGANO);
         //stampa menu
-        System.out.println("\u001B[31m");
         menuCarne.stampaMenu();
-        System.out.println("\u001B[34m");
         menuPesce.stampaMenu();
-        System.out.println("\u001B[32m");
         menuVegano.stampaMenu();
-        System.out.println("\u001B[33m");
         menuPizza.stampaMenu();
-        System.out.println("\u001B[36m");
         menuBibite.stampaMenu();
-        System.out.println("\u001B[0m");
 
 
     }
