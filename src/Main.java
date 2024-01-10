@@ -59,11 +59,11 @@ public class Main {
         Bibite bibita5 = new Bibite("Vino Rosso", 14.50, PortataEnum.BIBITE,null, true);
 
         //crea menu
-        Menu menuCarne = new Menu("Monte", TipoMenuEnum.CARNE);
-        Menu menuPesce = new Menu("Mare", TipoMenuEnum.PESCE);
-        Menu menuVegano = new Menu("Amici della natura", TipoMenuEnum.VEGANO);
-        Menu menuPizza = new Menu("Pizza", TipoMenuEnum.PIZZA);
-        Menu menuBibite = new Menu("Bibite", TipoMenuEnum.BIBITE);
+        Menu menuCarne = new Menu("Monte", TipoEnum.CARNE);
+        Menu menuPesce = new Menu("Mare", TipoEnum.PESCE);
+        Menu menuVegano = new Menu("Amici della natura", TipoEnum.VEGANO);
+        Menu menuPizza = new Menu("Pizza", TipoEnum.PIZZA);
+        Menu menuBibite = new Menu("Bibite", TipoEnum.BIBITE);
 
 
         // Aggiunta piatti menu carne
@@ -131,8 +131,8 @@ public class Main {
 
 
        // ristorante.stampaMenues(TipoMenuEnum.CARNE);
-        ristorante.stampamenu(TipoMenuEnum.CARNE);
-        ristorante.stampamenu(TipoMenuEnum.VEGANO);
+        ristorante.stampamenu(TipoEnum.CARNE);
+        ristorante.stampamenu(TipoEnum.VEGANO);
 
 
         //stampa menu
@@ -151,6 +151,9 @@ public class Main {
         gestione.addPrenotazione(prenotazione3, ristorante);
         gestione.removePrenotazione(prenotazione1, ristorante);
         gestione.visualizzaPrenotazioni();
+
+        //
+       // ristorante.prenotaTavolo(cliente, prenotazione);
 
     }
 }

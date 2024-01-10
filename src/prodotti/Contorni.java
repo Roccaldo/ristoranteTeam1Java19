@@ -9,6 +9,9 @@ public class Contorni extends Prodotti {
         super(nomePiatto, prezzo, portata, allergeni);
     }
 
+    /**
+     *
+     */
     //Metodo Stampa dettagli portata
     @Override
     public void stampaDettagli() {

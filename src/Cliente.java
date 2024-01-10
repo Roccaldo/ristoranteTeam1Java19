@@ -1,4 +1,6 @@
 public class Cliente {
+
+    //TODO inserire il tipo :Carnivoro, Veg, Lucano
     private String cognome;
     private int numeroPersone;
 
@@ -22,4 +24,6 @@ public class Cliente {
     public void setNumeroPersone(int numeroPersone) {
         this.numeroPersone = numeroPersone;
     }
+
+    //TODO stampare info
 }

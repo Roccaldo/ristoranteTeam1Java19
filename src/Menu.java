@@ -1,7 +1,6 @@
 import prodotti.*;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Menu {
@@ -10,18 +9,23 @@ public class Menu {
 
    private ArrayList<Prodotti> menu = new ArrayList<>();
 
-   private TipoMenuEnum tipoMenu;
+   private TipoEnum tipoMenu;
 
    // Costruttore
-   public Menu(String nomeMenu, TipoMenuEnum tipoMenu) {
+   public Menu(String nomeMenu, TipoEnum tipoMenu) {
       this.nomeMenu = nomeMenu;
       this.tipoMenu = tipoMenu;
    }
 
-   // Getter e Setter
+   /**
+    *
+    * @return il nome del menu
+    */
+   // Getter e Sette
    public String getNomeMenu() {
       return nomeMenu;
    }
+
 
    public void setNomeMenu(String nomeMenu) {
       this.nomeMenu = nomeMenu;
@@ -31,11 +35,11 @@ public class Menu {
       return menu;
    }
 
-   public TipoMenuEnum getTipoMenu() {
+   public TipoEnum getTipoMenu() {
       return tipoMenu;
    }
 
-   public void setTipoMenu(TipoMenuEnum tipoMenu) {
+   public void setTipoMenu(TipoEnum tipoMenu) {
       this.tipoMenu = tipoMenu;
    }
 

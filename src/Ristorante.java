@@ -1,4 +1,4 @@
-import prodotti.TipoMenuEnum;
+import prodotti.TipoEnum;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,6 +11,8 @@ public class Ristorante {
     private String indirizzo;
     private String stato;
     private LocalDateTime orario;
+
+    //TODO modiificare tutti i tipi primitivi presenti, sempre solo oggetti
     private int numeroTavoli;
     private int numMaxPosti;
     private int postiLiberi;
@@ -114,6 +116,7 @@ public class Ristorante {
     //Metodo che determina lo stato del ristorante
     private String determinaStato(){
         int oraAttuale = orario.getHour();
+        //TODO inserire un enum
         return oraAttuale >= 8 && oraAttuale < 23 ? "Aperto" : "Chiuso";
     }
 
@@ -123,6 +126,7 @@ public class Ristorante {
             System.out.println("menù già presente");
         } else {
             menues.add(menu);
+            //TODO tecnicamente i messaggi da mostrare dovrebbero stare in un unico posto per poterli riusare, quindi un enumerato
             System.out.println("menù aggiunto correttamente");
         }
     }
@@ -145,7 +149,7 @@ public class Ristorante {
     }
 
     //Stampa il menu in base al tipo di menu
-    public void stampamenu(TipoMenuEnum tipoMenuEnum) {
+    public void stampamenu(TipoEnum tipoMenuEnum) {
         boolean nonPresente = true;
         for (Menu menu : menues) {
             if (menu.getTipoMenu().equals(tipoMenuEnum)) {
