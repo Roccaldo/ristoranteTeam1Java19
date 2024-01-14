@@ -16,14 +16,14 @@ public class GestionePrenotazioni {
 
                 //aggiungo prenotazione
                 registroPrenotazioni.put(prenotazione, ristorante);
-                System.out.println("Prenotazione aggiunta correttamente");
+                System.out.println(MessaggiEnum.PRENOTAZIONEAGGIUNTA);
                 //modifico posti liberi
                 ristorante.setPostiLiberi(ristorante.getPostiLiberi() - prenotazione.getPostiOccupati());
             } else {
-                System.out.println("Prenotazione non valida");
+                System.out.println(MessaggiEnum.PRENOTAZIONENONVALIDA);
             }
         } else {
-            System.out.println("Il ristorante è pieno. Numero di posti liberi: " + ristorante.getPostiLiberi());
+            System.out.println(MessaggiEnum.PRENOTAZIONENULLA + " " + MessaggiEnum.POSTILIBERI + " = " + ristorante.getPostiLiberi());
         }
     }
 
@@ -34,11 +34,11 @@ public class GestionePrenotazioni {
 
             //rimuovo la prenotazione
             registroPrenotazioni.remove(prenotazione);
-            System.out.println("Prenotazione rimossa correttamente");
+            System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA);
             //modifico posti liberi
             ristorante.setPostiLiberi(ristorante.getPostiLiberi() + prenotazione.getPostiOccupati());
         } else {
-            System.out.println("Prenotazione inesistente");
+            System.out.println(MessaggiEnum.PRENOTAZIONEINESISTENTE);
         }
 
     }

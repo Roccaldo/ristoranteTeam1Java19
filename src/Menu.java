@@ -89,10 +89,10 @@ public class Menu {
    //Metodo Aggiungi piatto al menu
    public void aggiungiPiatto (Prodotti prodotto) {
       if (menu.contains(prodotto)) {
-         System.out.println("prodotto già presente nel menù");
+         System.out.println(MessaggiEnum.PRODOTTOPRESENTE);
       } else {
          menu.add(prodotto);
-         System.out.println("prodotto aggiunto correttamente");
+         System.out.println(MessaggiEnum.PRODOTTOAGGIUNTO);
       }
    }
 
@@ -100,9 +100,9 @@ public class Menu {
    public void rimuoviPiatto (Prodotti prodotto) {
       if (menu.contains(prodotto)) {
          menu.remove(prodotto);
-         System.out.println("prodotto rimosso correttamente");
+         System.out.println(MessaggiEnum.PRODOTTORIMOSSO);
       } else {
-         System.out.println("prodotto non presente nel menù");
+         System.out.println(MessaggiEnum.PRODOTTONONPRESENTE);
       }
    }
 

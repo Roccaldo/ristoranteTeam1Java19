@@ -123,11 +123,10 @@ public class Ristorante {
     //Metodo che aggiunge il menu al ristorante
     public void aggingiMenu(Menu menu) {
         if (menues.contains(menu)) {
-            System.out.println("menù già presente");
+            System.out.println(MessaggiEnum.MENUPRESENTE);
         } else {
             menues.add(menu);
-            //TODO tecnicamente i messaggi da mostrare dovrebbero stare in un unico posto per poterli riusare, quindi un enumerato
-            System.out.println("menù aggiunto correttamente");
+            System.out.println(MessaggiEnum.MENUAGGIUNTO);
         }
     }
 
@@ -135,9 +134,9 @@ public class Ristorante {
     public void rimuoviMenu(Menu menu) {
         if (menues.contains(menu)) {
             menues.remove(menu);
-            System.out.println("menù rimosso correttamente");
+            System.out.println(MessaggiEnum.MENURIMOSSO);
         } else {
-            System.out.println("menù non esistente");
+            System.out.println(MessaggiEnum.MENUNONPRESENTE);
         }
     }
 
@@ -158,7 +157,7 @@ public class Ristorante {
             }
         }
         if (nonPresente) {
-            System.out.println("il menù non è presente");
+            System.out.println(MessaggiEnum.MENUNONPRESENTE);
         }
     }
 
