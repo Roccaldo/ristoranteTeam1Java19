@@ -2,9 +2,9 @@ public class Cliente {
 
     //TODO inserire il tipo :Carnivoro, Veg, Lucano
     private String cognome;
-    private int numeroPersone;
+    private Integer numeroPersone;
 
-    public Cliente(String cognome, int numeroPersone) {
+    public Cliente(String cognome, Integer numeroPersone) {
         this.cognome = cognome;
         this.numeroPersone = numeroPersone;
     }
@@ -25,5 +25,9 @@ public class Cliente {
         this.numeroPersone = numeroPersone;
     }
 
-    //TODO stampare info
+
+    //Metodo stampa dettagli del cliente
+    public void dettagliCliente(){
+        System.out.print("Cliente:" + cognome + " - " + "Coperti:" +  numeroPersone);
+    }
 }

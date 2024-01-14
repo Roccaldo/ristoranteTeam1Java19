@@ -155,5 +155,7 @@ public class Main {
         //
        // ristorante.prenotaTavolo(cliente, prenotazione);
 
+        Cliente cliente1 = new Cliente("Rossi",5);
+        cliente1.dettagliCliente();
     }
 }
