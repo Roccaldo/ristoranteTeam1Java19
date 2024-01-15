@@ -1,3 +1,7 @@
+import com.journaldev.design.template.ClientePattern;
+import com.journaldev.design.template.InvitaAmico;
+import com.journaldev.design.template.Prenota;
+import com.journaldev.design.template.Recensione;
 import prodotti.*;
 
 import java.time.OffsetDateTime;
@@ -152,10 +156,26 @@ public class Main {
         gestione.removePrenotazione(prenotazione1, ristorante);
         gestione.visualizzaPrenotazioni();
 
-        //
-       // ristorante.prenotaTavolo(cliente, prenotazione);
 
+       // TODO ristorante.prenotaTavolo(cliente, prenotazione);
+
+        //crea cliente
         Cliente cliente1 = new Cliente("Rossi",5);
         cliente1.dettagliCliente();
+
+        //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
+        ClientePattern sessione1 = new Prenota();
+        sessione1.azione();
+        System.out.println(                 );
+        ClientePattern sessione2 = new InvitaAmico();
+        sessione2.azione();
+        System.out.println(                  );
+        ClientePattern sessione3 = new Recensione();
+        sessione3.azione();
     }
+
+
+
+
+
 }
