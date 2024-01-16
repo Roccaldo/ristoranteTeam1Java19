@@ -171,7 +171,9 @@ public class Main {
             Cliente cliente4 = new Cliente("Cassano",20,TipoEnum.PESCE);
             cliente1.dettagliCliente();
 
+
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
+            System.out.println(                 );
             ClientePattern sessione1 = new Prenota();
             sessione1.azione();
             System.out.println(                 );

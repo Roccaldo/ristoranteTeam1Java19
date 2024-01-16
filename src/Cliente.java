@@ -28,9 +28,16 @@ public class Cliente {
         this.numeroPersone = numeroPersone;
     }
 
+    public TipoEnum getMenuPreferito() {
+        return menuPreferito;
+    }
+
+    public void setMenuPreferito(TipoEnum menuPreferito) {
+        this.menuPreferito = menuPreferito;
+    }
 
     //Metodo stampa dettagli del cliente
     public void dettagliCliente(){
-        System.out.print("Cliente: " + cognome + " - " + "Coperti: " +  numeroPersone + "menu preferito: " + menuPreferito);
+        System.out.print("Cliente: " + cognome + " - " + "Coperti: " +  numeroPersone);
     }
 }
