@@ -1,4 +1,5 @@
 package com.journaldev.design.template;
+
 public abstract class ClientePattern {
 
     //template method
