@@ -42,10 +42,13 @@ public class Cliente {
         System.out.println("Cliente: " + cognome + " - " + "Coperti: " +  numeroPersone);
     }
 
+    //Metodo per stampare i ristoranti che contengono il tipo di menu preferito del cliente
     public void ristorantiConsigliati(RegistroRistoranti registro) {
         System.out.print("Ristoranti consigliati: ");
         for(Ristorante ristorante : registro.getRistorantiList()) {
+
             for(Menu menu : ristorante.getMenues()) {
+
                 if(menu.getTipoMenu().getTipoMenu().equals(menuPreferito.getTipoMenu())) {
                     System.out.print(ristorante.getNome() + " | ");
                     break;

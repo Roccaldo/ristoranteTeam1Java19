@@ -11,6 +11,7 @@ public class RegistroRistoranti {
         return ristorantiList;
     }
 
+    //Aggiunge un ristorante al registro
     public void addRistorante(Ristorante ristorante) {
         if(!ristorantiList.contains(ristorante)) {
             ristorantiList.add(ristorante);
@@ -20,6 +21,7 @@ public class RegistroRistoranti {
         }
     }
 
+    //Rimuove un ristorante dal registro
     public void removeAnimalList(Ristorante ristorante) {
         if(ristorantiList.contains(ristorante)) {
             ristorantiList.remove(ristorante);
