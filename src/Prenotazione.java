@@ -10,7 +10,7 @@ public class Prenotazione {
     private OffsetDateTime orario;
 
     //Costruttore
-    public Prenotazione(String nomePrenotazione, Integer postiOccupati, OffsetDateTime orario) {
+    public Prenotazione(String cognome, Integer postiOccupati, OffsetDateTime orario) {
         this.nomePrenotazione = nomePrenotazione;
         this.postiOccupati = postiOccupati;
         this.orario = orario;

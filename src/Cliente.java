@@ -1,10 +1,13 @@
+import prodotti.TipoEnum;
+
 public class Cliente {
 
     //TODO inserire il tipo :Carnivoro, Veg, Lucano
     private String cognome;
     private Integer numeroPersone;
+    private TipoEnum menuPreferito;
 
-    public Cliente(String cognome, Integer numeroPersone) {
+    public Cliente(String cognome, Integer numeroPersone, TipoEnum menuPreferito) {
         this.cognome = cognome;
         this.numeroPersone = numeroPersone;
     }
@@ -21,13 +24,13 @@ public class Cliente {
         return numeroPersone;
     }
 
-    public void setNumeroPersone(int numeroPersone) {
+    public void setNumeroPersone(Integer numeroPersone) {
         this.numeroPersone = numeroPersone;
     }
 
 
     //Metodo stampa dettagli del cliente
     public void dettagliCliente(){
-        System.out.print("Cliente:" + cognome + " - " + "Coperti:" +  numeroPersone);
+        System.out.print("Cliente: " + cognome + " - " + "Coperti: " +  numeroPersone + "menu preferito: " + menuPreferito);
     }
 }

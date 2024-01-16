@@ -14,6 +14,8 @@ public class Main {
         try {
             // Creazione di un ristorante
             Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
+            Ristorante ristorante2 = new Ristorante("La Perla", "Via il Molo, 7", 30);
+            Ristorante ristorante3 = new Ristorante("Il Ghiottone", "Via Aldo moro, 9", 200);
             System.out.println(ristorante);
             System.out.println();
 
@@ -123,12 +125,15 @@ public class Main {
 
             //add e remove menù al ristorante
             ristorante.aggingiMenu(menuCarne);
-            ristorante.aggingiMenu(menuCarne);
-            ristorante.rimuoviMenu(menuCarne);
-            ristorante.rimuoviMenu(menuCarne);
-            ristorante.aggingiMenu(menuCarne);
             ristorante.aggingiMenu(menuPesce);
             ristorante.aggingiMenu(menuBibite);
+            ristorante.aggingiMenu(menuPizza);
+            ristorante.aggingiMenu(menuVegano);
+            ristorante2.aggingiMenu(menuPesce);
+            ristorante2.aggingiMenu(menuBibite);
+            ristorante3.aggingiMenu(menuBibite);
+            ristorante3.aggingiMenu(menuCarne);
+            ristorante3.aggingiMenu(menuVegano);
 
 
             // ristorante.stampaMenues();
@@ -151,9 +156,8 @@ public class Main {
             //add, remove e visualizza prenotazioni
             GestionePrenotazioni gestione = new GestionePrenotazioni();
             gestione.addPrenotazione(prenotazione1, ristorante);
-            gestione.addPrenotazione(prenotazione1, ristorante);
             gestione.addPrenotazione(prenotazione2, ristorante);
-            gestione.addPrenotazione(prenotazione3, ristorante);
+            gestione.addPrenotazione(prenotazione3, ristorante2);
             gestione.removePrenotazione(prenotazione1, ristorante);
             gestione.visualizzaPrenotazioni();
 
@@ -161,7 +165,10 @@ public class Main {
             // TODO ristorante.prenotaTavolo(cliente, prenotazione);
 
             //crea cliente
-            Cliente cliente1 = new Cliente("Rossi",5);
+            Cliente cliente1 = new Cliente("Rossi",5,TipoEnum.CARNE);
+            Cliente cliente2 = new Cliente("Verdi",7,TipoEnum.PIZZA);
+            Cliente cliente3 = new Cliente("Bianchi",2,TipoEnum.VEGANO);
+            Cliente cliente4 = new Cliente("Cassano",20,TipoEnum.PESCE);
             cliente1.dettagliCliente();
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
