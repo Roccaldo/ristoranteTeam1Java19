@@ -2,9 +2,12 @@ import prodotti.StatoRistoranteEnum;
 import prodotti.TipoEnum;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Ristorante {
@@ -14,24 +17,27 @@ public class Ristorante {
     private LocalDateTime orario;
 
     //TODO modiificare tutti i tipi primitivi presenti, sempre solo oggetti
-    private int numeroTavoli;
-    private int numMaxPosti;
-    private int postiLiberi;
+    private Integer numeroTavoli;
+    private Integer numMaxPosti;
+    private Integer postiLiberi;
     private List<Prenotazione> prenotazioniList = new ArrayList<>();
 
     private ArrayList<Menu> menues = new ArrayList<>();
+    private final Map<Prenotazione, Cliente> registroPrenotazioni = new HashMap<>();
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     //Costruttore
-    public Ristorante(String nome, String indirizzo, int numMaxPosti){
+    public Ristorante(String nome, String indirizzo, Integer numMaxPosti){
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.orario = LocalDateTime.now();
         this.stato = determinaStato();
         this.numMaxPosti = numMaxPosti;
         this.postiLiberi = numMaxPosti;
+
     }
+
 
     //Getter e Setter
     public String getNome() {
@@ -66,27 +72,27 @@ public class Ristorante {
         this.orario = orario;
     }
 
-    public int getNumeroTavoli() {
+    public Integer getNumeroTavoli() {
         return numeroTavoli;
     }
 
-    public void setNumeroTavoli(int numeroTavoli) {
+    public void setNumeroTavoli(Integer numeroTavoli) {
         this.numeroTavoli = numeroTavoli;
     }
 
-    public int getNumMaxPosti() {
+    public Integer getNumMaxPosti() {
         return numMaxPosti;
     }
 
-    public void setNumMaxPosti(int numMaxPosti) {
+    public void setNumMaxPosti(Integer numMaxPosti) {
         this.numMaxPosti = numMaxPosti;
     }
 
-    public int getPostiLiberi() {
+    public Integer getPostiLiberi() {
         return postiLiberi;
     }
 
-    public void setPostiLiberi(int postiLiberi) {
+    public void setPostiLiberi(Integer postiLiberi) {
         this.postiLiberi = postiLiberi;
     }
 
@@ -117,7 +123,6 @@ public class Ristorante {
     //Metodo che determina lo stato del ristorante
     private String determinaStato(){
         int oraAttuale = orario.getHour();
-        //TODO inserire un enum
         return oraAttuale >= 8 && oraAttuale < 23 ? StatoRistoranteEnum.APERTO.getStato() : StatoRistoranteEnum.CHIUSO.getStato();
     }
 
@@ -159,6 +164,50 @@ public class Ristorante {
         }
         if (nonPresente) {
             throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
+        }
+    }
+    //metodo per aggiungere una prenotazione
+    public void addPrenotazione(Prenotazione prenotazione, Cliente cliente) {
+        //controllo se il ristorante ha posti liberi
+        if(postiLiberi - prenotazione.getPostiOccupati() >= 0) {
+
+            //controllo se la data è successiva ad adesso e se la prenotazione
+            //non è già stata inserita
+            if(prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
+
+                //aggiungo prenotazione
+                registroPrenotazioni.put(prenotazione, cliente);
+                System.out.println(MessaggiEnum.PRENOTAZIONEAGGIUNTA);
+                //modifico posti liberi
+                setPostiLiberi(postiLiberi - prenotazione.getPostiOccupati());
+            } else {
+                throw new RuntimeException(MessaggiEnum.PRENOTAZIONENONVALIDA.getMessaggio());
+            }
+        } else {
+            throw new RuntimeException(MessaggiEnum.PRENOTAZIONENULLA + " " + MessaggiEnum.POSTILIBERI + " = " + postiLiberi);
+        }
+    }
+
+    //metodo per rimuovere una prenotazione
+    public void removePrenotazione(Prenotazione prenotazione, Cliente cliente) {
+        //controllo se il registro contiene la prenotazione da rimuovere
+        if(registroPrenotazioni.containsKey(prenotazione)) {
+
+            //rimuovo la prenotazione
+            registroPrenotazioni.remove(prenotazione);
+            System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA);
+            //modifico posti liberi
+            setPostiLiberi(postiLiberi + prenotazione.getPostiOccupati());
+        } else {
+            throw new RuntimeException(MessaggiEnum.PRENOTAZIONEINESISTENTE.getMessaggio());
+        }
+
+    }
+
+    //metodo per visualizzare tutte le prenotazioni
+    public void visualizzaPrenotazioni() {
+        for(Map.Entry<Prenotazione, Cliente> element : registroPrenotazioni.entrySet()) {
+            System.out.println(element.getKey());
         }
     }
 

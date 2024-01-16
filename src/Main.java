@@ -158,18 +158,6 @@ public class Main {
             menuPizza.stampaMenu();
             menuBibite.stampaMenu();
 
-
-            //add, remove e visualizza prenotazioni
-            GestionePrenotazioni gestione = new GestionePrenotazioni();
-            gestione.addPrenotazione(prenotazione1, ristorante);
-            gestione.addPrenotazione(prenotazione2, ristorante2);
-            gestione.addPrenotazione(prenotazione3, ristorante3);
-            gestione.removePrenotazione(prenotazione1, ristorante3);
-            gestione.visualizzaPrenotazioni();
-
-
-            // TODO ristorante.prenotaTavolo(cliente, prenotazione);
-
             //crea cliente
             Cliente cliente1 = new Cliente("Rossi",5,TipoEnum.CARNE);
             Cliente cliente2 = new Cliente("Verdi",7,TipoEnum.PIZZA);
@@ -177,6 +165,13 @@ public class Main {
             Cliente cliente4 = new Cliente("Cassano",20,TipoEnum.PESCE);
             cliente1.dettagliCliente();
             cliente4.ristorantiConsigliati(registroRistoranti);
+
+            //add, remove e visualizza prenotazioni
+            ristorante.addPrenotazione(prenotazione1,cliente1);
+            ristorante2.addPrenotazione(prenotazione2,cliente2);
+            ristorante3.addPrenotazione(prenotazione3,cliente3 );
+            ristorante3.removePrenotazione(prenotazione3, cliente3);
+            ristorante.visualizzaPrenotazioni();
 
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
