@@ -20,10 +20,10 @@ public class GestionePrenotazioni {
                 //modifico posti liberi
                 ristorante.setPostiLiberi(ristorante.getPostiLiberi() - prenotazione.getPostiOccupati());
             } else {
-                System.out.println(MessaggiEnum.PRENOTAZIONENONVALIDA);
+                throw new RuntimeException(MessaggiEnum.PRENOTAZIONENONVALIDA.getMessaggio());
             }
         } else {
-            System.out.println(MessaggiEnum.PRENOTAZIONENULLA + " " + MessaggiEnum.POSTILIBERI + " = " + ristorante.getPostiLiberi());
+            throw new RuntimeException(MessaggiEnum.PRENOTAZIONENULLA + " " + MessaggiEnum.POSTILIBERI + " = " + ristorante.getPostiLiberi());
         }
     }
 
@@ -38,7 +38,7 @@ public class GestionePrenotazioni {
             //modifico posti liberi
             ristorante.setPostiLiberi(ristorante.getPostiLiberi() + prenotazione.getPostiOccupati());
         } else {
-            System.out.println(MessaggiEnum.PRENOTAZIONEINESISTENTE);
+            throw new RuntimeException(MessaggiEnum.PRENOTAZIONEINESISTENTE.getMessaggio());
         }
 
     }

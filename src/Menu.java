@@ -89,7 +89,7 @@ public class Menu {
    //Metodo Aggiungi piatto al menu
    public void aggiungiPiatto (Prodotti prodotto) {
       if (menu.contains(prodotto)) {
-         System.out.println(MessaggiEnum.PRODOTTOPRESENTE);
+         throw new RuntimeException(MessaggiEnum.PRODOTTOPRESENTE.getMessaggio());
       } else {
          menu.add(prodotto);
          System.out.println(MessaggiEnum.PRODOTTOAGGIUNTO);
@@ -102,7 +102,7 @@ public class Menu {
          menu.remove(prodotto);
          System.out.println(MessaggiEnum.PRODOTTORIMOSSO);
       } else {
-         System.out.println(MessaggiEnum.PRODOTTONONPRESENTE);
+         throw new RuntimeException(MessaggiEnum.PRODOTTONONPRESENTE.getMessaggio());
       }
    }
 

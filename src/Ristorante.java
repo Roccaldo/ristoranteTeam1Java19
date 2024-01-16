@@ -124,7 +124,7 @@ public class Ristorante {
     //Metodo che aggiunge il menu al ristorante
     public void aggingiMenu(Menu menu) {
         if (menues.contains(menu)) {
-            System.out.println(MessaggiEnum.MENUPRESENTE);
+            throw new RuntimeException(MessaggiEnum.MENUPRESENTE.getMessaggio());
         } else {
             menues.add(menu);
             System.out.println(MessaggiEnum.MENUAGGIUNTO);
@@ -137,7 +137,7 @@ public class Ristorante {
             menues.remove(menu);
             System.out.println(MessaggiEnum.MENURIMOSSO);
         } else {
-            System.out.println(MessaggiEnum.MENUNONPRESENTE);
+            throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
         }
     }
 
@@ -158,7 +158,7 @@ public class Ristorante {
             }
         }
         if (nonPresente) {
-            System.out.println(MessaggiEnum.MENUNONPRESENTE);
+            throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
         }
     }
 
