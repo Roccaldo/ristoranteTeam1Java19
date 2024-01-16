@@ -156,9 +156,9 @@ public class Main {
             //add, remove e visualizza prenotazioni
             GestionePrenotazioni gestione = new GestionePrenotazioni();
             gestione.addPrenotazione(prenotazione1, ristorante);
-            gestione.addPrenotazione(prenotazione2, ristorante);
-            gestione.addPrenotazione(prenotazione3, ristorante2);
-            gestione.removePrenotazione(prenotazione1, ristorante);
+            gestione.addPrenotazione(prenotazione2, ristorante2);
+            gestione.addPrenotazione(prenotazione3, ristorante3);
+            gestione.removePrenotazione(prenotazione1, ristorante3);
             gestione.visualizzaPrenotazioni();
 
 
