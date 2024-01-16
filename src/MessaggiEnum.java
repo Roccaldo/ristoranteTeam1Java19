@@ -13,7 +13,9 @@ public enum MessaggiEnum {
     PRENOTAZIONENONVALIDA("Prenotazione non valida"),
     PRENOTAZIONENULLA("Il ristorante è pieno"),
     PRENOTAZIONEINESISTENTE ("Prenotazione inesistente"),
-    POSTILIBERI ("Numero di posti liberi");
+    POSTILIBERI ("Numero di posti liberi"),
+    RISTORANTEPRESENTE ("Ristorante già presente"),
+    RISTORANTENONPRESENTE ("Ristorante non presente");
 
     private final String messaggio;
 

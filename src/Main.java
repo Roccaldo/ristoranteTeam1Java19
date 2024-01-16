@@ -19,6 +19,12 @@ public class Main {
             System.out.println(ristorante);
             System.out.println();
 
+            //Creazione registro ristoranti
+            RegistroRistoranti registroRistoranti = new RegistroRistoranti();
+            registroRistoranti.addRistorante(ristorante);
+            registroRistoranti.addRistorante(ristorante2);
+            registroRistoranti.addRistorante(ristorante3);
+
             //creazione prenotazioni
             OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
             Prenotazione prenotazione1 = new Prenotazione("Agostino", 10, date);
@@ -170,6 +176,7 @@ public class Main {
             Cliente cliente3 = new Cliente("Bianchi",2,TipoEnum.VEGANO);
             Cliente cliente4 = new Cliente("Cassano",20,TipoEnum.PESCE);
             cliente1.dettagliCliente();
+            cliente4.ristorantiConsigliati(registroRistoranti);
 
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni

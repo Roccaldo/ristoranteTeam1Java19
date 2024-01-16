@@ -10,6 +10,7 @@ public class Cliente {
     public Cliente(String cognome, Integer numeroPersone, TipoEnum menuPreferito) {
         this.cognome = cognome;
         this.numeroPersone = numeroPersone;
+        this.menuPreferito = menuPreferito;
     }
 
     public String getCognome() {
@@ -38,6 +39,20 @@ public class Cliente {
 
     //Metodo stampa dettagli del cliente
     public void dettagliCliente(){
-        System.out.print("Cliente: " + cognome + " - " + "Coperti: " +  numeroPersone);
+        System.out.println("Cliente: " + cognome + " - " + "Coperti: " +  numeroPersone);
     }
+
+    public void ristorantiConsigliati(RegistroRistoranti registro) {
+        System.out.print("Ristoranti consigliati: ");
+        for(Ristorante ristorante : registro.getRistorantiList()) {
+            for(Menu menu : ristorante.getMenues()) {
+                if(menu.getTipoMenu().getTipoMenu().equals(menuPreferito.getTipoMenu())) {
+                    System.out.print(ristorante.getNome() + " | ");
+                    break;
+                }
+            }
+        }
+        System.out.println();
+    }
+
 }
