@@ -1,3 +1,4 @@
+import prodotti.StatoRistoranteEnum;
 import prodotti.TipoEnum;
 
 import java.time.LocalDateTime;
@@ -117,7 +118,7 @@ public class Ristorante {
     private String determinaStato(){
         int oraAttuale = orario.getHour();
         //TODO inserire un enum
-        return oraAttuale >= 8 && oraAttuale < 23 ? "Aperto" : "Chiuso";
+        return oraAttuale >= 8 && oraAttuale < 23 ? StatoRistoranteEnum.APERTO.getStato() : StatoRistoranteEnum.CHIUSO.getStato();
     }
 
     //Metodo che aggiunge il menu al ristorante
