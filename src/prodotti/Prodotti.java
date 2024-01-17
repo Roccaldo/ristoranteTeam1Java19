@@ -10,7 +10,8 @@ public abstract class Prodotti {
 
     private PortataEnum portata;
 
-    private ArrayList<AllergeniEnum> allergeni = new ArrayList<>();
+    //TODO tutti i field s'inizializzano dentro il costruttore
+    private ArrayList<AllergeniEnum> allergeni;
 
 
     //Costruttore
@@ -20,6 +21,12 @@ public abstract class Prodotti {
         this.portata = portata;
         this.allergeni = allergeni;
     }
+
+    private void addAllergenico(AllergeniEnum allergeniEnum) {
+        allergeni.add(allergeniEnum);
+    }
+
+    //TODO anche per remove
 
     //Getter e Setter
     public String getNomePiatto() {
@@ -54,6 +61,8 @@ public abstract class Prodotti {
     public void stampaDettagli() {
         System.out.print(nomePiatto + ": " + " €" + prezzo + " | ");
         if (getAllergeni() != null && !getAllergeni().isEmpty()) {
+            //TODO il to string fa un po schifo per stampare, quindi si solito si fa un metodo che può essere creato anche nell'enum
+            //FOReach e poi si stampa la descizione e non l'enum in maiscolo
             System.out.print("Allergeni presenti: " + allergeni + " | ");
         }
     }

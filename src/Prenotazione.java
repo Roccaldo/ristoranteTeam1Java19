@@ -11,6 +11,7 @@ public class Prenotazione {
 
     //Costruttore
     public Prenotazione(String cognome, Integer postiOccupati, OffsetDateTime orario) {
+        //TODO
         this.nomePrenotazione = nomePrenotazione;
         this.postiOccupati = postiOccupati;
         this.orario = orario;

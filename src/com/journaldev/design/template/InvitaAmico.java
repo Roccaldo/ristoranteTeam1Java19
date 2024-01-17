@@ -1,5 +1,5 @@
 package com.journaldev.design.template;
-public class InvitaAmico extends ClientePattern {
+public class InvitaAmico extends GestioneClienteTemplatePattern {
 
     @Override
     public void start() {

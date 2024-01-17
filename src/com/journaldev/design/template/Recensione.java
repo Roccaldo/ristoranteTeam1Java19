@@ -1,5 +1,5 @@
 package com.journaldev.design.template;
-public class Recensione extends ClientePattern {
+public class Recensione extends GestioneClienteTemplatePattern {
 
     @Override
     public void start() {

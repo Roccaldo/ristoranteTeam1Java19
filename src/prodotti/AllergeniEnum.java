@@ -15,13 +15,13 @@ public enum AllergeniEnum {
     LUPINI ("Lupini"),
     MOLLUSCHI ("Molluschi");
 
-    private final String allergeni;
+    private final String descrizione;
 
     AllergeniEnum(String allergeni) {
-        this.allergeni = allergeni;
+        this.descrizione = allergeni;
     }
 
-    public String getAllergeni() {
-        return allergeni;
+    public String getDescrizione() {
+        return descrizione;
     }
 }

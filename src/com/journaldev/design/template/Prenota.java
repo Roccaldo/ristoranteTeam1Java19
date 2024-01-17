@@ -1,5 +1,5 @@
 package com.journaldev.design.template;
-public class Prenota extends ClientePattern {
+public class Prenota extends GestioneClienteTemplatePattern {
 
     @Override
     public void start() {

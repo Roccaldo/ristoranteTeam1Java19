@@ -1,4 +1,4 @@
-import com.journaldev.design.template.ClientePattern;
+import com.journaldev.design.template.GestioneClienteTemplatePattern;
 import com.journaldev.design.template.InvitaAmico;
 import com.journaldev.design.template.Prenota;
 import com.journaldev.design.template.Recensione;
@@ -176,13 +176,13 @@ public class Main {
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
             System.out.println(                 );
-            ClientePattern sessione1 = new Prenota();
+            GestioneClienteTemplatePattern sessione1 = new Prenota();
             sessione1.azione();
             System.out.println(                 );
-            ClientePattern sessione2 = new InvitaAmico();
+            GestioneClienteTemplatePattern sessione2 = new InvitaAmico();
             sessione2.azione();
             System.out.println(                  );
-            ClientePattern sessione3 = new Recensione();
+            GestioneClienteTemplatePattern sessione3 = new Recensione();
             sessione3.azione();
         } catch (Exception e) {
             System.out.println(e);

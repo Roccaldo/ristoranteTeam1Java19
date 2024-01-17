@@ -1,6 +1,7 @@
 import prodotti.StatoRistoranteEnum;
 import prodotti.TipoEnum;
 
+import java.io.InvalidObjectException;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,12 +14,16 @@ import java.util.Map;
 public class Ristorante {
     private String nome;
     private String indirizzo;
+
+    //TODO deve essere un enumerato no? è colpa di Agostino!!!!
     private String stato;
     private LocalDateTime orario;
 
     //TODO modiificare tutti i tipi primitivi presenti, sempre solo oggetti
-    private Integer numeroTavoli;
+    //non possiamo usare la lista per sapere quante posti vuoti ci sono?
     private Integer numMaxPosti;
+
+    //TODO mmm siamo sicuro di fare una gestione con tutti sti campi?
     private Integer postiLiberi;
     private List<Prenotazione> prenotazioniList = new ArrayList<>();
 
@@ -72,14 +77,6 @@ public class Ristorante {
         this.orario = orario;
     }
 
-    public Integer getNumeroTavoli() {
-        return numeroTavoli;
-    }
-
-    public void setNumeroTavoli(Integer numeroTavoli) {
-        this.numeroTavoli = numeroTavoli;
-    }
-
     public Integer getNumMaxPosti() {
         return numMaxPosti;
     }
@@ -127,9 +124,10 @@ public class Ristorante {
     }
 
     //Metodo che aggiunge il menu al ristorante
-    public void aggingiMenu(Menu menu) {
+    public void aggingiMenu(Menu menu) throws InvalidObjectException {
         if (menues.contains(menu)) {
-            throw new RuntimeException(MessaggiEnum.MENUPRESENTE.getMessaggio());
+            //TODO facciamo una gestione meno aggressiva delle eccezioni !è colpa di ubaldo!!!!
+            throw new InvalidObjectException(MessaggiEnum.MENUPRESENTE.getMessaggio());
         } else {
             menues.add(menu);
             System.out.println(MessaggiEnum.MENUAGGIUNTO);
@@ -207,6 +205,7 @@ public class Ristorante {
     //metodo per visualizzare tutte le prenotazioni
     public void visualizzaPrenotazioni() {
         for(Map.Entry<Prenotazione, Cliente> element : registroPrenotazioni.entrySet()) {
+            //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto
             System.out.println(element.getKey());
         }
     }

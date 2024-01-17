@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class RegistroRistoranti {
-    ArrayList<Ristorante> ristorantiList;
+   private ArrayList<Ristorante> ristorantiList;
 
     public RegistroRistoranti() {
         this.ristorantiList = new ArrayList<>();

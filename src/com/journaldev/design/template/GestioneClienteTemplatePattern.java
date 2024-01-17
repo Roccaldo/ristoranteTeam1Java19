@@ -1,6 +1,6 @@
 package com.journaldev.design.template;
 
-public abstract class ClientePattern {
+public abstract class GestioneClienteTemplatePattern {
 
     //template method
     public final void azione(){
