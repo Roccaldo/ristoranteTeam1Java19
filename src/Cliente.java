@@ -2,7 +2,6 @@ import prodotti.TipoEnum;
 
 public class Cliente {
 
-    //TODO inserire il tipo :Carnivoro, Veg, Lucano
     private String cognome;
     private Integer numeroPersone;
     private TipoEnum menuPreferito;

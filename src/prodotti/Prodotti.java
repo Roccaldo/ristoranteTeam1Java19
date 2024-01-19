@@ -22,7 +22,7 @@ public abstract class Prodotti {
         this.allergeni = allergeni;
     }
 
-    private void addAllergenico(AllergeniEnum allergeniEnum) {
+    private void addAllergeni(AllergeniEnum allergeniEnum) {
         allergeni.add(allergeniEnum);
     }
 
@@ -63,10 +63,20 @@ public abstract class Prodotti {
         if (getAllergeni() != null && !getAllergeni().isEmpty()) {
             //TODO il to string fa un po schifo per stampare, quindi si solito si fa un metodo che può essere creato anche nell'enum
             //FOReach e poi si stampa la descizione e non l'enum in maiscolo
-            System.out.print("Allergeni presenti: " + allergeni + " | ");
+            System.out.print("Allergeni presenti " + stampaAllergeni() + " | ");
         }
     }
 
+    public StringBuilder stampaAllergeni(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("(");
+        for(AllergeniEnum allergeniEnum : allergeni){
+            stringBuilder.append(allergeniEnum.stampaDescrizione());
+            stringBuilder.append(" ");
+        }
+        stringBuilder.append(")");
+        return stringBuilder;
+    }
     @Override
     public String toString() {
         return "prodotti.Prodotti{" +

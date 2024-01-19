@@ -15,12 +15,9 @@ public class Ristorante {
     private String nome;
     private String indirizzo;
 
-    //TODO deve essere un enumerato no? è colpa di Agostino!!!!
     private String stato;
     private LocalDateTime orario;
 
-    //TODO modiificare tutti i tipi primitivi presenti, sempre solo oggetti
-    //non possiamo usare la lista per sapere quante posti vuoti ci sono?
     private Integer numMaxPosti;
 
     //TODO mmm siamo sicuro di fare una gestione con tutti sti campi?

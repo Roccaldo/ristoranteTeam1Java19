@@ -173,6 +173,7 @@ public class Main {
             ristorante3.removePrenotazione(prenotazione3, cliente3);
             ristorante.visualizzaPrenotazioni();
 
+            //cliente.addPrenotazione(prenotazione1,ristorante1);
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
             System.out.println(                 );

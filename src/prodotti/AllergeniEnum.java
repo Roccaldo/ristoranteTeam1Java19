@@ -24,4 +24,9 @@ public enum AllergeniEnum {
     public String getDescrizione() {
         return descrizione;
     }
+
+    public String stampaDescrizione(){
+        return descrizione;
+    }
+
 }
