@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class RegistroRistoranti {
-   private ArrayList<Ristorante> ristorantiList;
+    private ArrayList<Ristorante> ristorantiList;
 
     public RegistroRistoranti() {
         this.ristorantiList = new ArrayList<>();
@@ -12,24 +12,20 @@ public class RegistroRistoranti {
     }
 
     //Aggiunge un ristorante al registro
-    public void addRistorante(Ristorante ristorante) {
-        if(!ristorantiList.contains(ristorante)) {
+    public void addRistoranteToList(Ristorante ristorante) {
+        if (!ristorantiList.contains(ristorante)) {
             ristorantiList.add(ristorante);
-
         } else {
             throw new RuntimeException(MessaggiEnum.RISTORANTEPRESENTE.getMessaggio());
         }
     }
 
     //Rimuove un ristorante dal registro
-    public void removeAnimalList(Ristorante ristorante) {
-        if(ristorantiList.contains(ristorante)) {
+    public void removeRistoranteToList(Ristorante ristorante) {
+        if (ristorantiList.contains(ristorante)) {
             ristorantiList.remove(ristorante);
-
         } else {
             throw new RuntimeException(MessaggiEnum.RISTORANTENONPRESENTE.getMessaggio());
         }
     }
-
-
 }

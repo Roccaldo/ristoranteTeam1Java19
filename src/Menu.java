@@ -87,7 +87,6 @@ public class Menu {
          throw new RuntimeException(MessaggiEnum.PRODOTTOPRESENTE.getMessaggio());
       } else {
          menu.add(prodotto);
-         System.out.println(MessaggiEnum.PRODOTTOAGGIUNTO);
       }
    }
 

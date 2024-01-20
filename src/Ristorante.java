@@ -127,7 +127,6 @@ public class Ristorante {
             throw new InvalidObjectException(MessaggiEnum.MENUPRESENTE.getMessaggio());
         } else {
             menues.add(menu);
-            System.out.println(MessaggiEnum.MENUAGGIUNTO);
         }
     }
 
@@ -165,14 +164,11 @@ public class Ristorante {
     public void addPrenotazione(Prenotazione prenotazione, Cliente cliente) {
         //controllo se il ristorante ha posti liberi
         if(postiLiberi - prenotazione.getPostiOccupati() >= 0) {
-
             //controllo se la data è successiva ad adesso e se la prenotazione
             //non è già stata inserita
             if(prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
-
                 //aggiungo prenotazione
                 registroPrenotazioni.put(prenotazione, cliente);
-                System.out.println(MessaggiEnum.PRENOTAZIONEAGGIUNTA);
                 //modifico posti liberi
                 setPostiLiberi(postiLiberi - prenotazione.getPostiOccupati());
             } else {

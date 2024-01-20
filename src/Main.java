@@ -21,9 +21,9 @@ public class Main {
 
             //Creazione registro ristoranti
             RegistroRistoranti registroRistoranti = new RegistroRistoranti();
-            registroRistoranti.addRistorante(ristorante);
-            registroRistoranti.addRistorante(ristorante2);
-            registroRistoranti.addRistorante(ristorante3);
+            registroRistoranti.addRistoranteToList(ristorante);
+            registroRistoranti.addRistoranteToList(ristorante2);
+            registroRistoranti.addRistoranteToList(ristorante3);
 
             //creazione prenotazioni
             OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");

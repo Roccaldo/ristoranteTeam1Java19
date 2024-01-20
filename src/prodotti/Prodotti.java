@@ -1,5 +1,4 @@
 package prodotti;
-
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -12,7 +11,6 @@ public abstract class Prodotti {
 
     //TODO tutti i field s'inizializzano dentro il costruttore
     private ArrayList<AllergeniEnum> allergeni;
-
 
     //Costruttore
     public Prodotti(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni) {
@@ -67,16 +65,17 @@ public abstract class Prodotti {
         }
     }
 
-    public StringBuilder stampaAllergeni(){
+    public StringBuilder stampaAllergeni() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("(");
-        for(AllergeniEnum allergeniEnum : allergeni){
+        for (AllergeniEnum allergeniEnum : allergeni) {
             stringBuilder.append(allergeniEnum.stampaDescrizione());
             stringBuilder.append(" ");
         }
         stringBuilder.append(")");
         return stringBuilder;
     }
+
     @Override
     public String toString() {
         return "prodotti.Prodotti{" +
