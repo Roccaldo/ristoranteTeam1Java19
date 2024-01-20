@@ -20,12 +20,6 @@ public abstract class Prodotti {
         this.allergeni = allergeni;
     }
 
-    private void addAllergeni(AllergeniEnum allergeniEnum) {
-        allergeni.add(allergeniEnum);
-    }
-
-    //TODO anche per remove
-
     //Getter e Setter
     public String getNomePiatto() {
         return nomePiatto;
@@ -47,12 +41,24 @@ public abstract class Prodotti {
         return allergeni;
     }
 
+    public void setAllergeni(ArrayList<AllergeniEnum> allergeni) {
+        this.allergeni = allergeni;
+    }
+
     public PortataEnum getPortata() {
         return portata;
     }
 
     public void setPortata(PortataEnum portata) {
         this.portata = portata;
+    }
+
+    private void addAllergeni(AllergeniEnum allergeniEnum) {
+        allergeni.add(allergeniEnum);
+    }
+    //TODO anche per remove
+    private void rimuoviAllergeni(AllergeniEnum allergeniEnum) {
+        allergeni.remove(allergeniEnum);
     }
 
     //Metodo stampa dettagli dei piatti

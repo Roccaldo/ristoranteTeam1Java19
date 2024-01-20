@@ -11,7 +11,6 @@ public class Bibite extends Prodotti {
         this.isAlcholic = isAlcholic;
     }
 
-
     //Getter e Setter
     public boolean isAlcholic() {
         return isAlcholic;
@@ -30,5 +29,4 @@ public class Bibite extends Prodotti {
             System.out.println("Analcolico");
         }
     }
-
 }

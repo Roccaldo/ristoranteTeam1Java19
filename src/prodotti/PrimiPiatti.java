@@ -2,7 +2,7 @@ package prodotti;
 
 import java.util.ArrayList;
 
-public class PrimiPiatti extends Prodotti{
+public class PrimiPiatti extends Prodotti {
 
     private String tipoPasta;
 

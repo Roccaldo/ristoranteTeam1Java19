@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.time.OffsetDateTime;
 
 public class Prenotazione {
@@ -52,7 +51,7 @@ public class Prenotazione {
     }
 
     //Metodo Stampa dettagli della prenotazione
-    public void dettagliPrenotazione(){
+    public void dettagliPrenotazione() {
         System.out.print(nomePrenotazione + ": " + " " + postiOccupati + " | " + orario);
     }
 }

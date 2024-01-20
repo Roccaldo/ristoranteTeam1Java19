@@ -1,8 +1,7 @@
 package prodotti;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class Pizza extends Prodotti {
     private String tipoImpasto;

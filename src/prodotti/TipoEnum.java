@@ -2,19 +2,15 @@ package prodotti;
 
 public enum TipoEnum {
     //Rosso
-    CARNE ("Carne", "\u001B[31m"),
-
+    CARNE("Carne", "\u001B[31m"),
     //Blu
-    PESCE ("Pesce", "\u001B[34m"),
-
+    PESCE("Pesce", "\u001B[34m"),
     //Verde
-    VEGANO ("Vegano", "\u001B[32m"),
-
+    VEGANO("Vegano", "\u001B[32m"),
     //Giallo
-    PIZZA ("Picca", "\u001B[33m"),
-
+    PIZZA("Picca", "\u001B[33m"),
     //Ciano
-    BIBITE ("Bibite", "\u001B[36m");
+    BIBITE("Bibite", "\u001B[36m");
 
     private final String tipoMenu;
 

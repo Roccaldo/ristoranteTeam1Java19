@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-
         try {
             // Creazione di un ristorante
             Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
@@ -39,37 +38,37 @@ public class Main {
             Secondi secondoCarne1 = new Secondi("Pollo alla campagnola", 10.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.BEN_COTTA);
             Secondi secondoCarne2 = new Secondi("Tagliata di manzo", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.AL_SANGUE);
             Contorni contornoCarne1 = new Contorni("Patate fritte", 1.50, PortataEnum.CONTORNO, null);
-            Contorni contornoCarne2 = new Contorni("Insalata di rucola, pere, grana e noci",5.00, PortataEnum.CONTORNO, null);
-            Dessert dessertCarne1 = new Dessert("Cheesecake di yogurt alle fragole", 12.99, PortataEnum.DESSERT,null, CalorieEnum.MEDIO);
+            Contorni contornoCarne2 = new Contorni("Insalata di rucola, pere, grana e noci", 5.00, PortataEnum.CONTORNO, null);
+            Dessert dessertCarne1 = new Dessert("Cheesecake di yogurt alle fragole", 12.99, PortataEnum.DESSERT, null, CalorieEnum.MEDIO);
             Dessert dessertCarne2 = new Dessert("Crostata al limone meringata", 9.99, PortataEnum.DESSERT, null, CalorieEnum.ALTO);
-            Antipasti antipastoPesce1 = new Antipasti("Antipasto di mare", 4.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI,AllergeniEnum.MOLLUSCHI)));
+            Antipasti antipastoPesce1 = new Antipasti("Antipasto di mare", 4.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI, AllergeniEnum.MOLLUSCHI)));
             Antipasti antipastoPesce2 = new Antipasti("Pepata di cozze", 6.40, PortataEnum.ANTIPASTO, null);
-            PrimiPiatti primoPiattoPesce1 = new PrimiPiatti("Spaghetti allo scoglio", 14.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI,AllergeniEnum.MOLLUSCHI)), "Classica");
+            PrimiPiatti primoPiattoPesce1 = new PrimiPiatti("Spaghetti allo scoglio", 14.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI, AllergeniEnum.MOLLUSCHI)), "Classica");
             PrimiPiatti primoPiattoPesce2 = new PrimiPiatti("Linguine all'astice", 9.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CROSTACEI)), "Classica");
             Secondi secondoPesce1 = new Secondi("Salmone croccante", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.STANDARD);
             Secondi secondoPesce2 = new Secondi("Polpettine di tonno e ricotta", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.STANDARD);
-            Contorni contornoPesce1 = new Contorni("Insalata semplice", 1.50, PortataEnum.CONTORNO,null);
-            Contorni contornoPesce2 = new Contorni("Insalata nizzarda",6.00, PortataEnum.CONTORNO,null);
-            Dessert dessertPesce1 = new Dessert("Tiramisù",5.00, PortataEnum.DESSERT, null, CalorieEnum.ALTO);
-            Dessert dessertPesce2 = new Dessert("Torta tenerina",5.00, PortataEnum.DESSERT, null, CalorieEnum.MEDIO);
+            Contorni contornoPesce1 = new Contorni("Insalata semplice", 1.50, PortataEnum.CONTORNO, null);
+            Contorni contornoPesce2 = new Contorni("Insalata nizzarda", 6.00, PortataEnum.CONTORNO, null);
+            Dessert dessertPesce1 = new Dessert("Tiramisù", 5.00, PortataEnum.DESSERT, null, CalorieEnum.ALTO);
+            Dessert dessertPesce2 = new Dessert("Torta tenerina", 5.00, PortataEnum.DESSERT, null, CalorieEnum.MEDIO);
             Antipasti antipastoVegano1 = new Antipasti("Insalata di ceci", 4.50, PortataEnum.ANTIPASTO, null);
             Antipasti antipastoVegano2 = new Antipasti("Falafel", 6.40, PortataEnum.ANTIPASTO, null);
             PrimiPiatti primoPiattoVegano1 = new PrimiPiatti("Carbonara Vegana", 11.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA)), "Integrale");
-            PrimiPiatti primoPiattoVegano2 = new PrimiPiatti("Lasagna vegana", 11.0, PortataEnum.PRIMOPIATTO,null, "Riso");
+            PrimiPiatti primoPiattoVegano2 = new PrimiPiatti("Lasagna vegana", 11.0, PortataEnum.PRIMOPIATTO, null, "Riso");
             Secondi secondoVegano1 = new Secondi("Strudel salato", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.STANDARD);
             Secondi secondoVegano2 = new Secondi("Seitan alla piastra", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.STANDARD);
-            Contorni contornoVegano1 = new Contorni("Finocchi gratinati in padella",2.50, PortataEnum.CONTORNO, null);
-            Contorni contornoVegano2 = new Contorni("Carciofi in insalata",4.00, PortataEnum.CONTORNO, null);
+            Contorni contornoVegano1 = new Contorni("Finocchi gratinati in padella", 2.50, PortataEnum.CONTORNO, null);
+            Contorni contornoVegano2 = new Contorni("Carciofi in insalata", 4.00, PortataEnum.CONTORNO, null);
             Dessert dessertVegano1 = new Dessert("Tronchetti vegani di banana al cioccolato fondente", 7.99, PortataEnum.DESSERT, null, CalorieEnum.MEDIO);
             Dessert dessertVegano2 = new Dessert("Frutta alle spezie vegano", 6.99, PortataEnum.DESSERT, null, CalorieEnum.BASSO);
-            Pizza pizza1 = new Pizza("Margherita", 4.50, PortataEnum.PIZZA, null, "Integrale",new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella")));
-            Pizza pizza2 = new Pizza("Crudaiola", 4.50, PortataEnum.PIZZA, null, "Normale",new ArrayList<>(Arrays.asList("Pomodoro" , "Mozzarella", "Prosciutto Crudo")));
-            Pizza pizza3 = new Pizza("Vegetariana", 5.00, PortataEnum.PIZZA, null, "Normale",new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella", "Zucchine", "Peperoni")));
+            Pizza pizza1 = new Pizza("Margherita", 4.50, PortataEnum.PIZZA, null, "Integrale", new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella")));
+            Pizza pizza2 = new Pizza("Crudaiola", 4.50, PortataEnum.PIZZA, null, "Normale", new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella", "Prosciutto Crudo")));
+            Pizza pizza3 = new Pizza("Vegetariana", 5.00, PortataEnum.PIZZA, null, "Normale", new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella", "Zucchine", "Peperoni")));
             Bibite bibita1 = new Bibite("Coca cola", 1.50, PortataEnum.BIBITE, null, false);
             Bibite bibita2 = new Bibite("Fanta", 2.00, PortataEnum.BIBITE, null, false);
             Bibite bibita3 = new Bibite("Birra", 2.50, PortataEnum.BIBITE, null, true);
-            Bibite bibita4 = new Bibite("Vino bianco", 14.50, PortataEnum.BIBITE,null, true);
-            Bibite bibita5 = new Bibite("Vino Rosso", 14.50, PortataEnum.BIBITE,null, true);
+            Bibite bibita4 = new Bibite("Vino bianco", 14.50, PortataEnum.BIBITE, null, true);
+            Bibite bibita5 = new Bibite("Vino Rosso", 14.50, PortataEnum.BIBITE, null, true);
 
             //crea menu
             Menu menuCarne = new Menu("Monte", TipoEnum.CARNE);
@@ -77,7 +76,6 @@ public class Main {
             Menu menuVegano = new Menu("Amici della natura", TipoEnum.VEGANO);
             Menu menuPizza = new Menu("Pizza", TipoEnum.PIZZA);
             Menu menuBibite = new Menu("Bibite", TipoEnum.BIBITE);
-
 
             // Aggiunta piatti menu carne
             menuCarne.aggiungiPiatto(antipastoCarne1);
@@ -127,8 +125,6 @@ public class Main {
             menuBibite.aggiungiPiatto(bibita4);
             menuBibite.aggiungiPiatto(bibita5);
 
-
-
             //add e remove menù al ristorante
             ristorante.aggingiMenu(menuCarne);
             ristorante.aggingiMenu(menuPesce);
@@ -141,15 +137,12 @@ public class Main {
             ristorante3.aggingiMenu(menuCarne);
             ristorante3.aggingiMenu(menuVegano);
 
-
             // ristorante.stampaMenues();
             ristorante.stampaMenues();
-
 
             // ristorante.stampaMenues(TipoMenuEnum.CARNE);
             ristorante.stampamenu(TipoEnum.CARNE);
             ristorante.stampamenu(TipoEnum.VEGANO);
-
 
             //stampa menu
             menuCarne.stampaMenu();
@@ -159,30 +152,30 @@ public class Main {
             menuBibite.stampaMenu();
 
             //crea cliente
-            Cliente cliente1 = new Cliente("Rossi",5,TipoEnum.CARNE);
-            Cliente cliente2 = new Cliente("Verdi",7,TipoEnum.PIZZA);
-            Cliente cliente3 = new Cliente("Bianchi",2,TipoEnum.VEGANO);
-            Cliente cliente4 = new Cliente("Cassano",20,TipoEnum.PESCE);
+            Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
+            Cliente cliente2 = new Cliente("Verdi", 7, TipoEnum.PIZZA);
+            Cliente cliente3 = new Cliente("Bianchi", 2, TipoEnum.VEGANO);
+            Cliente cliente4 = new Cliente("Cassano", 20, TipoEnum.PESCE);
             cliente1.dettagliCliente();
             cliente4.ristorantiConsigliati(registroRistoranti);
 
             //add, remove e visualizza prenotazioni
-            ristorante.addPrenotazione(prenotazione1,cliente1);
-            ristorante2.addPrenotazione(prenotazione2,cliente2);
-            ristorante3.addPrenotazione(prenotazione3,cliente3 );
+            ristorante.addPrenotazione(prenotazione1, cliente1);
+            ristorante2.addPrenotazione(prenotazione2, cliente2);
+            ristorante3.addPrenotazione(prenotazione3, cliente3);
             ristorante3.removePrenotazione(prenotazione3, cliente3);
             ristorante.visualizzaPrenotazioni();
 
             //cliente.addPrenotazione(prenotazione1,ristorante1);
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
-            System.out.println(                 );
+            System.out.println();
             GestioneClienteTemplatePattern sessione1 = new Prenota();
             sessione1.azione();
-            System.out.println(                 );
+            System.out.println();
             GestioneClienteTemplatePattern sessione2 = new InvitaAmico();
             sessione2.azione();
-            System.out.println(                  );
+            System.out.println();
             GestioneClienteTemplatePattern sessione3 = new Recensione();
             sessione3.azione();
         } catch (Exception e) {

@@ -13,24 +13,28 @@ import java.util.Map;
 
 public class Ristorante {
     private String nome;
+
     private String indirizzo;
 
     private String stato;
+
     private LocalDateTime orario;
 
     private Integer numMaxPosti;
 
     //TODO mmm siamo sicuro di fare una gestione con tutti sti campi?
     private Integer postiLiberi;
+
     private List<Prenotazione> prenotazioniList = new ArrayList<>();
 
     private ArrayList<Menu> menues = new ArrayList<>();
+
     private final Map<Prenotazione, Cliente> registroPrenotazioni = new HashMap<>();
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     //Costruttore
-    public Ristorante(String nome, String indirizzo, Integer numMaxPosti){
+    public Ristorante(String nome, String indirizzo, Integer numMaxPosti) {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.orario = LocalDateTime.now();
@@ -39,7 +43,6 @@ public class Ristorante {
         this.postiLiberi = numMaxPosti;
 
     }
-
 
     //Getter e Setter
     public String getNome() {
@@ -115,7 +118,7 @@ public class Ristorante {
     }
 
     //Metodo che determina lo stato del ristorante
-    private String determinaStato(){
+    private String determinaStato() {
         int oraAttuale = orario.getHour();
         return oraAttuale >= 8 && oraAttuale < 23 ? StatoRistoranteEnum.APERTO.getStato() : StatoRistoranteEnum.CHIUSO.getStato();
     }
@@ -160,13 +163,14 @@ public class Ristorante {
             throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
         }
     }
+
     //metodo per aggiungere una prenotazione
     public void addPrenotazione(Prenotazione prenotazione, Cliente cliente) {
         //controllo se il ristorante ha posti liberi
-        if(postiLiberi - prenotazione.getPostiOccupati() >= 0) {
+        if (postiLiberi - prenotazione.getPostiOccupati() >= 0) {
             //controllo se la data è successiva ad adesso e se la prenotazione
             //non è già stata inserita
-            if(prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
+            if (prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
                 //aggiungo prenotazione
                 registroPrenotazioni.put(prenotazione, cliente);
                 //modifico posti liberi
@@ -182,7 +186,7 @@ public class Ristorante {
     //metodo per rimuovere una prenotazione
     public void removePrenotazione(Prenotazione prenotazione, Cliente cliente) {
         //controllo se il registro contiene la prenotazione da rimuovere
-        if(registroPrenotazioni.containsKey(prenotazione)) {
+        if (registroPrenotazioni.containsKey(prenotazione)) {
 
             //rimuovo la prenotazione
             registroPrenotazioni.remove(prenotazione);
@@ -197,7 +201,7 @@ public class Ristorante {
 
     //metodo per visualizzare tutte le prenotazioni
     public void visualizzaPrenotazioni() {
-        for(Map.Entry<Prenotazione, Cliente> element : registroPrenotazioni.entrySet()) {
+        for (Map.Entry<Prenotazione, Cliente> element : registroPrenotazioni.entrySet()) {
             //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto
             System.out.println(element.getKey());
         }

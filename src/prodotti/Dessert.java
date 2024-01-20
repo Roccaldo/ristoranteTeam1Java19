@@ -7,6 +7,7 @@ public class Dessert extends Prodotti{
 
     //Costruttore
     public Dessert(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, CalorieEnum livelloCalorie) {
+        
         super(nomePiatto, prezzo, portata, allergeni);
         this.livelloCalorie = livelloCalorie;
     }

@@ -11,6 +11,10 @@ public class RegistroRistoranti {
         return ristorantiList;
     }
 
+    public void setRistorantiList(ArrayList<Ristorante> ristorantiList) {
+        this.ristorantiList = ristorantiList;
+    }
+
     //Aggiunge un ristorante al registro
     public void addRistoranteToList(Ristorante ristorante) {
         if (!ristorantiList.contains(ristorante)) {
