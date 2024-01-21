@@ -38,7 +38,7 @@ public class Cliente {
 
     //Metodo stampa dettagli del cliente
     public void dettagliCliente() {
-        System.out.println("Cliente: " + cognome + " - " + "Coperti: " + numeroPersone);
+        System.out.println(MessaggiEnum.CLIENTE + " " + cognome + " | " + MessaggiEnum.COPERTI + ": " + numeroPersone + " |");
     }
 
     //Metodo per stampare i ristoranti che contengono il tipo di menu preferito del cliente

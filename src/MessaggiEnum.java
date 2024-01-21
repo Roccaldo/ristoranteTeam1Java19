@@ -1,13 +1,13 @@
 public enum MessaggiEnum {
 
-    PRODOTTOAGGIUNTO("prodotto aggiunto correttamente"),
-    PRODOTTOPRESENTE("prodotto già presente nel menù"),
-    PRODOTTORIMOSSO("prodotto rimosso correttamente"),
-    PRODOTTONONPRESENTE("prodotto non presente nel menù"),
-    MENUAGGIUNTO("menù aggiunto correttamente"),
-    MENURIMOSSO("menù rimosso correttamente"),
-    MENUPRESENTE("menù già presente"),
-    MENUNONPRESENTE("menù non esistente"),
+    PRODOTTOAGGIUNTO("Prodotto aggiunto correttamente"),
+    PRODOTTOPRESENTE("Prodotto già presente nel menù"),
+    PRODOTTORIMOSSO("Prodotto rimosso correttamente"),
+    PRODOTTONONPRESENTE("Prodotto non presente nel menù"),
+    MENUAGGIUNTO("Menù aggiunto correttamente"),
+    MENURIMOSSO("Menù rimosso correttamente"),
+    MENUPRESENTE("Menù già presente"),
+    MENUNONPRESENTE("Menù non esistente"),
     PRENOTAZIONEAGGIUNTA("Prenotazione aggiunta correttamente"),
     PRENOTAZIONERIMOSSA("Prenotazione rimossa correttamente"),
     PRENOTAZIONENONVALIDA("Prenotazione non valida"),
@@ -15,8 +15,11 @@ public enum MessaggiEnum {
     PRENOTAZIONEINESISTENTE("Prenotazione inesistente"),
     POSTILIBERI("Numero di posti liberi"),
     RISTORANTEPRESENTE("Ristorante già presente"),
-    RISTORANTENONPRESENTE("Ristorante non presente");
-
+    RISTORANTENONPRESENTE("Ristorante non presente"),
+    NOMEPRENOTAZIONE("Nome prenotazione"),
+    COPERTI("COPERTI"),
+    ORARIO("Orario"),
+    CLIENTE("Cliente");
 
     private final String messaggio;
 

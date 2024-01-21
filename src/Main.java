@@ -159,14 +159,16 @@ public class Main {
             cliente1.dettagliCliente();
             cliente4.ristorantiConsigliati(registroRistoranti);
 
-            //add, remove e visualizza prenotazioni
+            //add, remove
             ristorante.addPrenotazione(prenotazione1, cliente1);
             ristorante2.addPrenotazione(prenotazione2, cliente2);
             ristorante3.addPrenotazione(prenotazione3, cliente3);
             ristorante3.removePrenotazione(prenotazione3, cliente3);
-            ristorante.visualizzaPrenotazioniRistorante();
 
-            //cliente.addPrenotazione(prenotazione1,ristorante1);
+            // visualizza tutte le prenotazioni del ristorante
+            ristorante.visualizzaPrenotazioniRistorante();
+            //visualizza dettagli della prenotazione
+            prenotazione1.dettagliPrenotazione();
 
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
             System.out.println();

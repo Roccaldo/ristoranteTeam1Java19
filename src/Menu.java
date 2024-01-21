@@ -51,7 +51,7 @@ public class Menu {
     public void stampaMenu() {
         System.out.println(" ");
         System.out.println("Menù " + getNomeMenu() + " (" + tipoMenu.getTipoMenu() + ")");
-        //Colore
+        //todo Colore e mettere il testo del enum
         System.out.print(tipoMenu.getColore());
         stampaSeContenuto(PortataEnum.ANTIPASTO);
         stampaSeContenuto(PortataEnum.PRIMOPIATTO);
@@ -96,7 +96,7 @@ public class Menu {
     public void rimuoviPiatto(Prodotti prodotto) {
         if (menu.contains(prodotto)) {
             menu.remove(prodotto);
-            System.out.println(MessaggiEnum.PRODOTTORIMOSSO);
+            System.out.println(MessaggiEnum.PRODOTTORIMOSSO.getMessaggio());
         } else {
             throw new RuntimeException(MessaggiEnum.PRODOTTONONPRESENTE.getMessaggio());
         }

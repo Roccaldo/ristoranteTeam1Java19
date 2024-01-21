@@ -51,6 +51,6 @@ public class Prenotazione {
 
     //Metodo Stampa dettagli della prenotazione
     public void dettagliPrenotazione() {
-        System.out.print(nomePrenotazione + ": " + " " + postiOccupati + " | " + orario);
+        System.out.print(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + ": " + nomePrenotazione + " | " + MessaggiEnum.COPERTI.getMessaggio() + ": " + postiOccupati + " | " + MessaggiEnum.ORARIO.getMessaggio() + ": " + orario + " |");
     }
 }

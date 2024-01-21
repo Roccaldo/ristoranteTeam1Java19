@@ -137,7 +137,7 @@ public class Ristorante {
     public void rimuoviMenu(Menu menu) {
         if (menues.contains(menu)) {
             menues.remove(menu);
-            System.out.println(MessaggiEnum.MENURIMOSSO);
+            System.out.println(MessaggiEnum.MENURIMOSSO.getMessaggio());
         } else {
             throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
         }
@@ -179,7 +179,7 @@ public class Ristorante {
                 throw new RuntimeException(MessaggiEnum.PRENOTAZIONENONVALIDA.getMessaggio());
             }
         } else {
-            throw new RuntimeException(MessaggiEnum.PRENOTAZIONENULLA + " " + MessaggiEnum.POSTILIBERI + " = " + postiLiberi);
+            throw new RuntimeException(MessaggiEnum.PRENOTAZIONENULLA.getMessaggio() + " " + MessaggiEnum.POSTILIBERI.getMessaggio() + " = " + postiLiberi);
         }
     }
 
@@ -190,7 +190,7 @@ public class Ristorante {
 
             //rimuovo la prenotazione
             registroPrenotazioni.remove(prenotazione);
-            System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA);
+            System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA.getMessaggio());
             //modifico posti liberi
             setPostiLiberi(postiLiberi + prenotazione.getPostiOccupati());
         } else {
@@ -202,8 +202,8 @@ public class Ristorante {
     //metodo per visualizzare le prenotazioni del singolo ristorante
     public void visualizzaPrenotazioniRistorante() {
         for (Prenotazione element : registroPrenotazioni.keySet()) {
-            //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto | fatto
-            System.out.println("Nome prenotazione: " + element.getNomePrenotazione() + " | posti occupati: " + element.getPostiOccupati() + " | orario: " + element.getOrario() + " |");
+            //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto | ubaldo i 2 punti
+            System.out.println(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + ": " + element.getNomePrenotazione() + " | " + MessaggiEnum.COPERTI.getMessaggio()  + ": " + element.getPostiOccupati() + " | " + MessaggiEnum.ORARIO.getMessaggio()  + ": " + element.getOrario() + " |");
         }
     }
 
