@@ -16,7 +16,7 @@ public abstract class Prodotti {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
         this.portata = portata;
-        this.allergeni = new ArrayList<>();
+        this.allergeni = allergeni;
     }
 
     //Getter e Setter
@@ -72,8 +72,10 @@ public abstract class Prodotti {
         stringBuilder.append("(");
         for (AllergeniEnum allergeniEnum : allergeni) {
             stringBuilder.append(allergeniEnum.stampaDescrizione());
-            stringBuilder.append(" ");
+            stringBuilder.append(", ");
         }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         stringBuilder.append(")");
         return stringBuilder;
     }

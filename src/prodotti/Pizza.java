@@ -11,7 +11,7 @@ public class Pizza extends Prodotti {
     public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, TipoImpastoEnum tipoImpasto, ArrayList<IngredientiPizzaEnum> ingredienti) {
         super(nomePiatto, prezzo, portata, allergeni);
         this.tipoImpasto = tipoImpasto;
-        this.ingredienti = new ArrayList<>();
+        this.ingredienti = ingredienti;
     }
 
     //Getter e Setter
@@ -45,8 +45,10 @@ public class Pizza extends Prodotti {
         stringBuilder.append("(");
         for (IngredientiPizzaEnum ingredientiPizzaEnum : ingredienti) {
             stringBuilder.append(ingredientiPizzaEnum.stampaDescrizione());
-            stringBuilder.append(" ");
+            stringBuilder.append(", ");
         }
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         stringBuilder.append(")");
         return stringBuilder;
     }
