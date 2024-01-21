@@ -56,18 +56,17 @@ public abstract class Prodotti {
     private void addAllergeni(AllergeniEnum allergeniEnum) {
         allergeni.add(allergeniEnum);
     }
-    //TODO anche per remove
     private void rimuoviAllergeni(AllergeniEnum allergeniEnum) {
         allergeni.remove(allergeniEnum);
     }
 
     //Metodo stampa dettagli dei piatti
     public void stampaDettagli() {
-        System.out.print(nomePiatto + ": " + " €" + prezzo + " | ");
+        System.out.println(nomePiatto + ": " + " €" + prezzo + " | ");
         if (getAllergeni() != null && !getAllergeni().isEmpty()) {
             //TODO il to string fa un po schifo per stampare, quindi si solito si fa un metodo che può essere creato anche nell'enum
             //FOReach e poi si stampa la descizione e non l'enum in maiscolo
-            System.out.print("Allergeni presenti " + stampaAllergeni() + " | ");
+            System.out.println(MessaggiProdottiEnum.ALLERGENI.getMessaggioEnum() + (": ") + stampaAllergeni() + " | ");
         }
     }
 

@@ -24,7 +24,7 @@ public class Secondi extends Prodotti{
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.print("Tipo di cottura: " + tipoCottura.getTipoCottura());
+        System.out.print(MessaggiProdottiEnum.COTTURA.getMessaggioEnum() + (": ") + tipoCottura.getTipoCottura());
         System.out.println();
     }
 }

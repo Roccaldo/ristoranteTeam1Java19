@@ -17,6 +17,7 @@ public enum MessaggiEnum {
     RISTORANTEPRESENTE("Ristorante già presente"),
     RISTORANTENONPRESENTE("Ristorante non presente");
 
+
     private final String messaggio;
 
     MessaggiEnum(String messaggio) {

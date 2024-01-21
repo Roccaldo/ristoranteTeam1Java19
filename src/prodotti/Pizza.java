@@ -35,8 +35,8 @@ public class Pizza extends Prodotti {
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.print("Tipo di impasto: " + tipoImpasto + " ");
-        System.out.print("Ingredienti: " + ingredienti.toString());
+        System.out.print(MessaggiProdottiEnum.IMPASTO.getMessaggioEnum() + (": ") + tipoImpasto + " ");
+        System.out.print(MessaggiProdottiEnum.INGREDIENTI.getMessaggioEnum() + (": ") + ingredienti.toString());
         System.out.println();
     }
 }
