@@ -164,7 +164,7 @@ public class Main {
             ristorante2.addPrenotazione(prenotazione2, cliente2);
             ristorante3.addPrenotazione(prenotazione3, cliente3);
             ristorante3.removePrenotazione(prenotazione3, cliente3);
-            ristorante.visualizzaPrenotazioni();
+            ristorante.visualizzaPrenotazioniRistorante();
 
             //cliente.addPrenotazione(prenotazione1,ristorante1);
 

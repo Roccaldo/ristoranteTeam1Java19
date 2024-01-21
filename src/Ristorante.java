@@ -199,11 +199,11 @@ public class Ristorante {
 
     }
 
-    //metodo per visualizzare tutte le prenotazioni
-    public void visualizzaPrenotazioni() {
-        for (Map.Entry<Prenotazione, Cliente> element : registroPrenotazioni.entrySet()) {
-            //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto
-            System.out.println(element.getKey());
+    //metodo per visualizzare le prenotazioni del singolo ristorante
+    public void visualizzaPrenotazioniRistorante() {
+        for (Prenotazione element : registroPrenotazioni.keySet()) {
+            //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto | fatto
+            System.out.println("Nome prenotazione: " + element.getNomePrenotazione() + " | posti occupati: " + element.getPostiOccupati() + " | orario: " + element.getOrario() + " |");
         }
     }
 
