@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 
 public class Pizza extends Prodotti {
-    private String tipoImpasto;
+    private TipoImpastoEnum tipoImpasto;
     private ArrayList<String> ingredienti;
 
     //Costruttore
-    public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, String tipoImpasto, ArrayList<String> ingredienti) {
+    public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, TipoImpastoEnum tipoImpasto, ArrayList<String> ingredienti) {
         super(nomePiatto, prezzo, portata, allergeni);
         this.tipoImpasto = tipoImpasto;
         this.ingredienti = ingredienti;
     }
 
     //Getter e Setter
-    public String getTipoImpasto() {
+    public TipoImpastoEnum getTipoImpasto() {
         return tipoImpasto;
     }
 
-    public void setTipoImpasto(String tipoImpasto) {
+    public void setTipoImpasto(TipoImpastoEnum tipoImpasto) {
         this.tipoImpasto = tipoImpasto;
     }
 
@@ -35,7 +35,7 @@ public class Pizza extends Prodotti {
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.print(MessaggiProdottiEnum.IMPASTO.getMessaggioEnum() + (": ") + tipoImpasto + " ");
+        System.out.print(MessaggiProdottiEnum.IMPASTO.getMessaggioEnum() + (": ") + tipoImpasto.getTipoImpastoEnum() + " ");
         System.out.print(MessaggiProdottiEnum.INGREDIENTI.getMessaggioEnum() + (": ") + ingredienti.toString());
         System.out.println();
     }

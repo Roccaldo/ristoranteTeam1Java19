@@ -64,8 +64,6 @@ public abstract class Prodotti {
     public void stampaDettagli() {
         System.out.println(nomePiatto + ": " + " €" + prezzo + " | ");
         if (getAllergeni() != null && !getAllergeni().isEmpty()) {
-            //TODO il to string fa un po schifo per stampare, quindi si solito si fa un metodo che può essere creato anche nell'enum
-            //FOReach e poi si stampa la descizione e non l'enum in maiscolo
             System.out.println(MessaggiProdottiEnum.ALLERGENI.getMessaggioEnum() + (": ") + stampaAllergeni() + " | ");
         }
     }
