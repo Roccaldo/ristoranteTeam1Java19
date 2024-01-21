@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class Pizza extends Prodotti {
     private TipoImpastoEnum tipoImpasto;
-    private ArrayList<String> ingredienti;
+    private ArrayList<IngredientiPizzaEnum> ingredienti;
 
     //Costruttore
-    public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, TipoImpastoEnum tipoImpasto, ArrayList<String> ingredienti) {
+    public Pizza(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni, TipoImpastoEnum tipoImpasto, ArrayList<IngredientiPizzaEnum> ingredienti) {
         super(nomePiatto, prezzo, portata, allergeni);
         this.tipoImpasto = tipoImpasto;
-        this.ingredienti = ingredienti;
+        this.ingredienti = new ArrayList<>();
     }
 
     //Getter e Setter
@@ -23,11 +23,11 @@ public class Pizza extends Prodotti {
         this.tipoImpasto = tipoImpasto;
     }
 
-    public ArrayList<String> getIngredienti() {
+    public ArrayList<IngredientiPizzaEnum> getIngredienti() {
         return ingredienti;
     }
 
-    public void setIngredienti(ArrayList<String> ingredienti) {
+    public void setIngredienti(ArrayList<IngredientiPizzaEnum> ingredienti) {
         this.ingredienti = ingredienti;
     }
 
@@ -36,7 +36,25 @@ public class Pizza extends Prodotti {
     public void stampaDettagli() {
         super.stampaDettagli();
         System.out.print(MessaggiProdottiEnum.IMPASTO.getMessaggioEnum() + (": ") + tipoImpasto.getTipoImpastoEnum() + " ");
-        System.out.print(MessaggiProdottiEnum.INGREDIENTI.getMessaggioEnum() + (": ") + ingredienti.toString());
+        System.out.print(MessaggiProdottiEnum.INGREDIENTI.getMessaggioEnum() + (": ") + stampaIngredienti());
         System.out.println();
+    }
+
+    public StringBuilder stampaIngredienti() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("(");
+        for (IngredientiPizzaEnum ingredientiPizzaEnum : ingredienti) {
+            stringBuilder.append(ingredientiPizzaEnum.stampaDescrizione());
+            stringBuilder.append(" ");
+        }
+        stringBuilder.append(")");
+        return stringBuilder;
+    }
+
+    private void addIngredienti(IngredientiPizzaEnum ingredientiPizzaEnum) {
+        ingredienti.add(ingredientiPizzaEnum);
+    }
+    private void rimuoviIngredienti(IngredientiPizzaEnum ingredientiPizzaEnum) {
+        ingredienti.remove(ingredientiPizzaEnum);
     }
 }

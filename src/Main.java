@@ -61,9 +61,9 @@ public class Main {
             Contorni contornoVegano2 = new Contorni("Carciofi in insalata", 4.00, PortataEnum.CONTORNO, null);
             Dessert dessertVegano1 = new Dessert("Tronchetti vegani di banana al cioccolato fondente", 7.99, PortataEnum.DESSERT, null, CalorieEnum.MEDIO);
             Dessert dessertVegano2 = new Dessert("Frutta alle spezie vegano", 6.99, PortataEnum.DESSERT, null, CalorieEnum.BASSO);
-            Pizza pizza1 = new Pizza("Margherita", 4.50, PortataEnum.PIZZA, null,TipoImpastoEnum.NORMALE, new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella")));
-            Pizza pizza2 = new Pizza("Crudaiola", 4.50, PortataEnum.PIZZA, null, TipoImpastoEnum.INTEGRALE, new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella", "Prosciutto Crudo")));
-            Pizza pizza3 = new Pizza("Vegetariana", 5.00, PortataEnum.PIZZA, null, TipoImpastoEnum.SENZAGLUTINE, new ArrayList<>(Arrays.asList("Pomodoro", "Mozzarella", "Zucchine", "Peperoni")));
+            Pizza pizza1 = new Pizza("Margherita", 4.50, PortataEnum.PIZZA, null,TipoImpastoEnum.NORMALE, new ArrayList<>(Arrays.asList(IngredientiPizzaEnum.POMODORO,IngredientiPizzaEnum.MOZZARELLA,IngredientiPizzaEnum.BASILICO)));
+            Pizza pizza2 = new Pizza("Crudaiola", 4.50, PortataEnum.PIZZA, null, TipoImpastoEnum.INTEGRALE, new ArrayList<>(Arrays.asList(IngredientiPizzaEnum.POMODORO,IngredientiPizzaEnum.MOZZARELLA,IngredientiPizzaEnum.CRUDO)));
+            Pizza pizza3 = new Pizza("Vegetariana", 5.00, PortataEnum.PIZZA, null, TipoImpastoEnum.SENZAGLUTINE, new ArrayList<>(Arrays.asList(IngredientiPizzaEnum.POMODORO,IngredientiPizzaEnum.MOZZARELLA,IngredientiPizzaEnum.ZUCCHINE,IngredientiPizzaEnum.PEPERONI)));
             Bibite bibita1 = new Bibite("Coca cola", 1.50, PortataEnum.BIBITE, null, false);
             Bibite bibita2 = new Bibite("Fanta", 2.00, PortataEnum.BIBITE, null, false);
             Bibite bibita3 = new Bibite("Birra", 2.50, PortataEnum.BIBITE, null, true);

@@ -9,7 +9,6 @@ public abstract class Prodotti {
 
     private PortataEnum portata;
 
-    //TODO tutti i field s'inizializzano dentro il costruttore
     private ArrayList<AllergeniEnum> allergeni;
 
     //Costruttore
@@ -17,7 +16,7 @@ public abstract class Prodotti {
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
         this.portata = portata;
-        this.allergeni = allergeni;
+        this.allergeni = new ArrayList<>();
     }
 
     //Getter e Setter
