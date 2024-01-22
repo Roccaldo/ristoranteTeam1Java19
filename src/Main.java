@@ -24,12 +24,6 @@ public class Main {
             registroRistoranti.addRistoranteToList(ristorante2);
             registroRistoranti.addRistoranteToList(ristorante3);
 
-            //creazione prenotazioni
-            OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
-            Prenotazione prenotazione1 = new Prenotazione("Agostino", 10, date);
-            Prenotazione prenotazione2 = new Prenotazione("Roccaldo", 25, date);
-            Prenotazione prenotazione3 = new Prenotazione("Chiara", 40, date);
-
             //Creazione delle portate
             Antipasti antipastoCarne1 = new Antipasti("Ravioli cinesi al vapore", 3.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA)));
             Antipasti antipastoCarne2 = new Antipasti("Cornetti salati", 1.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI)));
@@ -159,11 +153,19 @@ public class Main {
             cliente1.dettagliCliente();
             cliente4.ristorantiConsigliati(registroRistoranti);
 
+            //creazione prenotazioni
+            OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
+            Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
+            Prenotazione prenotazione2 = new Prenotazione(cliente2, 25, date);
+            Prenotazione prenotazione3 = new Prenotazione(cliente3, 40, date);
+
             //add, remove
-            ristorante.addPrenotazione(prenotazione1, cliente1);
-            ristorante2.addPrenotazione(prenotazione2, cliente2);
-            ristorante3.addPrenotazione(prenotazione3, cliente3);
-            ristorante3.removePrenotazione(prenotazione3, cliente3);
+            //IDEA si potrebbe istanziare la prenotazione direttamente nell'add, evitando passaggi extra
+            //bisognerebbe poi modificare il metodo remove e qualche altra cosa
+            ristorante.addPrenotazione(prenotazione1);
+            ristorante2.addPrenotazione(prenotazione2);
+            ristorante3.addPrenotazione(prenotazione3);
+            ristorante3.removePrenotazione(prenotazione3);
 
             // visualizza tutte le prenotazioni del ristorante
             ristorante.visualizzaPrenotazioniRistorante();
@@ -180,6 +182,9 @@ public class Main {
             System.out.println();
             GestioneClienteTemplatePattern sessione3 = new Recensione();
             sessione3.azione();
+
+            //visualizza prenotazione cliente
+            cliente1.visualizzaPrenotazioni();
         } catch (Exception e) {
             System.out.println(e);
         }

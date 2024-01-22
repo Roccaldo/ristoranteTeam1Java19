@@ -2,26 +2,27 @@ import java.time.OffsetDateTime;
 
 public class Prenotazione {
 
-    private String nomePrenotazione;
+    private Cliente clientePrenotazione;
 
     private Integer postiOccupati;
 
     private OffsetDateTime orario;
 
+
     //Costruttore
-    public Prenotazione(String nomePrenotazione, Integer postiOccupati, OffsetDateTime orario) {
-        this.nomePrenotazione = nomePrenotazione;
+    public Prenotazione(Cliente nomePrenotazione, Integer postiOccupati, OffsetDateTime orario) {
+        this.clientePrenotazione = nomePrenotazione;
         this.postiOccupati = postiOccupati;
         this.orario = orario;
     }
 
     //Getter e Setter
-    public String getNomePrenotazione() {
-        return nomePrenotazione;
+    public Cliente getClientePrenotazione() {
+        return clientePrenotazione;
     }
 
-    public void setNomePrenotazione(String nomePrenotazione) {
-        this.nomePrenotazione = nomePrenotazione;
+    public void setNomePrenotazione(Cliente nomePrenotazione) {
+        this.clientePrenotazione = nomePrenotazione;
     }
 
     public Integer getPostiOccupati() {
@@ -43,7 +44,7 @@ public class Prenotazione {
     @Override
     public String toString() {
         return "Prenotazione{" +
-                "nomePrenotazione='" + nomePrenotazione + '\'' +
+                "nomePrenotazione='" + clientePrenotazione + '\'' +
                 ", postiOccupati=" + postiOccupati +
                 ", orario=" + orario +
                 '}';
@@ -51,6 +52,6 @@ public class Prenotazione {
 
     //Metodo Stampa dettagli della prenotazione
     public void dettagliPrenotazione() {
-        System.out.print(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + ": " + nomePrenotazione + " | " + MessaggiEnum.COPERTI.getMessaggio() + ": " + postiOccupati + " | " + MessaggiEnum.ORARIO.getMessaggio() + ": " + orario + " |");
+        System.out.print(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + ": " + clientePrenotazione.getCognome() + " | " + MessaggiEnum.COPERTI.getMessaggio() + ": " + postiOccupati + " | " + MessaggiEnum.ORARIO.getMessaggio() + ": " + orario + " |");
     }
 }

@@ -1,15 +1,20 @@
+import prodotti.CaratteriSpeEnum;
 import prodotti.TipoEnum;
+
+import java.util.ArrayList;
 
 public class Cliente {
 
     private String cognome;
     private Integer numeroPersone;
     private TipoEnum menuPreferito;
+    private ArrayList<Prenotazione> prenotazioni;
 
     public Cliente(String cognome, Integer numeroPersone, TipoEnum menuPreferito) {
         this.cognome = cognome;
         this.numeroPersone = numeroPersone;
         this.menuPreferito = menuPreferito;
+        this.prenotazioni = new ArrayList<>();
     }
 
     public String getCognome() {
@@ -36,6 +41,17 @@ public class Cliente {
         this.menuPreferito = menuPreferito;
     }
 
+    public ArrayList<Prenotazione> getPrenotazioni() {
+        return prenotazioni;
+    }
+
+    public void addPrenotazione(Prenotazione prenotazione) {
+            prenotazioni.add(prenotazione);
+    }
+    public void removePrenotazione(Prenotazione prenotazione) {
+        prenotazioni.remove(prenotazione);
+    }
+
     //Metodo stampa dettagli del cliente
     public void dettagliCliente() {
         System.out.println(MessaggiEnum.CLIENTE + " " + cognome + " | " + MessaggiEnum.COPERTI + ": " + numeroPersone + " |");
@@ -53,5 +69,12 @@ public class Cliente {
             }
         }
         System.out.println();
+    }
+
+    public void visualizzaPrenotazioni() {
+        System.out.println("le tue prenotazioni :");
+        for (Prenotazione prenotazione : prenotazioni) {
+            prenotazione.dettagliPrenotazione();
+        }
     }
 }

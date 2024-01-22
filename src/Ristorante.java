@@ -165,14 +165,15 @@ public class Ristorante {
     }
 
     //metodo per aggiungere una prenotazione
-    public void addPrenotazione(Prenotazione prenotazione, Cliente cliente) {
+    public void addPrenotazione(Prenotazione prenotazione) {
         //controllo se il ristorante ha posti liberi
         if (postiLiberi - prenotazione.getPostiOccupati() >= 0) {
             //controllo se la data è successiva ad adesso e se la prenotazione
             //non è già stata inserita
             if (prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
                 //aggiungo prenotazione
-                registroPrenotazioni.put(prenotazione, cliente);
+                registroPrenotazioni.put(prenotazione, prenotazione.getClientePrenotazione());
+                prenotazione.getClientePrenotazione().addPrenotazione(prenotazione);
                 //modifico posti liberi
                 setPostiLiberi(postiLiberi - prenotazione.getPostiOccupati());
             } else {
@@ -184,12 +185,13 @@ public class Ristorante {
     }
 
     //metodo per rimuovere una prenotazione
-    public void removePrenotazione(Prenotazione prenotazione, Cliente cliente) {
+    public void removePrenotazione(Prenotazione prenotazione) {
         //controllo se il registro contiene la prenotazione da rimuovere
         if (registroPrenotazioni.containsKey(prenotazione)) {
 
             //rimuovo la prenotazione
             registroPrenotazioni.remove(prenotazione);
+            prenotazione.getClientePrenotazione().removePrenotazione(prenotazione);
             System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA.getMessaggio());
             //modifico posti liberi
             setPostiLiberi(postiLiberi + prenotazione.getPostiOccupati());
@@ -203,7 +205,7 @@ public class Ristorante {
     public void visualizzaPrenotazioniRistorante() {
         for (Prenotazione element : registroPrenotazioni.keySet()) {
             //TODO sto toString non va bene per stampare, dobbiamo usare i metodo dell'oggetto | ubaldo i 2 punti
-            System.out.println(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + ": " + element.getNomePrenotazione() + " | " + MessaggiEnum.COPERTI.getMessaggio()  + ": " + element.getPostiOccupati() + " | " + MessaggiEnum.ORARIO.getMessaggio()  + ": " + element.getOrario() + " |");
+            System.out.println(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + ": " + element.getClientePrenotazione().getCognome() + " | " + MessaggiEnum.COPERTI.getMessaggio()  + ": " + element.getPostiOccupati() + " | " + MessaggiEnum.ORARIO.getMessaggio()  + ": " + element.getOrario() + " |");
         }
     }
 
