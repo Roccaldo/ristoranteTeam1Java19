@@ -219,6 +219,16 @@ public class Ristorante {
         }
     }
 
+    public void stampaDettagliRistorante() {
+        System.out.println();
+        System.out.println(MessaggiEnum.NOMERISTORANTE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
+                + CaratteriSpeEnum.SPAZIO.getCarattere() + nome);
+        System.out.println(MessaggiEnum.INDIRIZZO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
+                + CaratteriSpeEnum.SPAZIO.getCarattere() + indirizzo);
+        System.out.println(MessaggiEnum.STATO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
+                + CaratteriSpeEnum.SPAZIO.getCarattere() + stato.getStato());
+    }
+
     @Override
     public String toString() {
         return "progetto.Ristorante{" +

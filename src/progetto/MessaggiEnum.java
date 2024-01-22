@@ -22,7 +22,10 @@ public enum MessaggiEnum {
     COPERTI("COPERTI"),
     ORARIO("Orario"),
     CLIENTE("Cliente"),
-    PRENOTAZIONE("le tue prenotazioni");
+    PRENOTAZIONE("le tue prenotazioni"),
+    NOMERISTORANTE("Nome ristorante"),
+    INDIRIZZO("Indirizzo"),
+    STATO("Stato");
 
     private final String messaggio;
 
