@@ -16,7 +16,7 @@ public class Ristorante {
 
     private String indirizzo;
 
-    private String stato;
+    private StatoRistoranteEnum stato;
 
     private LocalDateTime orario;
 
@@ -61,11 +61,11 @@ public class Ristorante {
         this.indirizzo = indirizzo;
     }
 
-    public String getStato() {
+    public StatoRistoranteEnum getStato() {
         return stato;
     }
 
-    public void setStato(String stato) {
+    public void setStato(StatoRistoranteEnum stato) {
         this.stato = stato;
     }
 
@@ -118,9 +118,9 @@ public class Ristorante {
     }
 
     //Metodo che determina lo stato del ristorante
-    private String determinaStato() {
+    private StatoRistoranteEnum determinaStato() {
         int oraAttuale = orario.getHour();
-        return oraAttuale >= 8 && oraAttuale < 23 ? StatoRistoranteEnum.APERTO.getStato() : StatoRistoranteEnum.CHIUSO.getStato();
+        return oraAttuale >= 8 && oraAttuale < 23 ? StatoRistoranteEnum.APERTO : StatoRistoranteEnum.CHIUSO;
     }
 
     //Metodo che aggiunge il menu al ristorante
@@ -134,12 +134,12 @@ public class Ristorante {
     }
 
     //Metodo che rimuove il menu dal ristorante
-    public void rimuoviMenu(Menu menu) {
+    public void rimuoviMenu(Menu menu) throws InvalidObjectException {
         if (menues.contains(menu)) {
             menues.remove(menu);
             System.out.println(MessaggiEnum.MENURIMOSSO.getMessaggio());
         } else {
-            throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
         }
     }
 
@@ -151,7 +151,7 @@ public class Ristorante {
     }
 
     //Stampa il menu in base al tipo di menu
-    public void stampamenu(TipoEnum tipoMenuEnum) {
+    public void stampamenu(TipoEnum tipoMenuEnum) throws InvalidObjectException {
         boolean nonPresente = true;
         for (Menu menu : menues) {
             if (menu.getTipoMenu().equals(tipoMenuEnum)) {
@@ -160,12 +160,12 @@ public class Ristorante {
             }
         }
         if (nonPresente) {
-            throw new RuntimeException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.MENUNONPRESENTE.getMessaggio());
         }
     }
 
     //metodo per aggiungere una prenotazione
-    public void addPrenotazione(Prenotazione prenotazione) {
+    public void addPrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
         //controllo se il ristorante ha posti liberi
         if (postiLiberi - prenotazione.getPostiOccupati() >= 0) {
             //controllo se la data è successiva ad adesso e se la prenotazione
@@ -177,15 +177,15 @@ public class Ristorante {
                 //modifico posti liberi
                 setPostiLiberi(postiLiberi - prenotazione.getPostiOccupati());
             } else {
-                throw new RuntimeException(MessaggiEnum.PRENOTAZIONENONVALIDA.getMessaggio());
+                throw new InvalidObjectException(MessaggiEnum.PRENOTAZIONENONVALIDA.getMessaggio());
             }
         } else {
-            throw new RuntimeException(MessaggiEnum.PRENOTAZIONENULLA.getMessaggio() + " " + MessaggiEnum.POSTILIBERI.getMessaggio() + " = " + postiLiberi);
+            throw new InvalidObjectException(MessaggiEnum.PRENOTAZIONENULLA.getMessaggio() + " " + MessaggiEnum.POSTILIBERI.getMessaggio() + " = " + postiLiberi);
         }
     }
 
     //metodo per rimuovere una prenotazione
-    public void removePrenotazione(Prenotazione prenotazione) {
+    public void removePrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
         //controllo se il registro contiene la prenotazione da rimuovere
         if (registroPrenotazioni.containsKey(prenotazione)) {
 
@@ -196,7 +196,7 @@ public class Ristorante {
             //modifico posti liberi
             setPostiLiberi(postiLiberi + prenotazione.getPostiOccupati());
         } else {
-            throw new RuntimeException(MessaggiEnum.PRENOTAZIONEINESISTENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.PRENOTAZIONEINESISTENTE.getMessaggio());
         }
 
     }

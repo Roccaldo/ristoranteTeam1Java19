@@ -2,6 +2,7 @@ import prodotti.PortataEnum;
 import prodotti.Prodotti;
 import prodotti.TipoEnum;
 
+import java.io.InvalidObjectException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -84,21 +85,21 @@ public class Menu {
     }
 
     //Metodo Aggiungi piatto al menu
-    public void aggiungiPiatto(Prodotti prodotto) {
+    public void aggiungiPiatto(Prodotti prodotto) throws InvalidObjectException {
         if (menu.contains(prodotto)) {
-            throw new RuntimeException(MessaggiEnum.PRODOTTOPRESENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.PRODOTTOPRESENTE.getMessaggio());
         } else {
             menu.add(prodotto);
         }
     }
 
     //Metodo Rimuovi piatto al menu
-    public void rimuoviPiatto(Prodotti prodotto) {
+    public void rimuoviPiatto(Prodotti prodotto) throws InvalidObjectException {
         if (menu.contains(prodotto)) {
             menu.remove(prodotto);
             System.out.println(MessaggiEnum.PRODOTTORIMOSSO.getMessaggio());
         } else {
-            throw new RuntimeException(MessaggiEnum.PRODOTTONONPRESENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.PRODOTTONONPRESENTE.getMessaggio());
         }
     }
 

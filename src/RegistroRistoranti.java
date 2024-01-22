@@ -1,3 +1,4 @@
+import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
 public class RegistroRistoranti {
@@ -16,20 +17,20 @@ public class RegistroRistoranti {
     }
 
     //Aggiunge un ristorante al registro
-    public void addRistoranteToList(Ristorante ristorante) {
+    public void addRistoranteToList(Ristorante ristorante) throws InvalidObjectException {
         if (!ristorantiList.contains(ristorante)) {
             ristorantiList.add(ristorante);
         } else {
-            throw new RuntimeException(MessaggiEnum.RISTORANTEPRESENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.RISTORANTEPRESENTE.getMessaggio());
         }
     }
 
     //Rimuove un ristorante dal registro
-    public void removeRistoranteToList(Ristorante ristorante) {
+    public void removeRistoranteToList(Ristorante ristorante) throws InvalidObjectException {
         if (ristorantiList.contains(ristorante)) {
             ristorantiList.remove(ristorante);
         } else {
-            throw new RuntimeException(MessaggiEnum.RISTORANTENONPRESENTE.getMessaggio());
+            throw new InvalidObjectException(MessaggiEnum.RISTORANTENONPRESENTE.getMessaggio());
         }
     }
 }
