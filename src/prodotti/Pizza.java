@@ -35,21 +35,25 @@ public class Pizza extends Prodotti {
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.print(MessaggiProdottiEnum.IMPASTO.getMessaggioEnum() + (": ") + tipoImpasto.getTipoImpastoEnum() + " ");
-        System.out.print(MessaggiProdottiEnum.INGREDIENTI.getMessaggioEnum() + (": ") + stampaIngredienti());
+        System.out.println(MessaggiProdottiEnum.IMPASTO.getMessaggioEnum() + (CaratteriSpeEnum.DUEPUNTI.getCarattere()) +
+                CaratteriSpeEnum.SPAZIO.getCarattere() + tipoImpasto.getTipoImpastoEnum());
+        System.out.print(MessaggiProdottiEnum.INGREDIENTI.getMessaggioEnum() + (CaratteriSpeEnum.DUEPUNTI.getCarattere()) +
+                CaratteriSpeEnum.SPAZIO.getCarattere() + stampaIngredienti());
         System.out.println();
     }
 
     public StringBuilder stampaIngredienti() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("(");
+        stringBuilder.append(CaratteriSpeEnum.APRIPARENTESI.getCarattere());
         for (IngredientiPizzaEnum ingredientiPizzaEnum : ingredienti) {
             stringBuilder.append(ingredientiPizzaEnum.stampaDescrizione());
-            stringBuilder.append(", ");
+            stringBuilder.append(CaratteriSpeEnum.VIRGOLA.getCarattere());
+            stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
+
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        stringBuilder.append(")");
+        stringBuilder.append(CaratteriSpeEnum.CHIUDIPARENTESI.getCarattere());
         return stringBuilder;
     }
 

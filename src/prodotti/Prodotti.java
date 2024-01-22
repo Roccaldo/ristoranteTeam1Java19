@@ -61,23 +61,43 @@ public abstract class Prodotti {
 
     //Metodo stampa dettagli dei piatti
     public void stampaDettagli() {
-        System.out.println(nomePiatto + ": " + " €" + prezzo + " | ");
+        System.out.println(StampaAllinea(nomePiatto, CaratteriSpeEnum.TRATTINO, prezzo, 70)
+                + CaratteriSpeEnum.EURO.getCarattere() + prezzo);
         if (getAllergeni() != null && !getAllergeni().isEmpty()) {
-            System.out.println(MessaggiProdottiEnum.ALLERGENI.getMessaggioEnum() + (": ") + stampaAllergeni() + " | ");
+            System.out.println(MessaggiProdottiEnum.ALLERGENI.getMessaggioEnum() + (CaratteriSpeEnum.DUEPUNTI.getCarattere()) +
+                    CaratteriSpeEnum.SPAZIO.getCarattere() + stampaAllergeni());
         }
     }
 
     public StringBuilder stampaAllergeni() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("(");
+        stringBuilder.append(CaratteriSpeEnum.APRIPARENTESI.getCarattere());
         for (AllergeniEnum allergeniEnum : allergeni) {
             stringBuilder.append(allergeniEnum.stampaDescrizione());
-            stringBuilder.append(", ");
+            stringBuilder.append(CaratteriSpeEnum.VIRGOLA.getCarattere());
+            stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
+
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        stringBuilder.append(")");
+        stringBuilder.append(CaratteriSpeEnum.CHIUDIPARENTESI.getCarattere());
         return stringBuilder;
+    }
+
+    private StringBuilder StampaAllinea(String parte, CaratteriSpeEnum character, Double prezzo, Integer lunghezza) {
+        StringBuilder stringBuilder = new StringBuilder(parte);
+        int nChar = lunghezza - parte.length();
+        stringBuilder.append(character.getCarattere().repeat(Math.max(0, nChar)));
+        stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
+        if (prezzo == null) {
+            return stringBuilder;
+        } else {
+            int extra = String.valueOf(prezzo).length();
+            for (int i = 0; i < extra; i ++) {
+                stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            }
+            return stringBuilder;
+        }
     }
 
     @Override
