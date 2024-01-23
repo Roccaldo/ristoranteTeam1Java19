@@ -17,8 +17,7 @@ public class Main {
             Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
             Ristorante ristorante2 = new Ristorante("La Perla", "Via il Molo, 7", 30);
             Ristorante ristorante3 = new Ristorante("Il Ghiottone", "Via Aldo moro, 9", 200);
-            System.out.println(ristorante);
-            System.out.println();
+
 
             //Creazione registro ristoranti
             RegistroRistoranti registroRistoranti = new RegistroRistoranti();

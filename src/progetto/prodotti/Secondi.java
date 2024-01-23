@@ -1,5 +1,7 @@
 package progetto.prodotti;
 
+import progetto.CaratteriSpeEnum;
+
 import java.util.ArrayList;
 
 public class Secondi extends Prodotti{
@@ -24,7 +26,7 @@ public class Secondi extends Prodotti{
     @Override
     public void stampaDettagli() {
         super.stampaDettagli();
-        System.out.print(MessaggiProdottiEnum.COTTURA.getMessaggioEnum() + (": ") + tipoCottura.getTipoCottura());
+        System.out.print(MessaggiProdottiEnum.COTTURA.getMessaggioEnum() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + tipoCottura.getTipoCottura());
         System.out.println();
     }
 }

@@ -64,11 +64,11 @@ public class Cliente {
 
     //Metodo per stampare i ristoranti che contengono il tipo di menu preferito del cliente
     public void ristorantiConsigliati(RegistroRistoranti registro) {
-        System.out.print("Ristoranti consigliati: ");
+        System.out.print(MessaggiEnum.RISTORANTI.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere());
         for (Ristorante ristorante : registro.getRistorantiList()) {
             for (Menu menu : ristorante.getMenues()) {
                 if (menu.getTipoMenu().getTipoMenu().equals(menuPreferito.getTipoMenu())) {
-                    System.out.print(ristorante.getNome() + " | ");
+                    System.out.print(ristorante.getNome() + CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere());
                     break;
                 }
             }

@@ -5,7 +5,7 @@ public enum MessaggiProdottiEnum {
     ALLERGENI("Allergeni presenti"),
     TIPOLOGIA("Tipologia"),
     COTTURA("Tipo di cottura"),
-    CALORIE("Calorie presenti"),
+    CALORIE("Livello calorie presenti"),
     IMPASTO("Tipo di impasto"),
     INGREDIENTI("Ingredienti"),
     ALCOLICO("Alcolico"),
