@@ -5,7 +5,9 @@ import progetto.prodotti.TipoEnum;
 
 import java.io.InvalidObjectException;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
+import java.time.chrono.ChronoLocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -121,8 +123,11 @@ public class Ristorante {
 
     //Metodo che determina lo stato del ristorante
     private StatoRistoranteEnum determinaStato() {
-        int oraAttuale = orario.getHour();
-        return oraAttuale >= 8 && oraAttuale < 23 ? StatoRistoranteEnum.APERTO : StatoRistoranteEnum.CHIUSO;
+        Integer oraAttuale = orario.getHour();
+        Integer inizio = LocalTime.parse("08:00:00").getHour();
+        Integer fine = LocalTime.parse("23:00:00").getHour();
+
+        return oraAttuale >= inizio && oraAttuale <= fine ? StatoRistoranteEnum.APERTO : StatoRistoranteEnum.CHIUSO;
     }
 
     //Metodo che aggiunge il menu al ristorante
