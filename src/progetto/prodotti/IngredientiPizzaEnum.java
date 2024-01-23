@@ -18,7 +18,4 @@ public enum IngredientiPizzaEnum {
         return IngredientiPizzaEnum;
     }
 
-    public String stampaDescrizione(){
-        return IngredientiPizzaEnum;
-    }
 }

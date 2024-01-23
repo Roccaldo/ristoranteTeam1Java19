@@ -25,7 +25,6 @@ public class Ristorante {
 
     private Integer numMaxPosti;
 
-    //TODO mmm siamo sicuro di fare una gestione con tutti sti campi?
     private Integer postiLiberi;
 
     private List<Prenotazione> prenotazioniList = new ArrayList<>();
@@ -125,14 +124,12 @@ public class Ristorante {
         Integer oraAttuale = orario.getHour();
         Integer inizio = LocalTime.parse("08:00:00").getHour();
         Integer fine = LocalTime.parse("23:00:00").getHour();
-
         return oraAttuale >= inizio && oraAttuale <= fine ? StatoRistoranteEnum.APERTO : StatoRistoranteEnum.CHIUSO;
     }
 
     //Metodo che aggiunge il menu al ristorante
     public void aggingiMenu(Menu menu) throws InvalidObjectException {
         if (menues.contains(menu)) {
-            //TODO facciamo una gestione meno aggressiva delle eccezioni !è colpa di ubaldo!!!!
             throw new InvalidObjectException(MessaggiEnum.MENUPRESENTE.getMessaggio());
         } else {
             menues.add(menu);

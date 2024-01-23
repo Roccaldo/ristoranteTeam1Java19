@@ -52,9 +52,11 @@ public class Menu {
 
     //Metodo StampaMenu
     public void stampaMenu() {
-        System.out.println(" ");
-        System.out.println("Menù " + getNomeMenu() + " (" + tipoMenu.getTipoMenu() + ")");
-        //todo Colore e mettere il testo del enum
+        System.out.println(CaratteriSpeEnum.SPAZIO.getCarattere());
+        System.out.println(MessaggiEnum.MENU.getMessaggio() + CaratteriSpeEnum.SPAZIO.getCarattere() + getNomeMenu() +
+                CaratteriSpeEnum.APRIPARENTESI.getCarattere() +
+                tipoMenu.getTipoMenu() + CaratteriSpeEnum.CHIUDIPARENTESI.getCarattere());
+        //Colore e mettere il testo del enum
         System.out.print(tipoMenu.getColore());
         stampaSeContenuto(PortataEnum.ANTIPASTO);
         stampaSeContenuto(PortataEnum.PRIMOPIATTO);
@@ -83,6 +85,7 @@ public class Menu {
                     prodotti.stampaDettagli();
                 }
             }
+            System.out.println();
         }
     }
 

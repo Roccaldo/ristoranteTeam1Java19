@@ -12,6 +12,5 @@ public class Antipasti extends Prodotti{
 	@Override
 	public void stampaDettagli() {
 		super.stampaDettagli();
-		System.out.println();
 	}
 }

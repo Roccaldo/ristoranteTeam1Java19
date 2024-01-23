@@ -8,7 +8,7 @@ public enum TipoEnum {
     //Verde
     VEGANO("Vegano", "\u001B[32m"),
     //Giallo
-    PIZZA("Picca", "\u001B[33m"),
+    PIZZA("Pizza", "\u001B[33m"),
     //Ciano
     BIBITE("Bibite", "\u001B[36m");
 

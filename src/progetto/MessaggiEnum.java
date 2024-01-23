@@ -26,7 +26,8 @@ public enum MessaggiEnum {
     PRENOTAZIONE("le tue prenotazioni"),
     NOMERISTORANTE("Nome ristorante"),
     INDIRIZZO("Indirizzo"),
-    STATO("Stato");
+    STATO("Stato"),
+    MENU("Menù");
 
     private final String messaggio;
 

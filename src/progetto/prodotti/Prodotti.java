@@ -75,7 +75,7 @@ public abstract class Prodotti {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(CaratteriSpeEnum.APRIPARENTESI.getCarattere());
         for (AllergeniEnum allergeniEnum : allergeni) {
-            stringBuilder.append(allergeniEnum.stampaDescrizione());
+            stringBuilder.append(allergeniEnum.getDescrizione());
             stringBuilder.append(CaratteriSpeEnum.VIRGOLA.getCarattere());
             stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
 
@@ -89,6 +89,7 @@ public abstract class Prodotti {
     private StringBuilder StampaAllinea(String parte, CaratteriSpeEnum character, Double prezzo, Integer lunghezza) {
         StringBuilder stringBuilder = new StringBuilder(parte);
         int nChar = lunghezza - parte.length();
+        stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
         stringBuilder.append(character.getCarattere().repeat(Math.max(0, nChar)));
         stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
         if (prezzo == null) {

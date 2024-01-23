@@ -48,7 +48,7 @@ public class Pizza extends Prodotti {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(CaratteriSpeEnum.APRIPARENTESI.getCarattere());
         for (IngredientiPizzaEnum ingredientiPizzaEnum : ingredienti) {
-            stringBuilder.append(ingredientiPizzaEnum.stampaDescrizione());
+            stringBuilder.append(ingredientiPizzaEnum.getIngredientiPizzaEnum());
             stringBuilder.append(CaratteriSpeEnum.VIRGOLA.getCarattere());
             stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
 

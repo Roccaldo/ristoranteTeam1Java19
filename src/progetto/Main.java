@@ -159,8 +159,6 @@ public class Main {
             OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
 
             //add, remove
-            //IDEA si potrebbe istanziare la prenotazione direttamente nell'add, evitando passaggi extra
-            //bisognerebbe poi modificare il metodo remove e qualche altra cosa
             ristorante.addPrenotazione(new Prenotazione(cliente1, 10, date));
             ristorante.addPrenotazione(new Prenotazione(cliente2, 25, date));
             ristorante3.addPrenotazione(new Prenotazione(cliente3, 40, date));
