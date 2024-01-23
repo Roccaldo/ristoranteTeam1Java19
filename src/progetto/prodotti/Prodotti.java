@@ -99,7 +99,7 @@ public abstract class Prodotti {
             for (int i = 0; i < extra; i ++) {
                 stringBuilder.deleteCharAt(stringBuilder.length() - 1);
             }
-            return stringBuilder;
+            return stringBuilder.append(CaratteriSpeEnum.SPAZIO.getCarattere());
         }
     }
 
