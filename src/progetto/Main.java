@@ -155,25 +155,21 @@ public class Main {
             cliente1.dettagliCliente();
             cliente4.ristorantiConsigliati(registroRistoranti);
 
-            //creazione prenotazioni
+            //creazione orario
             OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
-            Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
-            Prenotazione prenotazione2 = new Prenotazione(cliente2, 25, date);
-            Prenotazione prenotazione3 = new Prenotazione(cliente3, 40, date);
 
             //add, remove
             //IDEA si potrebbe istanziare la prenotazione direttamente nell'add, evitando passaggi extra
             //bisognerebbe poi modificare il metodo remove e qualche altra cosa
-            ristorante.addPrenotazione(prenotazione1);
-            ristorante.addPrenotazione(prenotazione2);
-            ristorante3.addPrenotazione(prenotazione3);
-            ristorante3.removePrenotazione(prenotazione3);
+            ristorante.addPrenotazione(new Prenotazione(cliente1, 10, date));
+            ristorante.addPrenotazione(new Prenotazione(cliente2, 25, date));
+            ristorante3.addPrenotazione(new Prenotazione(cliente3, 40, date));
+            ristorante.addPrenotazione(new Prenotazione(cliente4, 2, date));
+            //ristorante3.removePrenotazione(prenotazione3);
+            ristorante.removePrenotazione(2);
             System.out.println();
             // visualizza tutte le prenotazioni del ristorante
             ristorante.visualizzaPrenotazioniRistorante();
-            System.out.println();
-            //visualizza dettagli della prenotazione
-            prenotazione3.dettagliPrenotazione();
             System.out.println();
             //visualizza prenotazione cliente
             System.out.println();

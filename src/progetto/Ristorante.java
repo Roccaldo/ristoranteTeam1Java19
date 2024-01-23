@@ -190,32 +190,28 @@ public class Ristorante {
     }
 
     //metodo per rimuovere una prenotazione
-    public void removePrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
+    public void removePrenotazione(Integer idPrenotazione) throws InvalidObjectException {
         //controllo se il registro contiene la prenotazione da rimuovere
-        if (registroPrenotazioni.containsKey(prenotazione)) {
-
-            //rimuovo la prenotazione
-            registroPrenotazioni.remove(prenotazione);
-            prenotazione.getClientePrenotazione().removePrenotazione(prenotazione);
-            System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA.getMessaggio());
-            //modifico posti liberi
-            setPostiLiberi(postiLiberi + prenotazione.getPostiOccupati());
-        } else {
-            throw new InvalidObjectException(MessaggiEnum.PRENOTAZIONEINESISTENTE.getMessaggio());
+        boolean isContenuto = false;
+        for (Prenotazione prenotazione : registroPrenotazioni.keySet()) {
+            if (prenotazione.getId().equals(idPrenotazione)) {
+                registroPrenotazioni.remove(prenotazione);
+                prenotazione.getClientePrenotazione().removePrenotazione(prenotazione);
+                System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA.getMessaggio());
+                isContenuto = true;
+                break;
+            }
         }
-
+            if (!isContenuto) {
+                throw new InvalidObjectException(MessaggiEnum.PRENOTAZIONEINESISTENTE.getMessaggio());
+            }
     }
 
     //metodo per visualizzare le prenotazioni del singolo ristorante
     public void visualizzaPrenotazioniRistorante() {
+        System.out.println(nome + CaratteriSpeEnum.APRIPARENTESI.getCarattere() + MessaggiEnum.PRENOTAZIONI.getMessaggio() + CaratteriSpeEnum.CHIUDIPARENTESI.getCarattere());
         for (Prenotazione element : registroPrenotazioni.keySet()) {
-            System.out.println(MessaggiEnum.NOMEPRENOTAZIONE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() +
-                    CaratteriSpeEnum.SPAZIO.getCarattere() + element.getClientePrenotazione().getCognome() +
-                    CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
-                    MessaggiEnum.COPERTI.getMessaggio()  + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
-                    element.getPostiOccupati() + CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
-                    MessaggiEnum.ORARIO.getMessaggio()  + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
-                    element.getOrario() + CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere());
+            element.dettagliPrenotazione();
         }
     }
 
