@@ -6,32 +6,32 @@ import java.util.ArrayList;
 
 public class Cliente {
 
-    private String cognome;
-    private Integer numeroPersone;
+    private String nome;
+    private Integer coperti;
     private TipoEnum menuPreferito;
     private ArrayList<Prenotazione> prenotazioni;
 
-    public Cliente(String cognome, Integer numeroPersone, TipoEnum menuPreferito) {
-        this.cognome = cognome;
-        this.numeroPersone = numeroPersone;
+    public Cliente(String nome, Integer coperti, TipoEnum menuPreferito) {
+        this.nome = nome;
+        this.coperti = coperti;
         this.menuPreferito = menuPreferito;
         this.prenotazioni = new ArrayList<>();
     }
 
-    public String getCognome() {
-        return cognome;
+    public String getNome() {
+        return nome;
     }
 
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int getNumeroPersone() {
-        return numeroPersone;
+    public int getCoperti() {
+        return coperti;
     }
 
-    public void setNumeroPersone(Integer numeroPersone) {
-        this.numeroPersone = numeroPersone;
+    public void setCoperti(Integer coperti) {
+        this.coperti = coperti;
     }
 
     public TipoEnum getMenuPreferito() {
@@ -56,10 +56,10 @@ public class Cliente {
 
     //Metodo stampa dettagli del cliente
     public void dettagliCliente() {
-        System.out.println(MessaggiEnum.CLIENTE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + cognome +
+        System.out.println(MessaggiEnum.CLIENTE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + nome +
                 CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
                 MessaggiEnum.COPERTI + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
-                numeroPersone + CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere());
+                coperti + CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere());
     }
 
     //Metodo per stampare i ristoranti che contengono il tipo di menu preferito del cliente

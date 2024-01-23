@@ -7,7 +7,6 @@ import java.io.InvalidObjectException;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
-import java.time.chrono.ChronoLocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -174,7 +173,7 @@ public class Ristorante {
     //metodo per aggiungere una prenotazione
     public void addPrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
         //controllo se il ristorante ha posti liberi
-        if (postiLiberi - prenotazione.getPostiOccupati() >= 0) {
+        if (postiLiberi - prenotazione.getCoperti() >= 0) {
             //controllo se la data è successiva ad adesso e se la prenotazione
             //non è già stata inserita
             if (prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
@@ -182,7 +181,7 @@ public class Ristorante {
                 registroPrenotazioni.put(prenotazione, prenotazione.getClientePrenotazione());
                 prenotazione.getClientePrenotazione().addPrenotazione(prenotazione);
                 //modifico posti liberi
-                setPostiLiberi(postiLiberi - prenotazione.getPostiOccupati());
+                setPostiLiberi(postiLiberi - prenotazione.getCoperti());
             } else {
                 throw new InvalidObjectException(MessaggiEnum.PRENOTAZIONENONVALIDA.getMessaggio());
             }

@@ -7,7 +7,7 @@ public class Prenotazione {
 
     private Cliente clientePrenotazione;
 
-    private Integer postiOccupati;
+    private Integer coperti;
 
     private OffsetDateTime orario;
     private Integer id;
@@ -15,10 +15,10 @@ public class Prenotazione {
 
 
     //Costruttore
-    public Prenotazione(Cliente nomePrenotazione, Integer postiOccupati, OffsetDateTime orario) {
+    public Prenotazione(Cliente nomePrenotazione, Integer coperti, OffsetDateTime orario) {
         counter++;
         this.clientePrenotazione = nomePrenotazione;
-        this.postiOccupati = postiOccupati;
+        this.coperti = coperti;
         this.orario = orario;
         this.id = counter;
     }
@@ -32,12 +32,12 @@ public class Prenotazione {
         this.clientePrenotazione = nomePrenotazione;
     }
 
-    public Integer getPostiOccupati() {
-        return postiOccupati;
+    public Integer getCoperti() {
+        return coperti;
     }
 
-    public void setPostiOccupati(Integer postiOccupati) {
-        this.postiOccupati = postiOccupati;
+    public void setCoperti(Integer coperti) {
+        this.coperti = coperti;
     }
 
     public OffsetDateTime getOrario() {
@@ -60,7 +60,7 @@ public class Prenotazione {
     public String toString() {
         return "progetto.Prenotazione{" +
                 "nomePrenotazione='" + clientePrenotazione + '\'' +
-                ", postiOccupati=" + postiOccupati +
+                ", postiOccupati=" + coperti +
                 ", orario=" + orario +
                 '}';
     }
@@ -68,9 +68,9 @@ public class Prenotazione {
     //Metodo Stampa dettagli della prenotazione
     public void dettagliPrenotazione() {
         System.out.println(MessaggiEnum.ID.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + id +
-                CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + clientePrenotazione.getCognome() + CaratteriSpeEnum.LINEA.getCarattere() +
+                CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + clientePrenotazione.getNome() + CaratteriSpeEnum.LINEA.getCarattere() +
                 CaratteriSpeEnum.SPAZIO.getCarattere() + MessaggiEnum.COPERTI.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() +
-                CaratteriSpeEnum.SPAZIO.getCarattere() + postiOccupati + CaratteriSpeEnum.LINEA.getCarattere() +
+                CaratteriSpeEnum.SPAZIO.getCarattere() + coperti + CaratteriSpeEnum.LINEA.getCarattere() +
                 CaratteriSpeEnum.SPAZIO.getCarattere() + MessaggiEnum.DATA.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() +
                 CaratteriSpeEnum.SPAZIO.getCarattere() + orario.format(DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm")) + CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere());
     }
