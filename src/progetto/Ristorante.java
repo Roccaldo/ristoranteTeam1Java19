@@ -27,7 +27,7 @@ public class Ristorante {
 
     private Integer postiLiberi;
 
-    private List<Prenotazione> prenotazioniList = new ArrayList<>();
+
 
     private ArrayList<Menu> menues = new ArrayList<>();
 
@@ -39,7 +39,8 @@ public class Ristorante {
     public Ristorante(String nome, String indirizzo, Integer numMaxPosti) {
         this.nome = nome;
         this.indirizzo = indirizzo;
-        this.orario = LocalDateTime.now();
+        //TODO non serve più
+        this.orario = orario;
         this.stato = determinaStato();
         this.numMaxPosti = numMaxPosti;
         this.postiLiberi = numMaxPosti;
@@ -95,14 +96,6 @@ public class Ristorante {
         this.postiLiberi = postiLiberi;
     }
 
-    public List<Prenotazione> getPrenotazioniList() {
-        return prenotazioniList;
-    }
-
-    public void setPrenotazioniList(List<Prenotazione> prenotazioniList) {
-        this.prenotazioniList = prenotazioniList;
-    }
-
     public ArrayList<Menu> getMenues() {
         return menues;
     }
@@ -121,7 +114,11 @@ public class Ristorante {
 
     //Metodo che determina lo stato del ristorante
     private StatoRistoranteEnum determinaStato() {
-        Integer oraAttuale = orario.getHour();
+
+
+        Integer oraAttuale = LocalDateTime.now().getHour();
+
+        //TODO inseriamo dei field che ci dicono ora apertura e chiusura
         Integer inizio = LocalTime.parse("08:00:00").getHour();
         Integer fine = LocalTime.parse("23:00:00").getHour();
         return oraAttuale >= inizio && oraAttuale <= fine ? StatoRistoranteEnum.APERTO : StatoRistoranteEnum.CHIUSO;
