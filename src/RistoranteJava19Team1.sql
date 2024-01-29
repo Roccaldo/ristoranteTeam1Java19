@@ -44,14 +44,6 @@ menu_id INT,
 portata_id VARCHAR(255)
 );
 
-CREATE TABLE contorni (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_contorno VARCHAR(255),
-prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255)
-);
-
 CREATE TABLE dessert (
 id INT AUTO_INCREMENT PRIMARY KEY,
 nomePiatto_dessert VARCHAR(255),
