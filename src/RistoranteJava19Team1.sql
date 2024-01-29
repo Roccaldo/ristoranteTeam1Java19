@@ -26,3 +26,46 @@ prezzo DECIMAL(10,2),
 menu_id INT,
 portata_id VARCHAR(255)
 );
+
+CREATE TABLE secondi (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nomePiatto_secondo VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT,
+portata_id VARCHAR(255),
+tipo_cottura VARCHAR(255)
+);
+
+CREATE TABLE contorni (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nomePiatto_contorno VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT,
+portata_id VARCHAR(255)
+);
+
+CREATE TABLE contorni (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nomePiatto_contorno VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT,
+portata_id VARCHAR(255)
+);
+
+CREATE TABLE dessert (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nomePiatto_dessert VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT,
+portata_id VARCHAR(255),
+calorie VARCHAR(255)
+);
+
+CREATE TABLE bibite (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nomePiatto_bibita VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT,
+portata_id VARCHAR(255),
+is_alcholic BOOLEAN
+);
