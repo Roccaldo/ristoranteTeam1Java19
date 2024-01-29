@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Cliente {
 
+    private Integer clienteId;
     private String nome;
     private Integer coperti;
     private TipoEnum menuPreferito;

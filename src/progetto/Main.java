@@ -174,6 +174,8 @@ public class Main {
             System.out.println();
             //visualizza dettagli ristorante
             ristorante.stampaDettagliRistorante();
+            ristorante2.stampaDettagliRistorante();
+            ristorante3.stampaDettagliRistorante();
             //Con il CLientePattern noi diamo la possibilità al cliente di compiere azioni
             System.out.println();
             GestioneClienteTemplatePattern sessione1 = new Prenota();

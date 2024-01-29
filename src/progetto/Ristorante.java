@@ -27,8 +27,8 @@ public class Ristorante {
 
     private Integer postiLiberi;
 
-
-
+    //private apertura
+    //private chiusura
     private ArrayList<Menu> menues = new ArrayList<>();
 
     private final Map<Prenotazione, Cliente> registroPrenotazioni = new HashMap<>();
@@ -114,10 +114,7 @@ public class Ristorante {
 
     //Metodo che determina lo stato del ristorante
     private StatoRistoranteEnum determinaStato() {
-
-
         Integer oraAttuale = LocalDateTime.now().getHour();
-
         //TODO inseriamo dei field che ci dicono ora apertura e chiusura
         Integer inizio = LocalTime.parse("08:00:00").getHour();
         Integer fine = LocalTime.parse("23:00:00").getHour();
