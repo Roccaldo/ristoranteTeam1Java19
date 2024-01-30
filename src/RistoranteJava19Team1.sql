@@ -91,3 +91,32 @@ CREATE TABLE portataAllergeni(
 id_portata INT,
 id_allergene INT
 );
+
+CREATE TABLE Ristorante (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome_ristorante VARCHAR (255),
+indirizzo VARCHAR (255),
+Stato VARCHAR (255),
+orario_apertura TIME,
+orario_chiusura TIME,
+max_posti INT,
+posti_liberi INT
+);
+
+CREATE TABLE Prenotazione (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome_cliente VARCHAR (255),
+coperti INT,
+orario DATETIME
+);
+
+CREATE TABLE Cliente (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome_menu VARCHAR (255),
+tipo_menu VARCHAR (255)
+);
+
+CREATE TABLE Calorie (
+id INT PRIMARY KEY AUTO_INCREMENT,
+livello_calorie VARCHAR (255)
+);
