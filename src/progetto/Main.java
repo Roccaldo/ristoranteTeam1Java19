@@ -6,18 +6,23 @@ import progetto.template.Prenota;
 import progetto.template.Recensione;
 import progetto.prodotti.*;
 
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
+import java.time.OffsetTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
         try {
+             DateTimeFormatter formatter2 = DateTimeFormatter.ISO_OFFSET_TIME;
             // Creazione di un ristorante
-            Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
-            Ristorante ristorante2 = new Ristorante("La Perla", "Via il Molo, 7", 30);
-            Ristorante ristorante3 = new Ristorante("Il Ghiottone", "Via Aldo moro, 9", 200);
+            Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50, OffsetTime.parse("09:00:00+01:00",formatter2),OffsetTime.parse("00:00:00+01:00",formatter2));
+            Ristorante ristorante2 = new Ristorante("La Perla", "Via il Molo, 7", 30,  OffsetTime.parse("09:00:00+00:00",formatter2),OffsetTime.parse("00:00:00+00:00",formatter2));
+            Ristorante ristorante3 = new Ristorante("Il Ghiottone", "Via Aldo moro, 9", 200,  OffsetTime.parse("09:00:00+00:00",formatter2),OffsetTime.parse("00:00:00+00:00",formatter2));
 
 
             //Creazione registro ristoranti
