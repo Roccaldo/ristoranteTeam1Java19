@@ -61,3 +61,33 @@ menu_id INT,
 portata_id VARCHAR(255),
 is_alcholic BOOLEAN
 );
+
+CREATE TABLE pizze(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nomePiatto_pizza VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT,
+portata_id VARCHAR(255),
+allergeni VARCHAR(255),
+tipo_impasto VARCHAR(255)
+);
+
+CREATE TABLE ingredienti(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome_ingrediente VARCHAR(255)
+);
+
+CREATE TABLE allergeni(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome_allergene VARCHAR(255)
+);
+
+CREATE TABLE pizzaIngredienti(
+id_pizza INT,
+id_ingrediente INT
+);
+
+CREATE TABLE portataAllergeni(
+id_portata INT,
+id_allergene INT
+);
