@@ -162,15 +162,14 @@ public class Ristorante {
     }
 
     //metodo per aggiungere una prenotazione
-    public void addPrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
+    public void addPrenotazione(Prenotazione prenotazione, Cliente cliente) throws InvalidObjectException {
         //controllo se il ristorante ha posti liberi
         if (postiLiberi - prenotazione.getCoperti() >= 0) {
             //controllo se la data è successiva ad adesso e se la prenotazione
             //non è già stata inserita
             if (prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
                 //aggiungo prenotazione
-                registroPrenotazioni.put(prenotazione, prenotazione.getClientePrenotazione());
-                prenotazione.getClientePrenotazione().addPrenotazione(prenotazione);
+                registroPrenotazioni.put(prenotazione, cliente);
                 //modifico posti liberi
                 setPostiLiberi(postiLiberi - prenotazione.getCoperti());
             } else {
@@ -185,13 +184,12 @@ public class Ristorante {
     }
 
     //metodo per rimuovere una prenotazione
-    public void removePrenotazione(Integer idPrenotazione) throws InvalidObjectException {
+    public void removePrenotazione(Prenotazione prenotaziones) throws InvalidObjectException {
         //controllo se il registro contiene la prenotazione da rimuovere
         boolean isContenuto = false;
         for (Prenotazione prenotazione : registroPrenotazioni.keySet()) {
-            if (prenotazione.getId().equals(idPrenotazione)) {
+            if (prenotazione.equals(prenotaziones)) {
                 registroPrenotazioni.remove(prenotazione);
-                prenotazione.getClientePrenotazione().removePrenotazione(prenotazione);
                 System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA.getMessaggio());
                 isContenuto = true;
                 break;

@@ -5,8 +5,6 @@ import progetto.prodotti.TipoEnum;
 import java.util.ArrayList;
 
 public class Cliente {
-
-    private Integer clienteId;
     private String nome;
     private Integer coperti;
     private TipoEnum menuPreferito;
@@ -77,11 +75,11 @@ public class Cliente {
         System.out.println();
     }
 
-    public void visualizzaPrenotazioni() {
+    /*public void visualizzaPrenotazioni() {
         System.out.println(MessaggiEnum.PRENOTAZIONE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() +
                 CaratteriSpeEnum.SPAZIO.getCarattere());
         for (Prenotazione prenotazione : prenotazioni) {
             prenotazione.dettagliPrenotazione();
         }
-    }
+    }*/
 }

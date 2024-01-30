@@ -9,6 +9,7 @@ import progetto.prodotti.*;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class Main {
 
             //Creazione delle portate
             Antipasti antipastoCarne1 = new Antipasti("Ravioli cinesi al vapore", 3.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.SOIA)));
-            Antipasti antipastoCarne2 = new Antipasti("Cornetti salati", 1.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI)));
+            Antipasti antipastoCarne2 = new Antipasti("Cornetti salati", 1.50, PortataEnum.ANTIPASTO, new ArrayList<>(List.of(AllergeniEnum.CEREALI)));
             PrimiPiatti primoPiattoCarne1 = new PrimiPiatti("Pappardelle al ragù di cinghiale", 14.76, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.UOVA)), TipoDiPastaEnum.GRANO);
             PrimiPiatti primoPiattoCarne2 = new PrimiPiatti("Mezzemaniche al pesto di peperoni e basilico con salsiccia", 22.30, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CEREALI, AllergeniEnum.UOVA)), TipoDiPastaEnum.INTEGRALE);
             Secondi secondoCarne1 = new Secondi("Pollo alla campagnola", 10.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.BEN_COTTA);
@@ -39,7 +40,7 @@ public class Main {
             Antipasti antipastoPesce1 = new Antipasti("Antipasto di mare", 4.50, PortataEnum.ANTIPASTO, new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI, AllergeniEnum.MOLLUSCHI)));
             Antipasti antipastoPesce2 = new Antipasti("Pepata di cozze", 6.40, PortataEnum.ANTIPASTO, null);
             PrimiPiatti primoPiattoPesce1 = new PrimiPiatti("Spaghetti allo scoglio", 14.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.PESCE, AllergeniEnum.CROSTACEI, AllergeniEnum.MOLLUSCHI)), TipoDiPastaEnum.RISO);
-            PrimiPiatti primoPiattoPesce2 = new PrimiPiatti("Linguine all'astice", 9.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(Arrays.asList(AllergeniEnum.CROSTACEI)), TipoDiPastaEnum.GRANO);
+            PrimiPiatti primoPiattoPesce2 = new PrimiPiatti("Linguine all'astice", 9.0, PortataEnum.PRIMOPIATTO, new ArrayList<>(List.of(AllergeniEnum.CROSTACEI)), TipoDiPastaEnum.GRANO);
             Secondi secondoPesce1 = new Secondi("Salmone croccante", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.STANDARD);
             Secondi secondoPesce2 = new Secondi("Polpettine di tonno e ricotta", 18.0, PortataEnum.SECONDOPIATTO, null, TipoCotturaEnum.STANDARD);
             Contorni contornoPesce1 = new Contorni("Insalata semplice", 1.50, PortataEnum.CONTORNO, null);
@@ -157,20 +158,24 @@ public class Main {
             //creazione orario
             OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
 
+            //creazione prenotazioni
+            Prenotazione prenotazione1 = new Prenotazione("Rossi", 10, date);
+            Prenotazione prenotazione2 = new Prenotazione("Verdi", 25, date);
+            Prenotazione prenotazione3 = new Prenotazione("Bianchi", 40, date);
+            Prenotazione prenotazione4 = new Prenotazione("Cassano",2, date);
+
             //add, remove
-            ristorante.addPrenotazione(new Prenotazione(cliente1, 10, date));
-            ristorante.addPrenotazione(new Prenotazione(cliente2, 25, date));
-            ristorante3.addPrenotazione(new Prenotazione(cliente3, 40, date));
-            ristorante.addPrenotazione(new Prenotazione(cliente4, 2, date));
-            //ristorante3.removePrenotazione(prenotazione3);
-            ristorante.removePrenotazione(2);
+            ristorante.addPrenotazione(prenotazione1, cliente1);
+            ristorante.addPrenotazione(prenotazione2, cliente2);
+            ristorante3.addPrenotazione(prenotazione3, cliente3);
+            ristorante.addPrenotazione(prenotazione4, cliente4);
+            ristorante3.removePrenotazione(prenotazione3);
+            ristorante.removePrenotazione(prenotazione2);
             System.out.println();
             // visualizza tutte le prenotazioni del ristorante
             ristorante.visualizzaPrenotazioniRistorante();
             System.out.println();
             //visualizza prenotazione cliente
-            System.out.println();
-            cliente1.visualizzaPrenotazioni();
             System.out.println();
             //visualizza dettagli ristorante
             ristorante.stampaDettagliRistorante();
