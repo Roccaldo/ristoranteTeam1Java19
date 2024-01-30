@@ -7,6 +7,7 @@ import java.io.InvalidObjectException;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,11 +22,13 @@ public class Ristorante {
 
     private StatoRistoranteEnum stato;
 
-    private LocalDateTime orario;
-
     private Integer numMaxPosti;
 
     private Integer postiLiberi;
+
+    private OffsetTime oraApertura;
+
+    private OffsetTime oraChiusura;
 
     //private apertura
     //private chiusura
@@ -35,15 +38,17 @@ public class Ristorante {
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
+
+
     //Costruttore
-    public Ristorante(String nome, String indirizzo, Integer numMaxPosti) {
+    public Ristorante(String nome, String indirizzo, Integer numMaxPosti,OffsetTime oraApertura, OffsetTime oraChiusura) {
         this.nome = nome;
         this.indirizzo = indirizzo;
-        //TODO non serve più
-        this.orario = orario;
         this.stato = determinaStato();
         this.numMaxPosti = numMaxPosti;
         this.postiLiberi = numMaxPosti;
+        this.oraApertura = oraApertura;
+        this.oraChiusura = oraChiusura;
 
     }
 
@@ -72,14 +77,6 @@ public class Ristorante {
         this.stato = stato;
     }
 
-    public LocalDateTime getOrario() {
-        return orario;
-    }
-
-    public void setOrario(LocalDateTime orario) {
-        this.orario = orario;
-    }
-
     public Integer getNumMaxPosti() {
         return numMaxPosti;
     }
@@ -94,6 +91,22 @@ public class Ristorante {
 
     public void setPostiLiberi(Integer postiLiberi) {
         this.postiLiberi = postiLiberi;
+    }
+
+    public OffsetTime getOraApertura() {
+        return oraApertura;
+    }
+
+    public void setOraApertura(OffsetTime oraApertura) {
+        this.oraApertura = oraApertura;
+    }
+
+    public OffsetTime getOraChiusura() {
+        return oraChiusura;
+    }
+
+    public void setOraChiusura(OffsetTime oraChiusura) {
+        this.oraChiusura = oraChiusura;
     }
 
     public ArrayList<Menu> getMenues() {
@@ -114,11 +127,12 @@ public class Ristorante {
 
     //Metodo che determina lo stato del ristorante
     private StatoRistoranteEnum determinaStato() {
-        Integer oraAttuale = LocalDateTime.now().getHour();
-        //TODO inseriamo dei field che ci dicono ora apertura e chiusura
-        Integer inizio = LocalTime.parse("08:00:00").getHour();
-        Integer fine = LocalTime.parse("23:00:00").getHour();
-        return oraAttuale >= inizio && oraAttuale <= fine ? StatoRistoranteEnum.APERTO : StatoRistoranteEnum.CHIUSO;
+        OffsetTime oraAttuale = OffsetTime.now();
+        if (oraAttuale.isAfter(oraApertura) && oraAttuale.isBefore(oraChiusura)) {
+            return StatoRistoranteEnum.APERTO;
+        } else {
+            return StatoRistoranteEnum.CHIUSO;
+        }
     }
 
     //Metodo che aggiunge il menu al ristorante
@@ -220,11 +234,12 @@ public class Ristorante {
 
     @Override
     public String toString() {
-        return "progetto.Ristorante{" +
+        return "Ristorante{" +
                 "nome='" + nome + '\'' +
                 ", indirizzo='" + indirizzo + '\'' +
-                ", stato='" + stato + '\'' +
-                ", orario=" + orario.format(formatter) +
+                ", stato=" + stato +
+                ", oraApertura=" + oraApertura +
+                ", oraChiusura=" + oraChiusura +
                 '}';
     }
 }
