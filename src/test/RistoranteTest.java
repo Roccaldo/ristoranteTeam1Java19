@@ -45,7 +45,7 @@ class RistoranteTest {
     @Test
     void addPrenotazione() throws InvalidObjectException {
         DateTimeFormatter formatter2 = DateTimeFormatter.ISO_OFFSET_TIME;
-        Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", OffsetTime.parse("12:00:00+00:00",formatter2),OffsetTime.parse("05:00:00+00:00",formatter2));
+        Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50,OffsetTime.parse("12:00:00+00:00",formatter2),OffsetTime.parse("05:00:00+00:00",formatter2));
         Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
         OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
         Prenotazione prenotazione1 = new Prenotazione("Rossi", 10, date);
