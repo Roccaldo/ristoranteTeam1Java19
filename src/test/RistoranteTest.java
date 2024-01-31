@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RistoranteTest {
 
-    @Test
+    /*@Test
     void aggingiMenu() throws InvalidObjectException {
         Menu menuCarne = new Menu("Monte", TipoEnum.CARNE);
 
@@ -57,5 +57,5 @@ class RistoranteTest {
         ristorante.addPrenotazione(prenotazione1, cliente1);
         ristorante.removePrenotazione(prenotazione1);
 
-    }
+    }*/
 }

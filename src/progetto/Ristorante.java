@@ -4,10 +4,7 @@ import progetto.prodotti.StatoRistoranteEnum;
 import progetto.prodotti.TipoEnum;
 
 import java.io.InvalidObjectException;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.OffsetTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,8 +16,6 @@ public class Ristorante {
     private String nome;
 
     private String indirizzo;
-
-    private StatoRistoranteEnum stato;
 
     private Integer numMaxPosti;
 
@@ -44,12 +39,10 @@ public class Ristorante {
     public Ristorante(String nome, String indirizzo, Integer numMaxPosti,OffsetTime oraApertura, OffsetTime oraChiusura) {
         this.nome = nome;
         this.indirizzo = indirizzo;
-        this.stato = determinaStato();
         this.numMaxPosti = numMaxPosti;
         this.postiLiberi = numMaxPosti;
         this.oraApertura = oraApertura;
         this.oraChiusura = oraChiusura;
-
     }
 
     //Getter e Setter
@@ -67,14 +60,6 @@ public class Ristorante {
 
     public void setIndirizzo(String indirizzo) {
         this.indirizzo = indirizzo;
-    }
-
-    public StatoRistoranteEnum getStato() {
-        return stato;
-    }
-
-    public void setStato(StatoRistoranteEnum stato) {
-        this.stato = stato;
     }
 
     public Integer getNumMaxPosti() {
@@ -125,13 +110,20 @@ public class Ristorante {
         this.formatter = formatter;
     }
 
-    //Metodo che determina lo stato del ristorante
-    private StatoRistoranteEnum determinaStato() {
-        OffsetTime oraAttuale = OffsetTime.now();
-        if (oraAttuale.isAfter(oraApertura) && oraAttuale.isBefore(oraChiusura)) {
-            return StatoRistoranteEnum.APERTO;
+    public void determinaStato() {
+        OffsetDateTime oraAttuale = OffsetDateTime.now();
+        OffsetDateTime oraA = OffsetDateTime.of(LocalDate.from(oraAttuale), LocalTime.from(oraApertura), ZoneOffset.UTC);
+        OffsetDateTime oraC = OffsetDateTime.of(LocalDate.from(oraAttuale), LocalTime.from(oraChiusura), ZoneOffset.UTC);
+        if (oraC.isBefore(oraA)) {
+            oraC = oraC.plusDays(1);
+            oraAttuale = oraAttuale.plusDays(1);
+        }
+        if (oraAttuale.isAfter(oraA) && oraAttuale.isBefore(oraC)) {
+            System.out.println(MessaggiEnum.STATO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
+                    + CaratteriSpeEnum.SPAZIO.getCarattere() + StatoRistoranteEnum.APERTO.getStato());
         } else {
-            return StatoRistoranteEnum.CHIUSO;
+            System.out.println(MessaggiEnum.STATO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
+                    + CaratteriSpeEnum.SPAZIO.getCarattere() + StatoRistoranteEnum.CHIUSO.getStato());
         }
     }
 
@@ -228,8 +220,7 @@ public class Ristorante {
                 + CaratteriSpeEnum.SPAZIO.getCarattere() + nome);
         System.out.println(MessaggiEnum.INDIRIZZO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
                 + CaratteriSpeEnum.SPAZIO.getCarattere() + indirizzo);
-        System.out.println(MessaggiEnum.STATO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
-                + CaratteriSpeEnum.SPAZIO.getCarattere() + stato.getStato());
+        determinaStato();
     }
 
     @Override
@@ -237,7 +228,6 @@ public class Ristorante {
         return "Ristorante{" +
                 "nome='" + nome + '\'' +
                 ", indirizzo='" + indirizzo + '\'' +
-                ", stato=" + stato +
                 ", oraApertura=" + oraApertura +
                 ", oraChiusura=" + oraChiusura +
                 '}';

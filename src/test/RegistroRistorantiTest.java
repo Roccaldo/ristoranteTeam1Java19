@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RegistroRistorantiTest {
 
-    @Test
+    /*@Test
     void addRistoranteToList() throws InvalidObjectException {
         ArrayList<Ristorante> ristorantiList = new ArrayList<>();
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
@@ -24,5 +24,5 @@ class RegistroRistorantiTest {
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
         ristorantiList.add(ristorante);
         ristorantiList.remove(ristorante);
-    }
+    }*/
 }

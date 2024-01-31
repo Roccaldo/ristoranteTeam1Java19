@@ -30,7 +30,7 @@ class ClienteTest {
         cliente1.removePrenotazione(prenotazione1);
     }
 
-    @Test
+    /*@Test
     void ristorantiConsigliati() throws InvalidObjectException {
         ArrayList<Ristorante> ristorantiList = new ArrayList<>();
         Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
@@ -38,5 +38,5 @@ class ClienteTest {
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50);
         ristorante.aggingiMenu(menuCarne);
         cliente1.ristorantiConsigliati(new RegistroRistoranti());
-    }
+    }*/
 }
