@@ -120,3 +120,23 @@ CREATE TABLE Calorie (
 id INT PRIMARY KEY AUTO_INCREMENT,
 livello_calorie VARCHAR (255)
 );
+
+CREATE TABLE tipoCottura(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome_tipoCottura VARCHAR(255)
+);
+
+CREATE TABLE tipoPasta(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome_tipoPasta VARCHAR(255)
+);
+
+CREATE TABLE tipoImpasto(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome_tipoImpasto VARCHAR(255)
+);
+
+CREATE TABLE statoRistorante(
+id INT AUTO_INCREMENT PRIMARY KEY,
+stato VARCHAR(255)
+);
