@@ -8,7 +8,7 @@ public class Cliente {
     private String nome;
     private Integer coperti;
     private TipoEnum menuPreferito;
-    private ArrayList<Prenotazione> prenotazioni;
+    private final ArrayList<Prenotazione> prenotazioni;
 
     public Cliente(String nome, Integer coperti, TipoEnum menuPreferito) {
         this.nome = nome;
@@ -75,11 +75,11 @@ public class Cliente {
         System.out.println();
     }
 
-    /*public void visualizzaPrenotazioni() {
+    public void visualizzaPrenotazioni() {
         System.out.println(MessaggiEnum.PRENOTAZIONE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() +
                 CaratteriSpeEnum.SPAZIO.getCarattere());
         for (Prenotazione prenotazione : prenotazioni) {
             prenotazione.dettagliPrenotazione();
         }
-    }*/
+    }
 }

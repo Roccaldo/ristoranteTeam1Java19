@@ -164,16 +164,16 @@ public class Main {
             OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
 
             //creazione prenotazioni
-            Prenotazione prenotazione1 = new Prenotazione("Rossi", 10, date);
-            Prenotazione prenotazione2 = new Prenotazione("Verdi", 25, date);
-            Prenotazione prenotazione3 = new Prenotazione("Bianchi", 40, date);
-            Prenotazione prenotazione4 = new Prenotazione("Cassano",2, date);
+            Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
+            Prenotazione prenotazione2 = new Prenotazione(cliente2, 25, date);
+            Prenotazione prenotazione3 = new Prenotazione(cliente3, 40, date);
+            Prenotazione prenotazione4 = new Prenotazione(cliente4,2, date);
 
             //add, remove
-            ristorante.addPrenotazione(prenotazione1, cliente1);
-            ristorante.addPrenotazione(prenotazione2, cliente2);
-            ristorante3.addPrenotazione(prenotazione3, cliente3);
-            ristorante.addPrenotazione(prenotazione4, cliente4);
+            ristorante.addPrenotazione(prenotazione1);
+            ristorante.addPrenotazione(prenotazione2);
+            ristorante3.addPrenotazione(prenotazione3);
+            ristorante.addPrenotazione(prenotazione4);
             ristorante3.removePrenotazione(prenotazione3);
             ristorante.removePrenotazione(prenotazione2);
             System.out.println();
@@ -181,6 +181,7 @@ public class Main {
             ristorante.visualizzaPrenotazioniRistorante();
             System.out.println();
             //visualizza prenotazione cliente
+            cliente1.visualizzaPrenotazioni();
             System.out.println();
             //visualizza dettagli ristorante
             ristorante.stampaDettagliRistorante();

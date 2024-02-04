@@ -14,35 +14,24 @@ import java.util.Map;
 
 public class Ristorante {
     private String nome;
-
     private String indirizzo;
-
     private Integer numMaxPosti;
-
     private Integer postiLiberi;
-
     private OffsetTime oraApertura;
-
     private OffsetTime oraChiusura;
-
-    //private apertura
-    //private chiusura
     private ArrayList<Menu> menues = new ArrayList<>();
-
-    private final Map<Prenotazione, Cliente> registroPrenotazioni = new HashMap<>();
-
+    private final ArrayList<Prenotazione> registroPrenotazioni;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-
-
     //Costruttore
-    public Ristorante(String nome, String indirizzo, Integer numMaxPosti,OffsetTime oraApertura, OffsetTime oraChiusura) {
+    public Ristorante(String nome, String indirizzo, Integer numMaxPosti, OffsetTime oraApertura, OffsetTime oraChiusura) {
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.numMaxPosti = numMaxPosti;
         this.postiLiberi = numMaxPosti;
         this.oraApertura = oraApertura;
         this.oraChiusura = oraChiusura;
+        this.registroPrenotazioni = new ArrayList<>();
     }
 
     //Getter e Setter
@@ -171,14 +160,15 @@ public class Ristorante {
     }
 
     //metodo per aggiungere una prenotazione
-    public void addPrenotazione(Prenotazione prenotazione, Cliente cliente) throws InvalidObjectException {
+    public void addPrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
         //controllo se il ristorante ha posti liberi
         if (postiLiberi - prenotazione.getCoperti() >= 0) {
             //controllo se la data è successiva ad adesso e se la prenotazione
             //non è già stata inserita
-            if (prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.containsKey(prenotazione)) {
+            if (prenotazione.getOrario().isAfter(OffsetDateTime.now()) && !registroPrenotazioni.contains(prenotazione)) {
                 //aggiungo prenotazione
-                registroPrenotazioni.put(prenotazione, cliente);
+                registroPrenotazioni.add(prenotazione);
+                prenotazione.getClientePrenotazione().getPrenotazioni().add(prenotazione);
                 //modifico posti liberi
                 setPostiLiberi(postiLiberi - prenotazione.getCoperti());
             } else {
@@ -193,12 +183,13 @@ public class Ristorante {
     }
 
     //metodo per rimuovere una prenotazione
-    public void removePrenotazione(Prenotazione prenotaziones) throws InvalidObjectException {
+    public void removePrenotazione(Prenotazione prenotazione) throws InvalidObjectException {
         //controllo se il registro contiene la prenotazione da rimuovere
         boolean isContenuto = false;
-        for (Prenotazione prenotazione : registroPrenotazioni.keySet()) {
-            if (prenotazione.equals(prenotaziones)) {
-                registroPrenotazioni.remove(prenotazione);
+        for (Prenotazione prenotazioneC : registroPrenotazioni) {
+            if (prenotazioneC.equals(prenotazione)) {
+                registroPrenotazioni.remove(prenotazioneC);
+                prenotazione.getClientePrenotazione().getPrenotazioni().remove(prenotazione);
                 System.out.println(MessaggiEnum.PRENOTAZIONERIMOSSA.getMessaggio());
                 isContenuto = true;
                 break;
@@ -212,8 +203,8 @@ public class Ristorante {
     //metodo per visualizzare le prenotazioni del singolo ristorante
     public void visualizzaPrenotazioniRistorante() {
         System.out.println(nome + CaratteriSpeEnum.APRIPARENTESI.getCarattere() + MessaggiEnum.PRENOTAZIONI.getMessaggio() + CaratteriSpeEnum.CHIUDIPARENTESI.getCarattere());
-        for (Prenotazione element : registroPrenotazioni.keySet()) {
-            element.dettagliPrenotazione();
+        for (Prenotazione prenotazione : registroPrenotazioni) {
+            prenotazione.dettagliPrenotazione();
         }
     }
 

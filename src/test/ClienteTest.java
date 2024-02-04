@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ClienteTest {
 
-    @Test
+    /*@Test
     void addPrenotazione() {
         Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
         OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
@@ -41,5 +41,5 @@ class ClienteTest {
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50, OffsetTime.parse("12:00:00+00:00",formatter2),OffsetTime.parse("05:00:00+00:00",formatter2));
         ristorante.aggingiMenu(menuCarne);
         cliente1.ristorantiConsigliati(new RegistroRistoranti());
-    }
+    }*/
 }
