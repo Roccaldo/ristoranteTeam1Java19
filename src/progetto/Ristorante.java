@@ -110,15 +110,18 @@ public class Ristorante {
         this.formatter = formatter;
     }
 
-    public void determinaStato() {
+    public boolean determinaStato() {
         OffsetDateTime oraAttuale = OffsetDateTime.now();
         OffsetDateTime oraA = OffsetDateTime.of(LocalDate.from(oraAttuale), LocalTime.from(oraApertura), ZoneOffset.UTC);
         OffsetDateTime oraC = OffsetDateTime.of(LocalDate.from(oraAttuale), LocalTime.from(oraChiusura), ZoneOffset.UTC);
         if (oraC.isBefore(oraA)) {
             oraC = oraC.plusDays(1);
-            oraAttuale = oraAttuale.plusDays(1);
         }
-        if (oraAttuale.isAfter(oraA) && oraAttuale.isBefore(oraC)) {
+        return oraAttuale.isAfter(oraA) && oraAttuale.isBefore(oraC);
+    }
+
+    public void stampaStato() {
+        if (determinaStato()) {
             System.out.println(MessaggiEnum.STATO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
                     + CaratteriSpeEnum.SPAZIO.getCarattere() + StatoRistoranteEnum.APERTO.getStato());
         } else {
@@ -220,7 +223,7 @@ public class Ristorante {
                 + CaratteriSpeEnum.SPAZIO.getCarattere() + nome);
         System.out.println(MessaggiEnum.INDIRIZZO.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere()
                 + CaratteriSpeEnum.SPAZIO.getCarattere() + indirizzo);
-        determinaStato();
+        stampaStato();
     }
 
     @Override
