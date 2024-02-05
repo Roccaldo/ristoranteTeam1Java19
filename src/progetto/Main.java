@@ -165,7 +165,7 @@ public class Main {
 
             //creazione prenotazioni
             Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
-            Prenotazione prenotazione2 = new Prenotazione(cliente2, 25, date);
+            Prenotazione prenotazione2 = new Prenotazione(cliente1, 25, date);
             Prenotazione prenotazione3 = new Prenotazione(cliente3, 40, date);
             Prenotazione prenotazione4 = new Prenotazione(cliente4,2, date);
 
@@ -197,6 +197,12 @@ public class Main {
             System.out.println();
             GestioneClienteTemplatePattern sessione3 = new Recensione();
             sessione3.azione();
+            System.out.println();
+            ristorante.checkPrenotazione(prenotazione1);
+            ristorante.checkPrenotazione(prenotazione2);
+            cliente1.addRewardToPortafoglio(prenotazione1,new PuntoReward(50));
+            cliente1.addRewardToPortafoglio(prenotazione2,new PuntoReward(50));
+            cliente1.stampaPortafoglioReward();
         } catch (Exception e) {
             System.out.println(e);
         }

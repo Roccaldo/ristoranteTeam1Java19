@@ -12,7 +12,7 @@ public class Menu {
 
     private String nomeMenu;
 
-    private ArrayList<Prodotti> menu = new ArrayList<>();
+    private ArrayList<Prodotti> portateList = new ArrayList<>();
 
     private TipoEnum tipoMenu;
 
@@ -34,12 +34,12 @@ public class Menu {
         this.nomeMenu = nomeMenu;
     }
 
-    public ArrayList<Prodotti> getMenu() {
-        return menu;
+    public ArrayList<Prodotti> getPortateList() {
+        return portateList;
     }
 
-    public void setMenu(ArrayList<Prodotti> menu) {
-        this.menu = menu;
+    public void setPortateList(ArrayList<Prodotti> portateList) {
+        this.portateList = portateList;
     }
 
     public TipoEnum getTipoMenu() {
@@ -72,7 +72,7 @@ public class Menu {
     //Metodo che differenzia le portate all'interno della stampa e le mette in lista
     public void stampaSeContenuto(PortataEnum portataEnum) {
         boolean contenuto = false;
-        for (Prodotti prodotti : menu) {
+        for (Prodotti prodotti : portateList) {
             if (prodotti.getPortata().equals(portataEnum)) {
                 contenuto = true;
                 break;
@@ -80,7 +80,7 @@ public class Menu {
         }
         if (contenuto) {
             System.out.println(portataEnum.getPortata());
-            for (Prodotti prodotti : menu) {
+            for (Prodotti prodotti : portateList) {
                 if (prodotti.getPortata().equals(portataEnum)) {
                     prodotti.stampaDettagli();
                 }
@@ -91,17 +91,17 @@ public class Menu {
 
     //Metodo Aggiungi piatto al menu
     public void aggiungiPiatto(Prodotti prodotto) throws InvalidObjectException {
-        if (menu.contains(prodotto)) {
+        if (portateList.contains(prodotto)) {
             throw new InvalidObjectException(MessaggiEnum.PRODOTTOPRESENTE.getMessaggio());
         } else {
-            menu.add(prodotto);
+            portateList.add(prodotto);
         }
     }
 
     //Metodo Rimuovi piatto al menu
     public void rimuoviPiatto(Prodotti prodotto) throws InvalidObjectException {
-        if (menu.contains(prodotto)) {
-            menu.remove(prodotto);
+        if (portateList.contains(prodotto)) {
+            portateList.remove(prodotto);
             System.out.println(MessaggiEnum.PRODOTTORIMOSSO.getMessaggio());
         } else {
             throw new InvalidObjectException(MessaggiEnum.PRODOTTONONPRESENTE.getMessaggio());
@@ -113,12 +113,12 @@ public class Menu {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Menu menu1 = (Menu) o;
-        return Objects.equals(nomeMenu, menu1.nomeMenu) && Objects.equals(menu, menu1.menu) && tipoMenu == menu1.tipoMenu;
+        return Objects.equals(nomeMenu, menu1.nomeMenu) && Objects.equals(portateList, menu1.portateList) && tipoMenu == menu1.tipoMenu;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nomeMenu, menu, tipoMenu);
+        return Objects.hash(nomeMenu, portateList, tipoMenu);
     }
 }
 

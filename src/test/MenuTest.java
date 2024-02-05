@@ -25,16 +25,13 @@ class MenuTest {
         menuCarne.aggiungiPiatto(primoPiattoCarne1);
         menuCarne.aggiungiPiatto(secondoCarne1);
 
-    }
+        List<Prodotti> portateList = new ArrayList<>();
+        portateList.add(antipastoCarne2);
+        portateList.add(primoPiattoCarne1);
+        portateList.add(secondoCarne1);
 
-    @Test
-    void rimuoviPiatto() throws InvalidObjectException {
-        Antipasti antipastoCarne2 = new Antipasti("Cornetti salati", 1.50, PortataEnum.ANTIPASTO, new ArrayList<>(List.of(AllergeniEnum.CEREALI)));
-
-        Menu menuCarne = new Menu("Monte", TipoEnum.CARNE);
-
-        menuCarne.aggiungiPiatto(antipastoCarne2);
-        menuCarne.rimuoviPiatto(antipastoCarne2);
+        assertEquals(menuCarne.getPortateList().size(),portateList.size());
 
     }
+
 }

@@ -10,6 +10,8 @@ public class Prenotazione {
     private Integer id;
     private static Integer counter = 0;
 
+    private boolean completed;
+
 
     //Costruttore
     public Prenotazione(Cliente clientePrenotazione, Integer coperti, OffsetDateTime orario) {
@@ -18,6 +20,7 @@ public class Prenotazione {
         this.coperti = coperti;
         this.orario = orario;
         this.id = counter;
+        this.completed = false;
     }
 
     //Getter e Setter
@@ -54,12 +57,22 @@ public class Prenotazione {
         this.id = id;
     }
 
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
     @Override
     public String toString() {
-        return "progetto.Prenotazione{" +
-                "nomePrenotazione='" + clientePrenotazione + '\'' +
-                ", postiOccupati=" + coperti +
+        return "Prenotazione{" +
+                "clientePrenotazione=" + clientePrenotazione +
+                ", coperti=" + coperti +
                 ", orario=" + orario +
+                ", id=" + id +
+                ", completed=" + completed +
                 '}';
     }
 

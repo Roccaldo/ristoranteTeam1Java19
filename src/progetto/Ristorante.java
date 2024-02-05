@@ -99,6 +99,10 @@ public class Ristorante {
         this.formatter = formatter;
     }
 
+    public ArrayList<Prenotazione> getRegistroPrenotazioni() {
+        return registroPrenotazioni;
+    }
+
     public boolean determinaStato() {
         OffsetDateTime oraAttuale = OffsetDateTime.now();
         OffsetDateTime oraA = OffsetDateTime.of(LocalDate.from(oraAttuale), LocalTime.from(oraApertura), ZoneOffset.UTC);
@@ -207,6 +211,12 @@ public class Ristorante {
             prenotazione.dettagliPrenotazione();
         }
     }
+
+    public void checkPrenotazione(Prenotazione prenotazione) {
+        prenotazione.setCompleted(true);
+        System.out.println(MessaggiEnum.COMPLETED);
+    }
+
 
     public void stampaDettagliRistorante() {
         System.out.println();

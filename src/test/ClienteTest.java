@@ -9,28 +9,26 @@ import java.time.OffsetDateTime;
 import java.time.OffsetTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClienteTest {
 
-    /*@Test
+    @Test
     void addPrenotazione() {
         Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
         OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
-        Prenotazione prenotazione1 = new Prenotazione("Rossi", 10, date);
+        Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
         cliente1.addPrenotazione(prenotazione1);
+
+        List<Prenotazione> prenotazioneList = new ArrayList<>();
+        prenotazioneList.add(prenotazione1);
+
+        assertEquals(cliente1.getPrenotazioni().size(),prenotazioneList.size());
 
     }
 
-    @Test
-    void removePrenotazione() {
-        Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
-        OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
-        Prenotazione prenotazione1 = new Prenotazione("Rossi", 10, date);
-        cliente1.addPrenotazione(prenotazione1);
-        cliente1.removePrenotazione(prenotazione1);
-    }
 
     @Test
     void ristorantiConsigliati() throws InvalidObjectException {
@@ -41,5 +39,10 @@ class ClienteTest {
         Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50, OffsetTime.parse("12:00:00+00:00",formatter2),OffsetTime.parse("05:00:00+00:00",formatter2));
         ristorante.aggingiMenu(menuCarne);
         cliente1.ristorantiConsigliati(new RegistroRistoranti());
-    }*/
+
+        List<Ristorante> ristoranteList = new ArrayList<>();
+        ristoranteList.add(ristorante);
+
+        assertEquals(ristorante.getMenues().size(), ristoranteList.size());
+    }
 }

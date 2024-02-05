@@ -3,18 +3,22 @@ package progetto;
 import progetto.prodotti.TipoEnum;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Cliente {
     private String nome;
     private Integer coperti;
     private TipoEnum menuPreferito;
     private final ArrayList<Prenotazione> prenotazioni;
+    private List<PuntoReward> portafoglioReward;
 
     public Cliente(String nome, Integer coperti, TipoEnum menuPreferito) {
         this.nome = nome;
         this.coperti = coperti;
         this.menuPreferito = menuPreferito;
         this.prenotazioni = new ArrayList<>();
+        this.portafoglioReward = new LinkedList<>();
     }
 
     public String getNome() {
@@ -45,6 +49,10 @@ public class Cliente {
         return prenotazioni;
     }
 
+    public List<PuntoReward> getPortafoglioReward() {
+        return portafoglioReward;
+    }
+
     public void addPrenotazione(Prenotazione prenotazione) {
         prenotazioni.add(prenotazione);
     }
@@ -52,6 +60,7 @@ public class Cliente {
     public void removePrenotazione(Prenotazione prenotazione) {
         prenotazioni.remove(prenotazione);
     }
+
 
     //Metodo stampa dettagli del cliente
     public void dettagliCliente() {
@@ -73,6 +82,24 @@ public class Cliente {
             }
         }
         System.out.println();
+    }
+
+    public void addRewardToPortafoglio(Prenotazione prenotazione, PuntoReward puntoReward){
+        for(Prenotazione prenotazioneEs : prenotazioni){
+            if(prenotazione.isCompleted()){
+                portafoglioReward.add(puntoReward);
+            }
+        }
+
+    }
+
+    public void stampaPortafoglioReward(){
+        Integer somma = 0;
+        for(PuntoReward puntoReward : portafoglioReward){}
+            System.out.println(portafoglioReward.size());
+        for (PuntoReward puntoReward : portafoglioReward) {
+            somma += puntoReward.getValore();
+        }   System.out.println(somma);
     }
 
     public void visualizzaPrenotazioni() {
