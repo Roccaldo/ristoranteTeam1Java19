@@ -95,11 +95,10 @@ public class Cliente {
 
     public void stampaPortafoglioReward(){
         Integer somma = 0;
-        for(PuntoReward puntoReward : portafoglioReward){}
-            System.out.println(portafoglioReward.size());
+        System.out.println("Punti raccolti: " + portafoglioReward.size());
         for (PuntoReward puntoReward : portafoglioReward) {
             somma += puntoReward.getValore();
-        }   System.out.println(somma);
+        }   System.out.println("Valore del portafoglio: " + somma);
     }
 
     public void visualizzaPrenotazioni() {

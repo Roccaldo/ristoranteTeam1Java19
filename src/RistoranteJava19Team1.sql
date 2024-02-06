@@ -68,7 +68,6 @@ nomePiatto_pizza VARCHAR(255),
 prezzo DECIMAL(10,2),
 menu_id INT,
 portata_id VARCHAR(255),
-allergeni VARCHAR(255),
 tipo_impasto VARCHAR(255)
 );
 
