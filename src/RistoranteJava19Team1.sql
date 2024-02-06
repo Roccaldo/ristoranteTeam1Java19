@@ -157,3 +157,27 @@ FOREIGN KEY(id_cliente) REFERENCES cliente(id);
 ALTER TABLE menu
 ADD CONSTRAINT FK_MenuAntipasto
 FOREIGN KEY(id) REFERENCES antipasto(menu_id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_MenuPrimi
+FOREIGN KEY(id) REFERENCES primo(menu_id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_MenuSecondi
+FOREIGN KEY(id) REFERENCES secondi(menu_id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_MenuContorno
+FOREIGN KEY(id) REFERENCES contorni(menu_id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_MenuDessert
+FOREIGN KEY(id) REFERENCES dessert(menu_id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_MenuBibite
+FOREIGN KEY(id) REFERENCES bibite(menu_id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_MenuPizza
+FOREIGN KEY(id) REFERENCES pizze(menu_id);
