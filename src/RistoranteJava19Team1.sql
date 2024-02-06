@@ -146,38 +146,103 @@ ALTER TABLE menu
 ADD CONSTRAINT FK_MenuRistorante
 FOREIGN KEY(ristorante_id) REFERENCES ristorante(id);
 
-ALTER TABLE ristorante
-ADD CONSTRAINT FK_RistorantePrenotazione
-FOREIGN KEY(id) REFERENCES prenotazione(id_ristorante);
+--ALTER TABLE ristorante
+--ADD CONSTRAINT FK_RistorantePrenotazione
+--FOREIGN KEY(id) REFERENCES prenotazione(id_ristorante);
+ALTER TABLE prenotazione
+ADD CONSTRAINT FK_PrenotazioneRistorante
+FOREIGN KEY(id_ristorante) REFERENCES prenotazione(id);
+
 
 ALTER TABLE prenotazione
 ADD CONSTRAINT FK_PrenotazioneCliente
 FOREIGN KEY(id_cliente) REFERENCES cliente(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuAntipasto
-FOREIGN KEY(id) REFERENCES antipasto(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuAntipasto
+--FOREIGN KEY(id) REFERENCES antipasto(menu_id);
+ALTER TABLE antipasto
+ADD CONSTRAINT FK_AntipastoMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuPrimi
-FOREIGN KEY(id) REFERENCES primo(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuPrimi
+--FOREIGN KEY(id) REFERENCES primo(menu_id);
+ALTER TABLE primo
+ADD CONSTRAINT FK_PrimiMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuSecondi
-FOREIGN KEY(id) REFERENCES secondi(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuSecondi
+--FOREIGN KEY(id) REFERENCES secondi(menu_id);
+ALTER TABLE secondi
+ADD CONSTRAINT FK_SecondiMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuContorno
-FOREIGN KEY(id) REFERENCES contorni(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuContorno
+--FOREIGN KEY(id) REFERENCES contorni(menu_id);
+ALTER TABLE contorni
+ADD CONSTRAINT FK_ContornoMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuDessert
-FOREIGN KEY(id) REFERENCES dessert(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuDessert
+--FOREIGN KEY(id) REFERENCES dessert(menu_id);
+ALTER TABLE dessert
+ADD CONSTRAINT FK_DessertMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuBibite
-FOREIGN KEY(id) REFERENCES bibite(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuBibite
+--FOREIGN KEY(id) REFERENCES bibite(menu_id);
+ALTER TABLE bibite
+ADD CONSTRAINT FK_BibiteMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
 
-ALTER TABLE menu
-ADD CONSTRAINT FK_MenuPizza
-FOREIGN KEY(id) REFERENCES pizze(menu_id);
+--ALTER TABLE menu
+--ADD CONSTRAINT FK_MenuPizza
+--FOREIGN KEY(id) REFERENCES pizze(menu_id);
+ALTER TABLE pizze
+ADD CONSTRAINT FK_PizzaMenu
+FOREIGN KEY(menu_id) REFERENCES menu(id);
+
+ALTER TABLE pizzaingredienti
+ADD CONSTRAINT FK_Pizza
+FOREIGN KEY(id_pizza) REFERENCES pizze(id);
+
+ALTER TABLE pizzaingredienti
+ADD CONSTRAINT FK_Ingredienti
+FOREIGN KEY(id_pizza) REFERENCES ingredienti(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Antipasto
+FOREIGN KEY(id_portata) REFERENCES antipasto(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Primo
+FOREIGN KEY(id_portata) REFERENCES primo(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Secondi
+FOREIGN KEY(id_portata) REFERENCES secondi(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Contorni
+FOREIGN KEY(id_portata) REFERENCES contorni(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Dessert
+FOREIGN KEY(id_portata) REFERENCES dessert(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Bibite
+FOREIGN KEY(id_portata) REFERENCES bibite(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Pizze
+FOREIGN KEY(id_portata) REFERENCES pizze(id);
+
+ALTER TABLE portataallergeni
+ADD CONSTRAINT FK_Allergene
+FOREIGN KEY(id_allergene) REFERENCES allergeni(id);
