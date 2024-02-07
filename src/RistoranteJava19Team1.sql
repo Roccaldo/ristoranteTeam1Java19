@@ -1,14 +1,13 @@
 CREATE TABLE menu(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome_menu VARCHAR(255),
-tipo_menu VARCHAR(255),
+tipo_menu INT,
 ristorante_id INT
 );
 
 CREATE TABLE tipoMenu(
 id INT AUTO_INCREMENT PRIMARY KEY,
-nome_tipoMenu VARCHAR(255),
-menu_id INT
+nome_tipoMenu VARCHAR(255)
 );
 
 CREATE TABLE antipasto(
@@ -246,3 +245,19 @@ FOREIGN KEY(id_portata) REFERENCES pizze(id);
 ALTER TABLE portataallergeni
 ADD CONSTRAINT FK_Allergene
 FOREIGN KEY(id_allergene) REFERENCES allergeni(id);
+
+ALTER TABLE menu
+ADD CONSTRAINT FK_TipoMenu
+FOREIGN KEY(tipo_menu) REFERENCES tipomenu(id);
+
+INSERT INTO ristorante(nome_ristorante, indirizzo, orario_apertura, orario_chiusura, max_posti, posti_liberi)
+VALUES ('Team Java19', 'Via Sparsi Per l\' Italia, 5', '17:00:00', '06:00:00', 50, 50),
+('La Perla', 'Via il Molo, 7', '06:00:00', '03:00:00', 30, 30),
+('Il Ghiottone', 'Via Aldo moro, 9', '09:00:00', '00:00:00', 200, 200);
+
+INSERT INTO tipomenu(nome_tipoMenu)
+VALUES ('Carne'), ('Pesce'), ('Vegano'), ('Pizza'), ('Bibite');
+
+INSERT INTO menu(nome_menu, tipo_menu, ristorante_id)
+VALUES ('Monte', 1, 1), ('Monte', 1, 3), ('Amici della natura', 3, 1), ('Amici della natura', 3, 3),
+ ('Mare', 2, 1),  ('Mare', 2, 2), ('Pizza', 4, 1), ('Bibite', 5, 1), ('Bibite', 5, 2), ('Bibite', 5, 3);
