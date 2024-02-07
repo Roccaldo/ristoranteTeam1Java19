@@ -23,7 +23,8 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 nomePiatto_primo VARCHAR(255),
 prezzo DECIMAL(10,2),
 menu_id INT,
-portata_id VARCHAR(255)
+portata_id VARCHAR(255),
+tipo_pasta INT
 );
 
 CREATE TABLE secondi (
@@ -32,7 +33,7 @@ nomePiatto_secondo VARCHAR(255),
 prezzo DECIMAL(10,2),
 menu_id INT,
 portata_id VARCHAR(255),
-tipo_cottura VARCHAR(255)
+tipo_cottura INT
 );
 
 CREATE TABLE contorni (
@@ -49,7 +50,7 @@ nomePiatto_dessert VARCHAR(255),
 prezzo DECIMAL(10,2),
 menu_id INT,
 portata_id VARCHAR(255),
-calorie VARCHAR(255)
+calorie INT
 );
 
 CREATE TABLE bibite (
@@ -67,7 +68,7 @@ nomePiatto_pizza VARCHAR(255),
 prezzo DECIMAL(10,2),
 menu_id INT,
 portata_id VARCHAR(255),
-tipo_impasto VARCHAR(255)
+tipo_impasto INT
 );
 
 CREATE TABLE ingredienti(
