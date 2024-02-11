@@ -21,6 +21,8 @@ public class Ristorante {
     private OffsetTime oraChiusura;
     private ArrayList<Menu> menues = new ArrayList<>();
     private final ArrayList<Prenotazione> registroPrenotazioni;
+
+    private final List<Recensione> registroRecensioni;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     //Costruttore
@@ -32,6 +34,8 @@ public class Ristorante {
         this.oraApertura = oraApertura;
         this.oraChiusura = oraChiusura;
         this.registroPrenotazioni = new ArrayList<>();
+        this.registroRecensioni = new ArrayList<>();
+
     }
 
     //Getter e Setter
@@ -214,9 +218,21 @@ public class Ristorante {
 
     public void checkPrenotazione(Prenotazione prenotazione) {
         prenotazione.setCompleted(true);
-        System.out.println(MessaggiEnum.COMPLETED);
     }
 
+    public void addRecensione(Recensione recensione){
+        registroRecensioni.add(recensione);
+    }
+
+    public void checkRecensione(Recensione recensione) {
+        recensione.setPosted(true);
+    }
+
+    public void stampaListaRecensioni(){
+        for(Recensione recensione : registroRecensioni){
+            recensione.stampaRecensione();
+        }
+    }
 
     public void stampaDettagliRistorante() {
         System.out.println();

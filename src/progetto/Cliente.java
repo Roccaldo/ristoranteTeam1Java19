@@ -13,6 +13,7 @@ public class Cliente {
     private TipoEnum menuPreferito;
     private final ArrayList<Prenotazione> prenotazioni;
     private final List<PuntoReward> portafoglioReward;
+    private final List<Recensione> recensioneList;
 
     private Integer puntiTotali;
 
@@ -23,6 +24,7 @@ public class Cliente {
         this.prenotazioni = new ArrayList<>();
         this.portafoglioReward = new LinkedList<>();
         this.puntiTotali = 0;
+        this.recensioneList = new ArrayList<>();
     }
 
     public String getNome() {
@@ -61,6 +63,10 @@ public class Cliente {
         return puntiTotali;
     }
 
+    public List<Recensione> getRecensioneList() {
+        return recensioneList;
+    }
+
     public void addPrenotazione(Prenotazione prenotazione) {
         prenotazioni.add(prenotazione);
     }
@@ -92,9 +98,27 @@ public class Cliente {
         System.out.println();
     }
 
-    public void addRewardToPortafoglio(Prenotazione prenotazione, PuntoReward puntoReward){
+    public void addRecensione(Recensione recensione){
+        recensioneList.add(recensione);
+    }
+    public void stampaListaRecensioni(){
+        for(Recensione recensione : recensioneList){
+            recensione.stampaRecensione();
+        }
+    }
+
+    public void addRewardToPortafoglioPrenotazione(Prenotazione prenotazione, PuntoReward puntoReward){
         for(Prenotazione prenotazioneEs : prenotazioni){
             if(prenotazione.isCompleted()){
+                portafoglioReward.add(puntoReward);
+                puntiTotali++;
+            }
+        }
+    }
+
+    public void addRewardToPortafoglioRecensione(Recensione recensione, PuntoReward puntoReward){
+        for(Recensione recensioneEs : recensioneList){
+            if(recensione.isPosted()){
                 portafoglioReward.add(puntoReward);
                 puntiTotali++;
             }

@@ -1,5 +1,5 @@
 package progetto.template;
-public class Recensione extends GestioneClienteTemplatePattern {
+public class RecensionePattern extends GestioneClienteTemplatePattern {
 
     @Override
     public void start() {
