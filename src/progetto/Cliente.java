@@ -14,6 +14,7 @@ public class Cliente {
     private final ArrayList<Prenotazione> prenotazioni;
     private final List<PuntoReward> portafoglioReward;
     private final List<Recensione> recensioneList;
+    private final List<Ordine> ordineList;
 
     private Integer puntiTotali;
 
@@ -25,6 +26,7 @@ public class Cliente {
         this.portafoglioReward = new LinkedList<>();
         this.puntiTotali = 0;
         this.recensioneList = new ArrayList<>();
+        this.ordineList = new ArrayList<>();
     }
 
     public String getNome() {
@@ -67,6 +69,10 @@ public class Cliente {
         return recensioneList;
     }
 
+    public List<Ordine> getOrdineList() {
+        return ordineList;
+    }
+
     public void addPrenotazione(Prenotazione prenotazione) {
         prenotazioni.add(prenotazione);
     }
@@ -107,6 +113,20 @@ public class Cliente {
         }
     }
 
+    public void addOrdineToList(Ordine ordine){
+        ordineList.add(ordine);
+    }
+
+    public void removeOrdineToList(Ordine ordine){
+        ordineList.remove(ordine);
+    }
+
+    public void stampaOrdini(){
+        for(Ordine ordine : ordineList){
+            ordine.stampaOrdine();
+        }
+    }
+
     public void addRewardToPortafoglioPrenotazione(Prenotazione prenotazione, PuntoReward puntoReward){
         for(Prenotazione prenotazioneEs : prenotazioni){
             if(prenotazione.isCompleted()){
@@ -125,8 +145,18 @@ public class Cliente {
         }
     }
 
+    public void addRewardToPortafoglioOrdine(Ordine ordine, PuntoReward puntoReward){
+        for(Ordine ordineEs : ordineList){
+            if(ordine.isCompleted()){
+                portafoglioReward.add(puntoReward);
+                puntiTotali++;
+            }
+        }
+    }
+
     public void stampaPortafoglioReward(){
         System.out.println(MessaggiEnum.PUNTI.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + puntiTotali);
+        System.out.println();
     }
 
     public void visualizzaPrenotazioni() {
@@ -136,4 +166,6 @@ public class Cliente {
             prenotazione.dettagliPrenotazione();
         }
     }
+
+
 }

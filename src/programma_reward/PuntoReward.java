@@ -14,4 +14,8 @@ public class PuntoReward{
     public LivelloRewardEnum getLivelloRewardEnum() {
         return livelloRewardEnum;
     }
+
+    public void stampaPunti(){
+        System.out.println();
+    }
 }

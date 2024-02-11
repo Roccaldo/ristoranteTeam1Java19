@@ -213,6 +213,26 @@ public class Main {
             ristorante.checkRecensione(recensione1);
             cliente1.addRewardToPortafoglioRecensione(recensione1,new PuntoReward(LivelloRewardEnum.SILVER,AzioneRewardEnum.RECENSIONE));
             cliente1.stampaPortafoglioReward();
+            System.out.println();
+            Ordine ordine1 = new Ordine(cliente1);
+            cliente1.addOrdineToList(ordine1);
+            ristorante.addOrdineToList(ordine1);
+            ordine1.addPortateToOrdine(antipastoCarne1);
+            ordine1.addPortateToOrdine(antipastoCarne2);
+            ordine1.addPortateToOrdine(primoPiattoCarne1);
+            ordine1.addPortateToOrdine(secondoCarne1);
+            ordine1.addPortateToOrdine(dessertCarne1);
+            ordine1.addPortateToOrdine(bibita1);
+            ordine1.addPortateToOrdine(bibita1);
+            ordine1.stampaOrdine();
+            System.out.println();
+            Carrello carrello = new Carrello();
+            carrello.aggiungiOrdine(ordine1);
+            carrello.mostraCarrello();
+            ordine1.calcolaPrezzoOrdine();
+            ristorante.checkordine(ordine1);
+            cliente1.addRewardToPortafoglioOrdine(ordine1,new PuntoReward(LivelloRewardEnum.GOLD,AzioneRewardEnum.ORDINE));
+            cliente1.stampaPortafoglioReward();
         } catch (Exception e) {
             System.out.println(e);
         }

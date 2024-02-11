@@ -21,8 +21,9 @@ public class Ristorante {
     private OffsetTime oraChiusura;
     private ArrayList<Menu> menues = new ArrayList<>();
     private final ArrayList<Prenotazione> registroPrenotazioni;
-
     private final List<Recensione> registroRecensioni;
+
+    private final List<Ordine> registroOrdini;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     //Costruttore
@@ -35,6 +36,7 @@ public class Ristorante {
         this.oraChiusura = oraChiusura;
         this.registroPrenotazioni = new ArrayList<>();
         this.registroRecensioni = new ArrayList<>();
+        this.registroOrdini = new ArrayList<>();
 
     }
 
@@ -105,6 +107,14 @@ public class Ristorante {
 
     public ArrayList<Prenotazione> getRegistroPrenotazioni() {
         return registroPrenotazioni;
+    }
+
+    public List<Recensione> getRegistroRecensioni() {
+        return registroRecensioni;
+    }
+
+    public List<Ordine> getRegistroOrdini() {
+        return registroOrdini;
     }
 
     public boolean determinaStato() {
@@ -232,6 +242,24 @@ public class Ristorante {
         for(Recensione recensione : registroRecensioni){
             recensione.stampaRecensione();
         }
+    }
+
+    public void addOrdineToList(Ordine ordine){
+        registroOrdini.add(ordine);
+    }
+
+    public void removeOrdineToList(Ordine ordine){
+        registroOrdini.remove(ordine);
+    }
+
+    public void stampaListaOrdini(){
+        for(Ordine ordine : registroOrdini){
+            ordine.stampaOrdine();
+        }
+    }
+
+    public void checkordine(Ordine ordine) {
+        ordine.setCompleted(true);
     }
 
     public void stampaDettagliRistorante() {
