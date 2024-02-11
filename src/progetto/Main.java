@@ -5,15 +5,16 @@ import progetto.template.InvitaAmico;
 import progetto.template.Prenota;
 import progetto.template.Recensione;
 import progetto.prodotti.*;
+import programma_reward.AzioneRewardEnum;
+import programma_reward.LivelloRewardEnum;
+import programma_reward.PuntoReward;
 
-import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.OffsetTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
@@ -173,6 +174,7 @@ public class Main {
             ristorante.addPrenotazione(prenotazione1);
             ristorante.addPrenotazione(prenotazione2);
             ristorante3.addPrenotazione(prenotazione3);
+            ristorante.getRegistroPrenotazioni();
             ristorante.addPrenotazione(prenotazione4);
             ristorante3.removePrenotazione(prenotazione3);
             ristorante.removePrenotazione(prenotazione2);
@@ -200,8 +202,8 @@ public class Main {
             System.out.println();
             ristorante.checkPrenotazione(prenotazione1);
             ristorante.checkPrenotazione(prenotazione2);
-            cliente1.addRewardToPortafoglio(prenotazione1,new PuntoReward(50));
-            cliente1.addRewardToPortafoglio(prenotazione2,new PuntoReward(50));
+            cliente1.addRewardToPortafoglio(prenotazione1,new PuntoReward(LivelloRewardEnum.SILVER,AzioneRewardEnum.PRENOTAZIONE));
+            cliente1.addRewardToPortafoglio(prenotazione1,new PuntoReward(LivelloRewardEnum.SILVER,AzioneRewardEnum.PRENOTAZIONE));
             cliente1.stampaPortafoglioReward();
         } catch (Exception e) {
             System.out.println(e);

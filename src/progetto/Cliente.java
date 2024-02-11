@@ -1,6 +1,7 @@
 package progetto;
 
 import progetto.prodotti.TipoEnum;
+import programma_reward.PuntoReward;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -11,7 +12,9 @@ public class Cliente {
     private Integer coperti;
     private TipoEnum menuPreferito;
     private final ArrayList<Prenotazione> prenotazioni;
-    private List<PuntoReward> portafoglioReward;
+    private final List<PuntoReward> portafoglioReward;
+
+    private Integer puntiTotali;
 
     public Cliente(String nome, Integer coperti, TipoEnum menuPreferito) {
         this.nome = nome;
@@ -19,6 +22,7 @@ public class Cliente {
         this.menuPreferito = menuPreferito;
         this.prenotazioni = new ArrayList<>();
         this.portafoglioReward = new LinkedList<>();
+        this.puntiTotali = 0;
     }
 
     public String getNome() {
@@ -51,6 +55,10 @@ public class Cliente {
 
     public List<PuntoReward> getPortafoglioReward() {
         return portafoglioReward;
+    }
+
+    public Integer getPuntiTotali() {
+        return puntiTotali;
     }
 
     public void addPrenotazione(Prenotazione prenotazione) {
@@ -88,17 +96,13 @@ public class Cliente {
         for(Prenotazione prenotazioneEs : prenotazioni){
             if(prenotazione.isCompleted()){
                 portafoglioReward.add(puntoReward);
+                puntiTotali++;
             }
         }
-
     }
 
     public void stampaPortafoglioReward(){
-        Integer somma = 0;
-        System.out.println("Punti raccolti: " + portafoglioReward.size());
-        for (PuntoReward puntoReward : portafoglioReward) {
-            somma += puntoReward.getValore();
-        }   System.out.println("Valore del portafoglio: " + somma);
+        System.out.println(MessaggiEnum.PUNTI.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + puntiTotali);
     }
 
     public void visualizzaPrenotazioni() {

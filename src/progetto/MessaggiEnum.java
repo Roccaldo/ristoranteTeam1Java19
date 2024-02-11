@@ -30,7 +30,8 @@ public enum MessaggiEnum {
     MENU("Menù"),
     RISTORANTI("Ristoranti consigliati"),
 
-    COMPLETED("Prenotazione completata");
+    COMPLETED("Prenotazione completata"),
+    PUNTI("Punti totali ");
 
     private final String messaggio;
 
