@@ -9,23 +9,30 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Menu {
-
+    private static Integer counter = 0;
+    private Integer id;
     private String nomeMenu;
-
     private ArrayList<Prodotti> portateList = new ArrayList<>();
-
     private TipoEnum tipoMenu;
 
     // Costruttore
     public Menu(String nomeMenu, TipoEnum tipoMenu) {
+        counter++;
+        this.id = counter;
         this.nomeMenu = nomeMenu;
         this.tipoMenu = tipoMenu;
     }
 
-    /**
-     * @return il nome del menu
-     */
     // Getter e Setter
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getNomeMenu() {
         return nomeMenu;
     }

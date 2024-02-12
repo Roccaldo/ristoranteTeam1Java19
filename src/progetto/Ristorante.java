@@ -4,15 +4,16 @@ import progetto.prodotti.StatoRistoranteEnum;
 import progetto.prodotti.TipoEnum;
 
 import java.io.InvalidObjectException;
+import java.sql.Date;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class Ristorante {
+    private static Integer counter = 0;
+    private Integer id;
     private String nome;
     private String indirizzo;
     private Integer numMaxPosti;
@@ -28,6 +29,8 @@ public class Ristorante {
 
     //Costruttore
     public Ristorante(String nome, String indirizzo, Integer numMaxPosti, OffsetTime oraApertura, OffsetTime oraChiusura) {
+        counter++;
+        this.id = counter;
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.numMaxPosti = numMaxPosti;
@@ -38,6 +41,14 @@ public class Ristorante {
         this.registroRecensioni = new ArrayList<>();
         this.registroOrdini = new ArrayList<>();
 
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     //Getter e Setter

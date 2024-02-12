@@ -5,16 +5,17 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class Prodotti {
+    private static Integer counter = 0;
+    private Integer id;
     private String nomePiatto;
-
     private Double prezzo;
-
     private PortataEnum portata;
-
     private ArrayList<AllergeniEnum> allergeni;
 
     //Costruttore
     public Prodotti(String nomePiatto, Double prezzo, PortataEnum portata, ArrayList<AllergeniEnum> allergeni) {
+        counter++;
+        this.id = counter;
         this.nomePiatto = nomePiatto;
         this.prezzo = prezzo;
         this.portata = portata;
@@ -22,6 +23,15 @@ public abstract class Prodotti {
     }
 
     //Getter e Setter
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getNomePiatto() {
         return nomePiatto;
     }

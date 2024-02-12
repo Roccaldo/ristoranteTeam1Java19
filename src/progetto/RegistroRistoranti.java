@@ -1,5 +1,7 @@
 package progetto;
 
+import progetto.prodotti.Prodotti;
+
 import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
@@ -34,5 +36,25 @@ public class RegistroRistoranti {
         } else {
             throw new InvalidObjectException(MessaggiEnum.RISTORANTENONPRESENTE.getMessaggio());
         }
+    }
+
+    public Integer getMenuIdRistorante(Menu menu) {
+        for (Ristorante ristorante : ristorantiList) {
+            if (ristorante.getMenues().contains(menu)) {
+                return ristorante.getId();
+            }
+        }
+        return null;
+    }
+
+    public Integer getportataIdMenu(Prodotti prodotti) {
+        for (Ristorante ristorante : ristorantiList) {
+            for (Menu menu : ristorante.getMenues()) {
+                if (menu.getPortateList().contains(prodotti)) {
+                    return menu.getId();
+                }
+            }
+        }
+        return null;
     }
 }

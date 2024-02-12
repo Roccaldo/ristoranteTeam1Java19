@@ -1,11 +1,11 @@
 package progetto.prodotti;
 
 public enum PortataEnum  {
-    ANTIPASTO("Antipasto"),
-    PRIMOPIATTO("Primo Piatto"),
-    SECONDOPIATTO("Secondo Piatto"),
-    PIZZA("Pizza"),
-    CONTORNO("Contorno"),
+    ANTIPASTO("Antipasti"),
+    PRIMOPIATTO("Primi"),
+    SECONDOPIATTO("Secondi"),
+    PIZZA("Pizze"),
+    CONTORNO("Contorni"),
     DESSERT("Dessert"),
     BIBITE("Bibite");
     private String portata;

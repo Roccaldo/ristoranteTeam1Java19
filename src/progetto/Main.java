@@ -20,12 +20,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-             DateTimeFormatter formatter2 = DateTimeFormatter.ISO_OFFSET_TIME;
-            // Creazione di un ristorante
-            Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50, OffsetTime.parse("17:00:00+00:00",formatter2),OffsetTime.parse("06:00:00+00:00",formatter2));
-            Ristorante ristorante2 = new Ristorante("La Perla", "Via il Molo, 7", 30,  OffsetTime.parse("06:00:00+00:00",formatter2),OffsetTime.parse("03:00:00+00:00",formatter2));
-            Ristorante ristorante3 = new Ristorante("Il Ghiottone", "Via Aldo moro, 9", 200,  OffsetTime.parse("09:00:00+00:00",formatter2),OffsetTime.parse("00:00:00+00:00",formatter2));
+            DateTimeFormatter formatter2 = DateTimeFormatter.ISO_OFFSET_TIME;
+            // Creazione DatabaseAction
+            DatabaseAction databaseAction = new DatabaseAction("jdbc:mysql://localhost:3306/progettodb", "root", "password");
 
+            // Creazione e aggiunta al database di ristorante
+            Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50, OffsetTime.parse("17:00:00+00:00",formatter2),OffsetTime.parse("06:00:00+00:00",formatter2));
+            databaseAction.insertRistorante(ristorante);
+            Ristorante ristorante2 = new Ristorante("La Perla", "Via il Molo, 7", 30,  OffsetTime.parse("06:00:00+00:00",formatter2),OffsetTime.parse("03:00:00+00:00",formatter2));
+            databaseAction.insertRistorante(ristorante2);
+            Ristorante ristorante3 = new Ristorante("Il Ghiottone", "Via Aldo moro, 9", 200,  OffsetTime.parse("09:00:00+00:00",formatter2),OffsetTime.parse("00:00:00+00:00",formatter2));
+            databaseAction.insertRistorante(ristorante3);
 
             //Creazione registro ristoranti
             RegistroRistoranti registroRistoranti = new RegistroRistoranti();
@@ -80,65 +85,105 @@ public class Main {
             Menu menuPizza = new Menu("Pizza", TipoEnum.PIZZA);
             Menu menuBibite = new Menu("Bibite", TipoEnum.BIBITE);
 
+            //add e remove menù al ristorante e insert database
+            ristorante.aggingiMenu(menuCarne);
+            databaseAction.insertMenu(menuCarne, registroRistoranti);
+            ristorante.aggingiMenu(menuBibite);
+            databaseAction.insertMenu(menuBibite, registroRistoranti);
+            ristorante.aggingiMenu(menuPizza);
+            databaseAction.insertMenu(menuPizza, registroRistoranti);
+            ristorante2.aggingiMenu(menuPesce);
+            databaseAction.insertMenu(menuPesce, registroRistoranti);
+            ristorante2.aggingiMenu(menuBibite);
+            databaseAction.insertMenu(menuBibite, registroRistoranti);
+            ristorante3.aggingiMenu(menuVegano);
+            databaseAction.insertMenu(menuVegano, registroRistoranti);
+
             // Aggiunta piatti menu carne
             menuCarne.aggiungiPiatto(antipastoCarne1);
+            databaseAction.insertProdotto(antipastoCarne1, registroRistoranti);
             menuCarne.aggiungiPiatto(antipastoCarne2);
+            databaseAction.insertProdotto(antipastoCarne2, registroRistoranti);
             menuCarne.aggiungiPiatto(primoPiattoCarne1);
+            databaseAction.insertProdotto(primoPiattoCarne1, registroRistoranti);
             menuCarne.aggiungiPiatto(primoPiattoCarne2);
+            databaseAction.insertProdotto(primoPiattoCarne2, registroRistoranti);
             menuCarne.aggiungiPiatto(secondoCarne1);
+            databaseAction.insertProdotto(secondoCarne1, registroRistoranti);
             menuCarne.aggiungiPiatto(secondoCarne2);
+            databaseAction.insertProdotto(secondoCarne2, registroRistoranti);
             menuCarne.aggiungiPiatto(contornoCarne1);
+            databaseAction.insertProdotto(contornoCarne1, registroRistoranti);
             menuCarne.aggiungiPiatto(contornoCarne2);
+            databaseAction.insertProdotto(contornoCarne2, registroRistoranti);
             menuCarne.aggiungiPiatto(dessertCarne1);
+            databaseAction.insertProdotto(dessertCarne1, registroRistoranti);
             menuCarne.aggiungiPiatto(dessertCarne2);
+            databaseAction.insertProdotto(dessertCarne2, registroRistoranti);
 
             // Aggiunta piatti menu pesce
             menuPesce.aggiungiPiatto(antipastoPesce1);
+            databaseAction.insertProdotto(antipastoPesce1, registroRistoranti);
             menuPesce.aggiungiPiatto(antipastoPesce2);
+            databaseAction.insertProdotto(antipastoPesce2, registroRistoranti);
             menuPesce.aggiungiPiatto(primoPiattoPesce1);
+            databaseAction.insertProdotto(primoPiattoPesce1, registroRistoranti);
             menuPesce.aggiungiPiatto(primoPiattoPesce2);
+            databaseAction.insertProdotto(primoPiattoPesce2, registroRistoranti);
             menuPesce.aggiungiPiatto(secondoPesce1);
+            databaseAction.insertProdotto(secondoPesce1, registroRistoranti);
             menuPesce.aggiungiPiatto(secondoPesce2);
+            databaseAction.insertProdotto(secondoPesce2, registroRistoranti);
             menuPesce.aggiungiPiatto(contornoPesce1);
+            databaseAction.insertProdotto(contornoPesce1, registroRistoranti);
             menuPesce.aggiungiPiatto(contornoPesce2);
+            databaseAction.insertProdotto(contornoPesce2, registroRistoranti);
             menuPesce.aggiungiPiatto(dessertPesce1);
+            databaseAction.insertProdotto(dessertPesce1, registroRistoranti);
             menuPesce.aggiungiPiatto(dessertPesce2);
+            databaseAction.insertProdotto(dessertPesce2, registroRistoranti);
 
             // Aggiunta piatti menu vegano
             menuVegano.aggiungiPiatto(antipastoVegano1);
+            databaseAction.insertProdotto(antipastoVegano1, registroRistoranti);
             menuVegano.aggiungiPiatto(antipastoVegano2);
+            databaseAction.insertProdotto(antipastoVegano2, registroRistoranti);
             menuVegano.aggiungiPiatto(primoPiattoVegano1);
+            databaseAction.insertProdotto(primoPiattoVegano1, registroRistoranti);
             menuVegano.aggiungiPiatto(primoPiattoVegano2);
+            databaseAction.insertProdotto(primoPiattoVegano2, registroRistoranti);
             menuVegano.aggiungiPiatto(secondoVegano1);
+            databaseAction.insertProdotto(secondoVegano1, registroRistoranti);
             menuVegano.aggiungiPiatto(secondoVegano2);
+            databaseAction.insertProdotto(secondoVegano2, registroRistoranti);
             menuVegano.aggiungiPiatto(contornoVegano1);
+            databaseAction.insertProdotto(contornoVegano1, registroRistoranti);
             menuVegano.aggiungiPiatto(contornoVegano2);
+            databaseAction.insertProdotto(contornoVegano2, registroRistoranti);
             menuVegano.aggiungiPiatto(dessertVegano1);
+            databaseAction.insertProdotto(dessertVegano1, registroRistoranti);
             menuVegano.aggiungiPiatto(dessertVegano2);
+            databaseAction.insertProdotto(dessertVegano2, registroRistoranti);
 
             // Aggiunta piatti menu pizza
             menuPizza.aggiungiPiatto(pizza1);
+            databaseAction.insertProdotto(pizza1, registroRistoranti);
             menuPizza.aggiungiPiatto(pizza2);
+            databaseAction.insertProdotto(pizza2, registroRistoranti);
             menuPizza.aggiungiPiatto(pizza3);
+            databaseAction.insertProdotto(pizza3, registroRistoranti);
 
             // Aggiunta piatti menu bibite
             menuBibite.aggiungiPiatto(bibita1);
+            databaseAction.insertProdotto(bibita1, registroRistoranti);
             menuBibite.aggiungiPiatto(bibita2);
+            databaseAction.insertProdotto(bibita2, registroRistoranti);
             menuBibite.aggiungiPiatto(bibita3);
+            databaseAction.insertProdotto(bibita3, registroRistoranti);
             menuBibite.aggiungiPiatto(bibita4);
+            databaseAction.insertProdotto(bibita4, registroRistoranti);
             menuBibite.aggiungiPiatto(bibita5);
-
-            //add e remove menù al ristorante
-            ristorante.aggingiMenu(menuCarne);
-            ristorante.aggingiMenu(menuPesce);
-            ristorante.aggingiMenu(menuBibite);
-            ristorante.aggingiMenu(menuPizza);
-            ristorante.aggingiMenu(menuVegano);
-            ristorante2.aggingiMenu(menuPesce);
-            ristorante2.aggingiMenu(menuBibite);
-            ristorante3.aggingiMenu(menuBibite);
-            ristorante3.aggingiMenu(menuCarne);
-            ristorante3.aggingiMenu(menuVegano);
+            databaseAction.insertProdotto(bibita5, registroRistoranti);
 
             // ristorante.stampaMenues();
             ristorante.stampaMenues();
@@ -175,7 +220,6 @@ public class Main {
             ristorante.addPrenotazione(prenotazione1);
             ristorante.addPrenotazione(prenotazione2);
             ristorante3.addPrenotazione(prenotazione3);
-            ristorante.getRegistroPrenotazioni();
             ristorante.addPrenotazione(prenotazione4);
             ristorante3.removePrenotazione(prenotazione3);
             ristorante.removePrenotazione(prenotazione2);
