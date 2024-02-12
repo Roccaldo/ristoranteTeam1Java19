@@ -156,7 +156,6 @@ public class Cliente {
 
     public void stampaPortafoglioReward(){
         System.out.println(MessaggiEnum.PUNTI.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + puntiTotali);
-        System.out.println();
     }
 
     public void visualizzaPrenotazioni() {

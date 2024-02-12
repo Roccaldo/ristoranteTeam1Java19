@@ -208,6 +208,7 @@ public class Main {
             cliente1.stampaPortafoglioReward();
             System.out.println();
             Recensione recensione1 = new Recensione(cliente1,"Ottima esperienza,abbiamo mangiato benissimo",VotoEnum.CINQUE);
+            recensione1.stampaRecensione();
             ristorante.addRecensione(recensione1);
             cliente1.addRecensione(recensione1);
             ristorante.checkRecensione(recensione1);

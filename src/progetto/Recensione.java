@@ -38,9 +38,10 @@ public class Recensione {
 
         public void stampaRecensione(){
             System.out.println(MessaggiEnum.RECENSIONE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() +
-                    CaratteriSpeEnum.SPAZIO.getCarattere() + cliente + CaratteriSpeEnum.SPAZIO.getCarattere() +
+                    CaratteriSpeEnum.SPAZIO.getCarattere() + cliente.getNome() + CaratteriSpeEnum.SPAZIO.getCarattere() +
                     CaratteriSpeEnum.TRATTINO.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + testo +
                     CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.TRATTINO.getCarattere() +  CaratteriSpeEnum.SPAZIO.getCarattere() + voto);
+            System.out.println();
         }
 }
 
