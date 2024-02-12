@@ -1,74 +1,57 @@
 CREATE TABLE menu(
-id INT AUTO_INCREMENT PRIMARY KEY,
+id INT PRIMARY KEY,
 nome_menu VARCHAR(255),
-tipo_menu INT,
+tipo_menu VARCHAR(255),
 ristorante_id INT
 );
 
-CREATE TABLE tipoMenu(
-id INT AUTO_INCREMENT PRIMARY KEY,
-nome_tipoMenu VARCHAR(255)
+CREATE TABLE antipasti(
+id INT PRIMARY KEY,
+nome VARCHAR(255),
+prezzo DECIMAL(10,2),
+menu_id INT
 );
 
-CREATE TABLE antipasto(
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_antipasto VARCHAR(255),
+CREATE TABLE primi(
+id INT PRIMARY KEY,
+nome VARCHAR(255),
 prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255)
+menu_id INT
 );
 
-CREATE TABLE primo (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_primo VARCHAR(255),
+CREATE TABLE secondi(
+id INT PRIMARY KEY,
+nome VARCHAR(255),
 prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255),
-tipo_pasta INT
+menu_id INT
 );
 
-CREATE TABLE secondi (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_secondo VARCHAR(255),
+CREATE TABLE contorni(
+id INT PRIMARY KEY,
+nome VARCHAR(255),
 prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255),
-tipo_cottura INT
+menu_id INT
 );
 
-CREATE TABLE contorni (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_contorno VARCHAR(255),
+CREATE TABLE dessert(
+id INT PRIMARY KEY,
+nome VARCHAR(255),
 prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255)
+menu_id INT
 );
 
-CREATE TABLE dessert (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_dessert VARCHAR(255),
+CREATE TABLE bibite(
+id INT PRIMARY KEY,
+nome VARCHAR(255),
 prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255),
-calorie INT
-);
-
-CREATE TABLE bibite (
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_bibita VARCHAR(255),
-prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255),
-is_alcholic BOOLEAN
+menu_id INT
 );
 
 CREATE TABLE pizze(
-id INT AUTO_INCREMENT PRIMARY KEY,
-nomePiatto_pizza VARCHAR(255),
+id INT PRIMARY KEY,
+nome VARCHAR(255),
 prezzo DECIMAL(10,2),
-menu_id INT,
-portata_id VARCHAR(255),
-tipo_impasto INT
+menu_id INT
 );
 
 CREATE TABLE ingredienti(
@@ -95,11 +78,7 @@ CREATE TABLE Ristorante (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome_ristorante VARCHAR (255),
 indirizzo VARCHAR (255),
-Stato VARCHAR (255),
-orario_apertura TIME,
-orario_chiusura TIME,
-max_posti INT,
-posti_liberi INT
+max_posti INT
 );
 
 CREATE TABLE Prenotazione (
@@ -161,14 +140,14 @@ FOREIGN KEY(id_cliente) REFERENCES cliente(id);
 -- ALTER TABLE menu
 -- ADD CONSTRAINT FK_MenuAntipasto
 -- FOREIGN KEY(id) REFERENCES antipasto(menu_id);
-ALTER TABLE antipasto
-ADD CONSTRAINT FK_AntipastoMenu
+ALTER TABLE antipasti
+ADD CONSTRAINT FK_AntipastiMenu
 FOREIGN KEY(menu_id) REFERENCES menu(id);
 
 -- ALTER TABLE menu
 -- ADD CONSTRAINT FK_MenuPrimi
 -- FOREIGN KEY(id) REFERENCES primo(menu_id);
-ALTER TABLE primo
+ALTER TABLE primi
 ADD CONSTRAINT FK_PrimiMenu
 FOREIGN KEY(menu_id) REFERENCES menu(id);
 
@@ -217,11 +196,11 @@ FOREIGN KEY(id_pizza) REFERENCES ingredienti(id);
 
 ALTER TABLE portataallergeni
 ADD CONSTRAINT FK_Antipasto
-FOREIGN KEY(id_portata) REFERENCES antipasto(id);
+FOREIGN KEY(id_portata) REFERENCES antipasti(id);
 
 ALTER TABLE portataallergeni
 ADD CONSTRAINT FK_Primo
-FOREIGN KEY(id_portata) REFERENCES primo(id);
+FOREIGN KEY(id_portata) REFERENCES primi(id);
 
 ALTER TABLE portataallergeni
 ADD CONSTRAINT FK_Secondi
@@ -246,19 +225,3 @@ FOREIGN KEY(id_portata) REFERENCES pizze(id);
 ALTER TABLE portataallergeni
 ADD CONSTRAINT FK_Allergene
 FOREIGN KEY(id_allergene) REFERENCES allergeni(id);
-
-ALTER TABLE menu
-ADD CONSTRAINT FK_TipoMenu
-FOREIGN KEY(tipo_menu) REFERENCES tipomenu(id);
-
-INSERT INTO ristorante(nome_ristorante, indirizzo, orario_apertura, orario_chiusura, max_posti, posti_liberi)
-VALUES ('Team Java19', 'Via Sparsi Per l\' Italia, 5', '17:00:00', '06:00:00', 50, 50),
-('La Perla', 'Via il Molo, 7', '06:00:00', '03:00:00', 30, 30),
-('Il Ghiottone', 'Via Aldo moro, 9', '09:00:00', '00:00:00', 200, 200);
-
-INSERT INTO tipomenu(nome_tipoMenu)
-VALUES ('Carne'), ('Pesce'), ('Vegano'), ('Pizza'), ('Bibite');
-
-INSERT INTO menu(nome_menu, tipo_menu, ristorante_id)
-VALUES ('Monte', 1, 1), ('Monte', 1, 3), ('Amici della natura', 3, 1), ('Amici della natura', 3, 3),
- ('Mare', 2, 1),  ('Mare', 2, 2), ('Pizza', 4, 1), ('Bibite', 5, 1), ('Bibite', 5, 2), ('Bibite', 5, 3);
