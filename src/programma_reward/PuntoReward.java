@@ -18,4 +18,5 @@ public class PuntoReward{
     public void stampaPunti(){
         System.out.println();
     }
+
 }

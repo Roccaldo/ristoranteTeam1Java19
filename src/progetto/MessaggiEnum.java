@@ -29,11 +29,12 @@ public enum MessaggiEnum {
     STATO("Stato"),
     MENU("Menù"),
     RISTORANTI("Ristoranti consigliati"),
-
-    COMPLETED("Prenotazione completata"),
     PUNTI("Punti totali"),
+    RECENSIONE("Recensione"),
 
-    RECENSIONE("Recensione");
+    RICEVUTO("Ricevuto"),
+    COMPLETATO("Completato");
+
 
     private final String messaggio;
 

@@ -74,7 +74,18 @@ public class Ordine {
         for(Prodotti prodotti : portateList){
             prodotti.stampaDettagli();
         }
+        stampaStatoOrdine();
+
     }
+
+    public void stampaStatoOrdine(){
+        if(!isCompleted()){
+            System.out.println(MessaggiEnum.RICEVUTO.getMessaggio());
+        } else if(isCompleted()){
+            System.out.println(MessaggiEnum.COMPLETATO.getMessaggio());
+        }
+    }
+
 
     @Override
     public String toString() {

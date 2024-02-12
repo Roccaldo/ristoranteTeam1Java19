@@ -230,7 +230,8 @@ public class Main {
             carrello.aggiungiOrdine(ordine1);
             carrello.mostraCarrello();
             ordine1.calcolaPrezzoOrdine();
-            ristorante.checkordine(ordine1);
+            carrello.checkordine(ordine1);
+            ordine1.stampaStatoOrdine();
             cliente1.addRewardToPortafoglioOrdine(ordine1,new PuntoReward(LivelloRewardEnum.GOLD,AzioneRewardEnum.ORDINE));
             cliente1.stampaPortafoglioReward();
         } catch (Exception e) {

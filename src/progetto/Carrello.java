@@ -44,5 +44,8 @@ public class Carrello {
         }
     }
 
+    public void checkordine(Ordine ordine) {
+        ordine.setCompleted(true);
+    }
 }
 
