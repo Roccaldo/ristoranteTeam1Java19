@@ -113,4 +113,51 @@ public class DatabaseAction {
             System.out.println("Insertion failed. Error: " + e.getMessage());
         }
     }
+
+    public void insertCliente(Cliente cliente) {
+        String insertQuery = "INSERT INTO clienti (id, nome, tipo_menu) VALUES (?, ?, ?)";
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+
+            preparedStatement.setInt(1, cliente.getId());
+            preparedStatement.setString(2, cliente.getNome());
+            preparedStatement.setString(3, cliente.getMenuPreferito().getTipoMenu());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            System.out.println(rowsAffected + " row(s) inserted successfully!");
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Insertion failed. Error: " + e.getMessage());
+        }
+    }
+
+    public void insertPrenotazione(Prenotazione prenotazione, RegistroRistoranti registroRistoranti) {
+        String insertQuery = "INSERT INTO prenotazione (id, nome_cliente, coperti, id_cliente, id_ristorante) VALUES (?, ?, ?, ?, ?)";
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database!");
+
+            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+
+            preparedStatement.setInt(1, prenotazione.getId());
+            preparedStatement.setString(2, prenotazione.getClientePrenotazione().getNome());
+            preparedStatement.setInt(3, prenotazione.getCoperti());
+            preparedStatement.setInt(4, prenotazione.getClientePrenotazione().getId());
+            preparedStatement.setInt(5, registroRistoranti.getPrenotazioneIdRistorante(prenotazione));
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            System.out.println(rowsAffected + " row(s) inserted successfully!");
+
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Insertion failed. Error: " + e.getMessage());
+        }
+    }
+
 }

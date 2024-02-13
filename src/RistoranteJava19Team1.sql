@@ -85,14 +85,13 @@ CREATE TABLE Prenotazione (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome_cliente VARCHAR (255),
 coperti INT,
-orario DATETIME,
 id_cliente INT,
 id_ristorante INT
 );
 
-CREATE TABLE Cliente (
-id INT PRIMARY KEY AUTO_INCREMENT,
-nome_menu VARCHAR (255),
+CREATE TABLE Clienti (
+id INT PRIMARY KEY,
+nome VARCHAR (255),
 tipo_menu VARCHAR (255)
 );
 
@@ -131,7 +130,7 @@ FOREIGN KEY(id_ristorante) REFERENCES prenotazione(id);
 
 ALTER TABLE prenotazione
 ADD CONSTRAINT FK_PrenotazioneCliente
-FOREIGN KEY(id_cliente) REFERENCES cliente(id);
+FOREIGN KEY(id_cliente) REFERENCES clienti(id);
 
 ALTER TABLE antipasti
 ADD CONSTRAINT FK_AntipastiMenu

@@ -185,6 +185,35 @@ public class Main {
             menuBibite.aggiungiPiatto(bibita5);
             databaseAction.insertProdotto(bibita5, registroRistoranti);
 
+            //crea cliente e aggiunta al database
+            Cliente cliente1 = new Cliente("Rossi", TipoEnum.CARNE);
+            databaseAction.insertCliente(cliente1);
+            Cliente cliente2 = new Cliente("Verdi", TipoEnum.PIZZA);
+            databaseAction.insertCliente(cliente2);
+            Cliente cliente3 = new Cliente("Bianchi", TipoEnum.VEGANO);
+            databaseAction.insertCliente(cliente3);
+            Cliente cliente4 = new Cliente("Cassano", TipoEnum.PESCE);
+            databaseAction.insertCliente(cliente4);
+
+            //creazione orario
+            OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
+
+            //creazione prenotazioni e aggiunta al database
+            Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
+            Prenotazione prenotazione2 = new Prenotazione(cliente2, 25, date);
+            Prenotazione prenotazione3 = new Prenotazione(cliente3, 40, date);
+            Prenotazione prenotazione4 = new Prenotazione(cliente4,2, date);
+
+            //add e aggiunta al database
+            ristorante.addPrenotazione(prenotazione1);
+            databaseAction.insertPrenotazione(prenotazione1, registroRistoranti);
+            ristorante.addPrenotazione(prenotazione2);
+            databaseAction.insertPrenotazione(prenotazione2, registroRistoranti);
+            ristorante3.addPrenotazione(prenotazione3);
+            databaseAction.insertPrenotazione(prenotazione3, registroRistoranti);
+            ristorante.addPrenotazione(prenotazione4);
+            databaseAction.insertPrenotazione(prenotazione4, registroRistoranti);
+
             // ristorante.stampaMenues();
             ristorante.stampaMenues();
 
@@ -199,30 +228,10 @@ public class Main {
             menuPizza.stampaMenu();
             menuBibite.stampaMenu();
 
-            //crea cliente
-            Cliente cliente1 = new Cliente("Rossi", 5, TipoEnum.CARNE);
-            Cliente cliente2 = new Cliente("Verdi", 7, TipoEnum.PIZZA);
-            Cliente cliente3 = new Cliente("Bianchi", 2, TipoEnum.VEGANO);
-            Cliente cliente4 = new Cliente("Cassano", 20, TipoEnum.PESCE);
+            //stampa dettagli e ristoranti consigliati;
             cliente1.dettagliCliente();
             cliente4.ristorantiConsigliati(registroRistoranti);
 
-            //creazione orario
-            OffsetDateTime date = OffsetDateTime.parse("2024-03-01T13:00:00Z");
-
-            //creazione prenotazioni
-            Prenotazione prenotazione1 = new Prenotazione(cliente1, 10, date);
-            Prenotazione prenotazione2 = new Prenotazione(cliente1, 25, date);
-            Prenotazione prenotazione3 = new Prenotazione(cliente3, 40, date);
-            Prenotazione prenotazione4 = new Prenotazione(cliente4,2, date);
-
-            //add, remove
-            ristorante.addPrenotazione(prenotazione1);
-            ristorante.addPrenotazione(prenotazione2);
-            ristorante3.addPrenotazione(prenotazione3);
-            ristorante.addPrenotazione(prenotazione4);
-            ristorante3.removePrenotazione(prenotazione3);
-            ristorante.removePrenotazione(prenotazione2);
             System.out.println();
             // visualizza tutte le prenotazioni del ristorante
             ristorante.visualizzaPrenotazioniRistorante();
@@ -284,3 +293,4 @@ public class Main {
         }
     }
 }
+

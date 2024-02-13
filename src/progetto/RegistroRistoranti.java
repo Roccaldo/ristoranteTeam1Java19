@@ -57,4 +57,13 @@ public class RegistroRistoranti {
         }
         return null;
     }
+
+    public Integer getPrenotazioneIdRistorante(Prenotazione prenotazione) {
+        for (Ristorante ristorante : ristorantiList) {
+            if (ristorante.getRegistroPrenotazioni().contains(prenotazione)) {
+                return ristorante.getId();
+            }
+        }
+        return null;
+    }
 }

@@ -8,8 +8,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Cliente {
+    private static Integer counter = 0;
+    private Integer id;
     private String nome;
-    private Integer coperti;
     private TipoEnum menuPreferito;
     private final ArrayList<Prenotazione> prenotazioni;
     private final List<PuntoReward> portafoglioReward;
@@ -18,9 +19,10 @@ public class Cliente {
 
     private Integer puntiTotali;
 
-    public Cliente(String nome, Integer coperti, TipoEnum menuPreferito) {
+    public Cliente(String nome, TipoEnum menuPreferito) {
+        counter++;
+        this.id = counter;
         this.nome = nome;
-        this.coperti = coperti;
         this.menuPreferito = menuPreferito;
         this.prenotazioni = new ArrayList<>();
         this.portafoglioReward = new LinkedList<>();
@@ -29,20 +31,20 @@ public class Cliente {
         this.ordineList = new ArrayList<>();
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getCoperti() {
-        return coperti;
-    }
-
-    public void setCoperti(Integer coperti) {
-        this.coperti = coperti;
     }
 
     public TipoEnum getMenuPreferito() {
@@ -87,7 +89,7 @@ public class Cliente {
         System.out.println(MessaggiEnum.CLIENTE.getMessaggio() + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() + nome +
                 CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
                 MessaggiEnum.COPERTI + CaratteriSpeEnum.DUEPUNTI.getCarattere() + CaratteriSpeEnum.SPAZIO.getCarattere() +
-                coperti + CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere());
+                CaratteriSpeEnum.SPAZIO.getCarattere() + CaratteriSpeEnum.LINEA.getCarattere());
     }
 
     //Metodo per stampare i ristoranti che contengono il tipo di menu preferito del cliente
