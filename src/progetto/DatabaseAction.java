@@ -8,14 +8,22 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DatabaseAction {
+    private static DatabaseAction instance;
     private String url;
     private String username;
     private String password;
 
-    public DatabaseAction(String url, String username, String password) {
-        this.url = url;
-        this.username = username;
-        this.password = password;
+    private DatabaseAction() {
+        this.url = "url";
+        this.username = "username";
+        this.password = "password";
+    }
+
+    public static DatabaseAction getInstance() {
+        if (instance == null) {
+            instance = new DatabaseAction();
+        }
+        return instance;
     }
 
     public String getUrl() {

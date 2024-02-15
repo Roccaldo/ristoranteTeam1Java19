@@ -22,7 +22,10 @@ public class Main {
         try {
             DateTimeFormatter formatter2 = DateTimeFormatter.ISO_OFFSET_TIME;
             // Creazione DatabaseAction
-            DatabaseAction databaseAction = new DatabaseAction("jdbc:mysql://localhost:3306/progettodb", "root", "password");
+            DatabaseAction databaseAction = DatabaseAction.getInstance();
+            databaseAction.setUrl("jdbc:mysql://localhost:3306/progettodb");
+            databaseAction.setUsername("root");
+            databaseAction.setPassword("password");
 
             // Creazione e aggiunta al database di ristorante
             Ristorante ristorante = new Ristorante("Team Java19", "Via Sparsi Per l' Italia, 5", 50, OffsetTime.parse("17:00:00+00:00",formatter2),OffsetTime.parse("06:00:00+00:00",formatter2));
